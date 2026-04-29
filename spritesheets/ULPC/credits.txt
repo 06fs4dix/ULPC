@@ -1,0 +1,548 @@
+[
+  {
+    "authors": [
+      "Michael Whitlock (bigbeargames)",
+      "Matthew Krohn (makrohn)",
+      "Johannes Sjölund (wulax)",
+      "bluecarrot16",
+      "JaidynReiman",
+      "Nila122",
+      "Benjamin K. Smith (BenCreating)",
+      "Evert",
+      "Eliza Wyatt (ElizaWy)",
+      "TheraHedwig",
+      "MuffinElZangano",
+      "Durrani",
+      "Stephen Challener (Redshrike)",
+      "Pierre Vigier (pvigier)",
+      "ElizaWy",
+      "Sander Frenken (castelonia)",
+      "dalonedrau",
+      "kheftel",
+      "Eliza Wyatt",
+      "Joe White",
+      "Luke Mehl",
+      "Napsio (Vitruvian Studio)",
+      "Bluecarrot16",
+      "Thane Brimhall (pennomi)",
+      "laetissima",
+      "Mandi Paugh",
+      "William.Thompsonj",
+      "Skorpio",
+      "Manuel Riecke (MrBeast)",
+      "thecilekli",
+      "Yamilian",
+      "Lanea Zimmerman (Sharm)",
+      "Barbara Riviera",
+      "Emilio J. Sanchez-Sierra",
+      "Radomir Dopieralski",
+      "Fabzy",
+      "Page",
+      "Cobra Hubbard (BlueVortexGames)",
+      "kcilds/Rocetti/Eredah",
+      "Makrohn",
+      "Ahmad3366",
+      "Marcel van de Steeg (MadMarcel)",
+      "Daniel Eddeland (daneeklu)",
+      "gr3yh47",
+      "Inboxninja",
+      "DarkwallLKE",
+      "Tuomo Untinen (reemax)",
+      "ElizaWy; walk and down by JaidynReiman",
+      "tskaufma",
+      "William.Thomsponj",
+      "Zi Ye",
+      "AntumDeluge",
+      "??",
+      "Joshua Taylor",
+      "Matthew Krohn (Makrohn)",
+      "Charles Sanchez (CharlesGabriel)",
+      "Tracy",
+      "Stafford McIntyre",
+      "PlatForge project",
+      "DCSS authors",
+      "Shaun Williams",
+      "Nyom"
+    ],
+    "licenses": [
+      "OGA-BY 3.0",
+      "CC-BY-SA 3.0",
+      "GPL 3.0",
+      "GPL 2.0",
+      "CC-BY 3.0",
+      "OGA-BY 3.0+",
+      "CC-BY 3.0+",
+      "CC0",
+      "GPL 3.0+",
+      "CC-BY 4.0",
+      "OGA-SA 3.0",
+      "CC-BY-SA 4.0"
+    ],
+    "urls": [
+      "http://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "http://opengameart.org/content/lpc-clothing-updates",
+      "http://opengameart.org/content/lpc-folk",
+      "http://opengameart.org/content/lpc-revised-character-basics",
+      "http://opengameart.org/content/sara-wizard",
+      "https://github.com/ElizaWy/LPC/blob/main/Characters/Hair",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Feminine%2C%20Thin/Accessories",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Masculine%2C%20Thin/Accessories/Neckwear%2001%20-%20Bowtie",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Head",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Head%20Accessories",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Head/Head%20Overlay%2001%20-%20Large%20Nose",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Shield%2001%20-%20Heater%20Shield",
+      "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Sword%2001%20-%20Arming%20Sword",
+      "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/46ddcf05a0e43e7aa6ffd47d350eef0eb529ac24",
+      "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/c32ce8a7edd9fc7fe7daa62a39cf64e5946020a2",
+      "https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75",
+      "https://gitlab.com/vagabondgame/lpc-characters",
+      "https://opengameart.org/content/",
+      "https://opengameart.org/content/3-hairs-for-lpc",
+      "https://opengameart.org/content/alternate-lpc-character-sprites-george",
+      "https://opengameart.org/content/anime-lpc-hair",
+      "https://opengameart.org/content/bunny-rabbit-lpc-style-for-pixelfarm",
+      "https://opengameart.org/content/cc0-headgear-icons",
+      "https://opengameart.org/content/clothing-facial-features-and-ui-elements",
+      "https://opengameart.org/content/concept-art-for-lpc-entry",
+      "https://opengameart.org/content/drakes-and-lizardfolk",
+      "https://opengameart.org/content/eredah-rpg-character-base-48x64-ongoing",
+      "https://opengameart.org/content/fantasy-rpg-npcs",
+      "https://opengameart.org/content/female-mage-clothing-set",
+      "https://opengameart.org/content/four-characters-my-lpc-entries",
+      "https://opengameart.org/content/fruit-and-veggie-inventory",
+      "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "https://opengameart.org/content/lpc-1-hairstyle-2-hair-extensions-3-previously-unofficially-released-hairstyles",
+      "https://opengameart.org/content/lpc-2-characters",
+      "https://opengameart.org/content/lpc-7-womens-shirts",
+      "https://opengameart.org/content/lpc-barbarian-sprite-base",
+      "https://opengameart.org/content/lpc-base-character-expressions",
+      "https://opengameart.org/content/lpc-be-seated",
+      "https://opengameart.org/content/lpc-boarman",
+      "https://opengameart.org/content/lpc-celestial-wizard-hats",
+      "https://opengameart.org/content/lpc-character-bases",
+      "https://opengameart.org/content/lpc-child-standing-template",
+      "https://opengameart.org/content/lpc-children-walk-animation",
+      "https://opengameart.org/content/lpc-clothes-and-hair",
+      "https://opengameart.org/content/lpc-clothing-updates",
+      "https://opengameart.org/content/lpc-combat-armor-for-women",
+      "https://opengameart.org/content/lpc-crown",
+      "https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more",
+      "https://opengameart.org/content/lpc-dress-in-combat-poses",
+      "https://opengameart.org/content/lpc-expanded-armor",
+      "https://opengameart.org/content/lpc-expanded-hair",
+      "https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "https://opengameart.org/content/lpc-expanded-pants",
+      "https://opengameart.org/content/lpc-expanded-simple-shirts",
+      "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "https://opengameart.org/content/lpc-expanded-xlong-hair",
+      "https://opengameart.org/content/lpc-extended-weapon-animations",
+      "https://opengameart.org/content/lpc-faun-and-minotaur",
+      "https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle",
+      "https://opengameart.org/content/lpc-folk",
+      "https://opengameart.org/content/lpc-full-plate-golden-armor",
+      "https://opengameart.org/content/lpc-full-plate-golden-armor-0",
+      "https://opengameart.org/content/lpc-gentleman",
+      "https://opengameart.org/content/lpc-glow-sword",
+      "https://opengameart.org/content/lpc-goblin",
+      "https://opengameart.org/content/lpc-hair",
+      "https://opengameart.org/content/lpc-helmets",
+      "https://opengameart.org/content/lpc-helmets-mega-pack",
+      "https://opengameart.org/content/lpc-heroine",
+      "https://opengameart.org/content/lpc-heroine-2",
+      "https://opengameart.org/content/lpc-hijab",
+      "https://opengameart.org/content/lpc-items-and-game-effects",
+      "https://opengameart.org/content/lpc-jump-expanded",
+      "https://opengameart.org/content/lpc-kimono-relm",
+      "https://opengameart.org/content/lpc-kite-shield",
+      "https://opengameart.org/content/lpc-korean-idol-hairstyle-male-with-12-colors",
+      "https://opengameart.org/content/lpc-ladies",
+      "https://opengameart.org/content/lpc-lizard-headgear",
+      "https://opengameart.org/content/lpc-long-ears",
+      "https://opengameart.org/content/lpc-long-straight-hair-with-12-colors",
+      "https://opengameart.org/content/lpc-long-tied-hair-with-12-colors",
+      "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+      "https://opengameart.org/content/lpc-male-sheets",
+      "https://opengameart.org/content/lpc-masks",
+      "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+      "https://opengameart.org/content/lpc-muscular-hurt-animation",
+      "https://opengameart.org/content/lpc-muscular-pants",
+      "https://opengameart.org/content/lpc-muscular-swing-animation",
+      "https://opengameart.org/content/lpc-pink-short-hair",
+      "https://opengameart.org/content/lpc-pirates",
+      "https://opengameart.org/content/lpc-pointed-hats",
+      "https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear",
+      "https://opengameart.org/content/lpc-realistic-helmet-pack",
+      "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail",
+      "https://opengameart.org/content/lpc-revised-character-basics",
+      "https://opengameart.org/content/lpc-revised-elders",
+      "https://opengameart.org/content/lpc-roman-armor",
+      "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle",
+      "https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads",
+      "https://opengameart.org/content/lpc-santa",
+      "https://opengameart.org/content/lpc-sara",
+      "https://opengameart.org/content/lpc-shields-pack",
+      "https://opengameart.org/content/lpc-skeleton",
+      "https://opengameart.org/content/lpc-skorpios-scifi-sprite-pack",
+      "https://opengameart.org/content/lpc-spear-and-shovel-reworked",
+      "https://opengameart.org/content/lpc-style-farm-animals",
+      "https://opengameart.org/content/lpc-teen-androgynous-short-sleeve-shirt",
+      "https://opengameart.org/content/lpc-teen-unisex-base-clothes",
+      "https://opengameart.org/content/lpc-walk-animations-for-bows",
+      "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident",
+      "https://opengameart.org/content/lpc-wild-boar",
+      "https://opengameart.org/content/lpc-wings-new-animations",
+      "https://opengameart.org/content/lpc-wolf-animation",
+      "https://opengameart.org/content/lpc-wolfman",
+      "https://opengameart.org/content/lpc-zombie",
+      "https://opengameart.org/content/more-lpc-clothes-and-hair",
+      "https://opengameart.org/content/musclemanogreminotaur",
+      "https://opengameart.org/content/one-more-lpc-alternate-character",
+      "https://opengameart.org/content/ponytail-and-plain-hairstyles",
+      "https://opengameart.org/content/puck-overland",
+      "https://opengameart.org/content/sinbad-the-ogre",
+      "https://opengameart.org/content/star-overland",
+      "https://opengameart.org/content/steampun-a-fy-with-concept-art",
+      "https://opengameart.org/content/the-revolution-hair",
+      "https://opengameart.org/content/thin-mage-clothing-set",
+      "https://opengameart.org/content/tower-defense-prototyping-assets-4-monsters-some-tiles-a-background-image",
+      "https://opengameart.org/content/trevor-overland",
+      "https://opengameart.org/content/trolls-0",
+      "https://opengameart.org/content/ulpc-expanded-expressions",
+      "https://opengameart.org/content/wartotaur-4-directions",
+      "https://opengameart.org/content/wizard-2",
+      "https://opengameart.org/content/wizard-hat"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "AntumDeluge",
+      "7Soul"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/cc0-jewelry-icons",
+      "https://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "https://opengameart.org/content/lpc-jewelry",
+      "https://www.deviantart.com/7soul1/art/129892453"
+    ]
+  },
+  {
+    "authors": [
+      "drjamgo@hotmail.com"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/shadow-for-lpc-sprite"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "Pierre Vigier (pvigier)",
+      "Tuomo Untinen (reemax)",
+      "Johannes Sjölund (wulax)",
+      "and Inboxninja"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-hand-tools"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16"
+    ],
+    "licenses": [
+      "OGA-BY 3.0+",
+      "GPL 3.0",
+      "CC-BY 4.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-more-weapons"
+    ]
+  },
+  {
+    "authors": [
+      "Nila122"
+    ],
+    "licenses": [
+      "OGA-BY 3.0",
+      "CC-BY-SA 3.0",
+      "GPL 2.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-bandages"
+    ]
+  },
+  {
+    "authors": [
+      "JaidynReiman"
+    ],
+    "licenses": [
+      "OGA-BY 3.0+",
+      "CC-BY 3.0+",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-furry-ears-tails-for-rpg-sprites"
+    ]
+  },
+  {
+    "authors": [
+      "The Foreman"
+    ],
+    "licenses": [
+      "OGA-BY 4.0",
+      "CC-BY-SA 4.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-fairy-wings-pack-2"
+    ]
+  },
+  {
+    "authors": [
+      "JaidynReiman",
+      "Carlo Enrico Victoria (Nemisys)"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-white-beard"
+    ]
+  },
+  {
+    "authors": [
+      "JaidynReiman",
+      "Carlo Enrico Victoria (Nemisys)"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-brunet-mustache"
+    ]
+  },
+  {
+    "authors": [
+      "Nila122"
+    ],
+    "licenses": [
+      "OGA-BY 3.0",
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-clothes-for-children"
+    ]
+  },
+  {
+    "authors": [
+      "JaidynReiman"
+    ],
+    "licenses": [
+      "OGA-BY 3.0+",
+      "CC-BY 3.0+",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-new-elven-ear-variants"
+    ]
+  },
+  {
+    "authors": [
+      "kirts",
+      "JaidynReiman"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/cyclops-and-his-eye"
+    ]
+  },
+  {
+    "authors": [
+      "Nila122"
+    ],
+    "licenses": [
+      "OGA-BY 3.0",
+      "CC-BY-SA 3.0",
+      "GPL 2.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-aprons"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "Daniel Eddeland (daneeklu)"
+    ],
+    "licenses": [
+      "CC0",
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements",
+      "https://opengameart.org/content/lpc-more-backpacks"
+    ]
+  },
+  {
+    "authors": [
+      "Benjamin K. Smith (BenCreating)",
+      "macmanmatty"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-backpacks"
+    ]
+  },
+  {
+    "authors": [
+      "Benjamin K. Smith (BenCreating)",
+      "bluecarrot16",
+      "Sander Frenken (castelonia)"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-medieval-weapons"
+    ]
+  },
+  {
+    "authors": [
+      "LordNeo",
+      "Michael Whitlock (bigbeargames)",
+      "bluecarrot16"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-magic-staff",
+      "https://opengameart.org/content/staff-64-x64"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "Dr. Jamgo"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-simple-staff"
+    ]
+  },
+  {
+    "authors": [
+      "Matthew Krohn (makrohn)"
+    ],
+    "licenses": [
+      "CC-BY-SA 3.0",
+      "GPL 3.0",
+      "OGA-BY 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-wands"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "drjamgo@hotmail.com"
+    ],
+    "licenses": [
+      "CC0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-crossbow-final"
+    ]
+  },
+  {
+    "authors": [
+      "bluecarrot16",
+      "Sander Frenken (castelonia)",
+      "ElizaWy",
+      "JaidynReiman"
+    ],
+    "licenses": [
+      "OGA-BY 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-shields"
+    ]
+  },
+  {
+    "authors": [
+      "Pierre Vigier and DCSS artists (see https://github.com/crawl/tiles/blob/master/ARTISTS.md)"
+    ],
+    "licenses": [
+      "OGA-BY 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-dcss-swords"
+    ]
+  },
+  {
+    "authors": [
+      "The Foreman"
+    ],
+    "licenses": [
+      "OGA-BY 4.0",
+      "CC-BY-SA 4.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-fairy-wings"
+    ]
+  },
+  {
+    "authors": [
+      "JaidynReiman"
+    ],
+    "licenses": [
+      "OGA-BY 3.0+",
+      "CC-BY 3.0+",
+      "GPL 3.0"
+    ],
+    "urls": [
+      "https://opengameart.org/content/lpc-expanded-long-hair"
+    ]
+  },
+  {
+    "authors": [
+      "Napsio (Vitruvian Studio)",
+      "Michael Whitlock (bigbeargames)",
+      "Tracy"
+    ],
+    "licenses": [
+      "CC-BY 3.0"
+    ],
+    "urls": [
+      "https:/opengameart.org/content/lpc-celestial-wizard-hats",
+      "https:/opengameart.org/content/lpc-expanded-hats-facial-helmets"
+    ]
+  }
+]
