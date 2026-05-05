@@ -28,7 +28,7 @@ const {
   SPRITES_DIR, META_FILE, OUT_ROOT, OUT_SPRITES,
   ANIMATION_NAMES, ANIMATION_OFFSETS, BODY_TYPES,
   MATERIAL_BASES, DIRLESS_ANIMS, getAnimDirs,
-  loadItemMetadata,
+  loadCreditsFromCSV, formatCreditsAsTxt,
   buildRecolorMaterialMap,
   readPNGDimensions, detectFrameSize, isFullCompositeSheet,
   buildZPosMap, lookupZPos,
@@ -68,6 +68,40 @@ function cropFirstFrame(srcPath, dstPath, frameSize, targetFrames = null) {
       for (let px = 0; px < frameSize; px++) {
         const si = (y * src.width  + srcFrameX + px) * 4;
         const di = (y * newW       + dstFrameX + px) * 4;
+        dst.data[di]     = src.data[si];
+        dst.data[di + 1] = src.data[si + 1];
+        dst.data[di + 2] = src.data[si + 2];
+        dst.data[di + 3] = src.data[si + 3];
+      }
+    }
+  }
+  src.data = null;
+  writePNG(dst, dstPath);
+}
+
+// 처음 N 프레임만 잘라냄 (frame 0 유지, 초과 컬럼 제거)
+// slash 128px 파일처럼 ULPC 표준 시트 전체 폭(13열)으로 추출됐지만
+// 실제 유효 프레임이 6개뿐인 경우에 사용
+function cropToFrames(srcPath, dstPath, frameSize, targetFrames) {
+  const src       = PNG.sync.read(fs.readFileSync(srcPath));
+  const srcCols   = Math.floor(src.width / frameSize);
+  const finalCols = Math.min(targetFrames, srcCols);
+  if (finalCols >= srcCols) {
+    // 자를 필요 없으면 그냥 복사
+    const dir = path.dirname(dstPath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(dstPath, fs.readFileSync(srcPath));
+    src.data = null;
+    return;
+  }
+  const newW = finalCols * frameSize;
+  const dst  = new PNG({ width: newW, height: src.height });
+  for (let y = 0; y < src.height; y++) {
+    for (let col = 0; col < finalCols; col++) {
+      const baseX = col * frameSize;
+      for (let px = 0; px < frameSize; px++) {
+        const si = (y * src.width + baseX + px) * 4;
+        const di = (y * newW      + baseX + px) * 4;
         dst.data[di]     = src.data[si];
         dst.data[di + 1] = src.data[si + 1];
         dst.data[di + 2] = src.data[si + 2];
@@ -197,6 +231,7 @@ if (!isMainThread) {
           else if (e.animName === 'idle' || e.animName === 'combat_idle') prependFirstFrame(e.srcPath, e.dstPath, e.frameSize);
           else if (e.animName === 'jump')                                 appendFrame(e.srcPath, e.dstPath, e.frameSize, 1);
           else if (e.animName === 'backslash')                            deleteFrame(e.srcPath, e.dstPath, e.frameSize, 6);
+          else if (e.targetFrames)                                        cropToFrames(e.srcPath, e.dstPath, e.frameSize, e.targetFrames);
           else {
             const dir = path.dirname(e.dstPath);
             if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -262,50 +297,33 @@ console.log(`  컬러 이름: ${colorSet.size}개`);
 fs.writeFileSync(path.join(OUT_ROOT, 'colors.json'), JSON.stringify([...colorSet].sort(), null, 2), 'utf8');
 
 // 1-B. palette.json: material/version/color → hex[] 전체 팔레트 테이블
-const palettes      = {};
-const palLines      = palSection.split('\n');
-let curMaterial     = null;
-let curVersion      = null;
-let curColor        = null;
-let inHexArray      = false;
-
-for (const line of palLines) {
-  const matMatch = line.match(/^\s{4}"(all|body|cloth|eye|hair|metal)"\s*:/);
-  if (matMatch) {
-    curMaterial = matMatch[1];
-    if (!palettes[curMaterial]) palettes[curMaterial] = {};
-    curVersion = null; curColor = null;
-    continue;
+// paletteMetadata 는 미니파이드 한 줄 JSON 이므로 eval 로 파싱
+const palettes = {};
+{
+  let palObj;
+  try {
+    // "const paletteMetadata = {...};" 형태에서 객체 리터럴만 추출
+    const objStr = palSection.replace(/^const paletteMetadata\s*=\s*/, '').replace(/;\s*$/, '').trim();
+    palObj = (new Function(`return (${objStr})`))();
+  } catch (e) {
+    console.error('❌ paletteMetadata 파싱 실패:', e.message);
+    process.exit(1);
   }
-  if (!curMaterial) continue;
 
-  const verMatch = line.match(/^\s{8}"(lpcr|ulpc)"\s*:\s*\{/);
-  if (verMatch) {
-    curVersion = verMatch[1];
-    if (!palettes[curMaterial][curVersion]) palettes[curMaterial][curVersion] = {};
-    continue;
-  }
-  if (!curVersion) continue;
-
-  const colorMatch = line.match(/^\s{10}"([a-z][a-z0-9_]*)"\s*:\s*\[/);
-  if (colorMatch) {
-    curColor   = colorMatch[1];
-    inHexArray = true;
-    palettes[curMaterial][curVersion][curColor] = [];
-    const inlineHex = line.match(/#[0-9a-fA-F]{6}/g);
-    if (inlineHex) {
-      palettes[curMaterial][curVersion][curColor].push(...inlineHex.map(h => h.toLowerCase()));
+  // 구조: palObj.materials[material].palettes[version][color] = hex[]
+  const materialsMap = palObj.materials || palObj; // 구버전 호환
+  for (const [mat, matData] of Object.entries(materialsMap)) {
+    const versionsObj = matData.palettes || matData; // 구버전: 바로 version 키
+    if (typeof versionsObj !== 'object') continue;
+    for (const [ver, colorsObj] of Object.entries(versionsObj)) {
+      if (typeof colorsObj !== 'object' || Array.isArray(colorsObj)) continue;
+      if (!palettes[mat]) palettes[mat] = {};
+      if (!palettes[mat][ver]) palettes[mat][ver] = {};
+      for (const [color, hexArr] of Object.entries(colorsObj)) {
+        if (!Array.isArray(hexArr)) continue;
+        palettes[mat][ver][color] = hexArr.map(h => h.toLowerCase());
+      }
     }
-    if (line.includes(']')) inHexArray = false;
-    continue;
-  }
-
-  if (inHexArray && curColor) {
-    const hexMatch = line.match(/"(#[0-9a-fA-F]{6})"/);
-    if (hexMatch) {
-      palettes[curMaterial][curVersion][curColor].push(hexMatch[1].toLowerCase());
-    }
-    if (line.includes(']')) { inHexArray = false; curColor = null; }
   }
 }
 
@@ -322,54 +340,8 @@ console.log('  → colors.json 저장 완료 (OUT_ROOT)');
 console.log('  → palette.json 은 파일 복사 완료 후 저장됩니다.');
 
 // 1-C. credits 추출 (쓰기는 STEP 3에서 palette.json 과 함께)
-// URL 하나라도 공유하면 같은 출처로 간주해 union-find 로 병합
-const credits = (() => {
-  const itemMeta = loadItemMetadata();
-
-  // 1) 모든 credit 엔트리를 flat 배열로 수집
-  const raw = [];
-  for (const item of Object.values(itemMeta)) {
-    if (!Array.isArray(item.credits)) continue;
-    for (const credit of item.credits) {
-      const urls = Array.isArray(credit.urls) ? credit.urls.filter(Boolean) : [];
-      if (!urls.length) continue;
-      raw.push({
-        authors:   credit.authors  || [],
-        licenses:  credit.licenses || [],
-        urls,
-        fileName:  credit.file || null,
-      });
-    }
-  }
-
-  // 2) union-find
-  const parent = raw.map((_, i) => i);
-  function find(x) { return parent[x] === x ? x : (parent[x] = find(parent[x])); }
-  function union(a, b) { parent[find(a)] = find(b); }
-
-  // URL → 처음 등장한 엔트리 인덱스
-  const urlIndex = new Map();
-  for (let i = 0; i < raw.length; i++) {
-    for (const url of raw[i].urls) {
-      if (urlIndex.has(url)) union(i, urlIndex.get(url));
-      else urlIndex.set(url, i);
-    }
-  }
-
-  // 3) 루트별로 병합
-  const groups = new Map(); // root → merged entry
-  for (let i = 0; i < raw.length; i++) {
-    const root = find(i);
-    if (!groups.has(root)) groups.set(root, { authors: [], licenses: [], urls: new Set(), fileNames: [] });
-    const g = groups.get(root);
-    for (const a of raw[i].authors)  { if (!g.authors.includes(a))   g.authors.push(a);   }
-    for (const l of raw[i].licenses) { if (!g.licenses.includes(l)) g.licenses.push(l); }
-    for (const u of raw[i].urls)     { g.urls.add(u); }
-    if (raw[i].fileName && !g.fileNames.includes(raw[i].fileName)) g.fileNames.push(raw[i].fileName);
-  }
-
-  return [...groups.values()].map(g => ({ authors: g.authors, licenses: g.licenses, urls: [...g.urls].sort() }));
-})();
+// CREDITS.csv 에서 직접 읽어 URL 집합이 동일한 행끼리만 병합
+const credits = loadCreditsFromCSV();
 console.log(`  크레딧 고유 출처: ${credits.length}개\n`);
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -551,10 +523,12 @@ function mapFile(fullPath) {
     hurt: 6, climb: 6, idle: 3, jump: 5, sit: 3, emote: 3,
     run: 8, combat_idle: 2, backslash: 12, halfslash: 6,
   };
+  const cap = ANIM_FRAME_CAPS[animName] ?? null;
   const effectiveFrameCount = (animName === 'walk')              ? (ANIM_FRAME_CAPS.walk)
                             : (PREPEND_ANIMS.has(animName))      ? frameCount + 1
                             : (animName === 'jump')              ? frameCount + 1
                             : (animName === 'backslash')         ? frameCount - 1
+                            : (cap !== null && frameCount > cap) ? cap
                             : frameCount;
   const newFilename  = `${colorId}_${frameSize}_${effectiveFrameCount}_${dirs}.png`;
 
@@ -566,7 +540,15 @@ function mapFile(fullPath) {
     newFilename,
   ].join('/');
 
-  const targetFrames = animName === 'walk' ? ANIM_FRAME_CAPS.walk : null;
+  // targetFrames: walk=크롭+frame0제거, 그 외 표준 초과=앞N프레임 크롭
+  const needsCrop = cap !== null && frameCount > cap
+                    && animName !== 'walk'
+                    && !PREPEND_ANIMS.has(animName)
+                    && animName !== 'jump'
+                    && animName !== 'backslash';
+  const targetFrames = animName === 'walk' ? ANIM_FRAME_CAPS.walk
+                     : needsCrop           ? effectiveFrameCount
+                     : null;
   return { oldPath: relPath, newPath, zPos, yOffset, animName, color: colorId, frameSize, frameCount: effectiveFrameCount, targetFrames, warnings };
 }
 
@@ -850,7 +832,7 @@ const nonSynthetic = mapping.filter(e => !e.synthetic);
   if (!isDryRun) {
     if (!fs.existsSync(projectDir)) fs.mkdirSync(projectDir, { recursive: true });
     fs.writeFileSync(path.join(projectDir, 'palette.json'), JSON.stringify(palettes, null, 2), 'utf8');
-    fs.writeFileSync(path.join(projectDir, 'credits.txt'), JSON.stringify(credits, null, 2), 'utf8');
+    fs.writeFileSync(path.join(projectDir, 'credits.txt'), formatCreditsAsTxt(credits), 'utf8');
     console.log(`  → palette.json / credits.txt 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
   }
 

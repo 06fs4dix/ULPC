@@ -89,7 +89,11 @@ function buildItemRow(prefix) {
     swatchWrap.className = 'd-flex flex-wrap gap-1';
 
     for (const colorName of group.colors) {
-      const hexArr = state.palettes?.[group.material]?.[group.version]?.[colorName];
+      let hexArr = state.palettes?.[group.material]?.[group.version]?.[colorName];
+      // material=null 파일: 팔레트 전체를 검색해 같은 색상명의 hex를 찾아 표시
+      if (!hexArr && !group.material) {
+        hexArr = findColorHexAnywhere(state.palettes, colorName);
+      }
       const hex = hexArr ? hexArr[Math.floor(hexArr.length / 2)] : null;
       const btn = document.createElement('button');
       btn.className = 'swatch-btn';
@@ -109,6 +113,24 @@ function buildItemRow(prefix) {
   }
 
   return wrapper;
+}
+
+/**
+ * 팔레트 전체를 검색해 color 이름과 일치하는 첫 번째 hex 배열 반환
+ * 우선순위: 'all' material → 나머지 material
+ * material=null 파일의 스와치 색상 표시에 사용
+ */
+function findColorHexAnywhere(palettes, colorName) {
+  if (!palettes) return null;
+  const matKeys = ['all', ...Object.keys(palettes).filter(k => k !== 'all')];
+  for (const mat of matKeys) {
+    const vers = palettes[mat];
+    if (!vers) continue;
+    for (const verColors of Object.values(vers)) {
+      if (verColors[colorName]) return verColors[colorName];
+    }
+  }
+  return null;
 }
 
 /** prefix → 읽기 좋은 표시명 변환 */

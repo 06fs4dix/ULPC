@@ -3,9 +3,10 @@ const fs   = require('fs');
 const path = require('path');
 
 // ─── 경로 설정 ───────────────────────────────────────────────────────────────
-const ULPC_ROOT  = path.join(__dirname, '../../ULPC');
+const ULPC_ROOT   = path.join(__dirname, '../../Universal-LPC-Spritesheet-Character-Generator-master');
 const SPRITES_DIR = path.join(ULPC_ROOT, 'spritesheets');
 const META_FILE   = path.join(ULPC_ROOT, 'item-metadata.js');
+const CREDITS_CSV = path.join(ULPC_ROOT, 'CREDITS.csv');
 const OUT_ROOT    = __dirname;
 const OUT_SPRITES = path.join(__dirname, '../spritesheets');
 
@@ -526,13 +527,90 @@ function walkDir(dir, onFile) {
   }
 }
 
+// ─── CREDITS.csv 파서 ────────────────────────────────────────────────────────
+// CSV 한 줄을 파싱 (큰따옴표 감싸기 + 닫는따옴표 뒤 공백 지원)
+function parseCSVLine(line) {
+  const cols = [];
+  let i = 0;
+  while (i < line.length) {
+    while (i < line.length && line[i] === ' ') i++; // 앞 공백 건너뜀
+    if (i >= line.length) break;
+    if (line[i] === '"') {
+      let end = i + 1;
+      while (end < line.length && !(line[end] === '"' && line[end + 1] !== '"')) end++;
+      cols.push(line.slice(i + 1, end).replace(/""/g, '"').trim());
+      i = end + 1;
+      while (i < line.length && line[i] === ' ') i++; // 닫는따옴표 뒤 공백 건너뜀
+      if (line[i] === ',') i++;
+    } else {
+      const end = line.indexOf(',', i);
+      if (end === -1) { cols.push(line.slice(i).trim()); break; }
+      cols.push(line.slice(i, end).trim());
+      i = end + 1;
+    }
+  }
+  return cols;
+}
+
+// CREDITS.csv → 중복 제거된 credits 배열 반환
+// URL 집합이 완전히 같은 행끼리만 병합, 나머지는 행 단위 유지
+function loadCreditsFromCSV() {
+  if (!fs.existsSync(CREDITS_CSV)) return [];
+  const lines = fs.readFileSync(CREDITS_CSV, 'utf8').split('\n');
+  const groups = new Map(); // urlKey → { authors: Set, licenses: Set, urls: string[] }
+  for (const line of lines.slice(1)) { // 헤더 건너뜀
+    if (!line.trim()) continue;
+    const cols = parseCSVLine(line);
+    if (cols.length < 5) continue;
+    const authors  = cols[2].split(',').map(s => s.trim()).filter(Boolean);
+    const licenses = cols[3].split(',').map(s => s.trim()).filter(Boolean);
+    const urls     = [...new Set(cols[4].split(',').map(s => s.trim()).filter(Boolean))];
+    if (!urls.length) continue;
+    const key = [...urls].sort().join('|');
+    if (!groups.has(key)) {
+      groups.set(key, { authors: new Set(authors), licenses: new Set(licenses), urls: [...urls].sort() });
+    } else {
+      const g = groups.get(key);
+      for (const a of authors)  g.authors.add(a);
+      for (const l of licenses) g.licenses.add(l);
+    }
+  }
+  return [...groups.values()].map(g => ({
+    authors:  [...g.authors],
+    licenses: [...g.licenses],
+    urls:     g.urls,
+  }));
+}
+
+// credits 배열 → 사람이 읽기 좋은 txt 문자열
+function formatCreditsAsTxt(credits) {
+  const SEP  = '='.repeat(80);
+  const DASH = '-'.repeat(80);
+  const lines = [
+    SEP,
+    'ULPC Asset Credits',
+    'You must credit the following authors when using these assets.',
+    SEP,
+    '',
+  ];
+  for (const c of credits) {
+    lines.push(`Authors  : ${c.authors.join(', ')}`);
+    lines.push(`Licenses : ${c.licenses.join(', ')}`);
+    lines.push('URLs     :');
+    for (const url of c.urls) lines.push(`  ${url}`);
+    lines.push(DASH);
+  }
+  return lines.join('\n');
+}
+
 module.exports = {
-  ULPC_ROOT, SPRITES_DIR, META_FILE, OUT_ROOT, OUT_SPRITES,
+  ULPC_ROOT, SPRITES_DIR, META_FILE, CREDITS_CSV, OUT_ROOT, OUT_SPRITES,
   FRAME_SIZE, ANIMATION_OFFSETS, ANIMATION_NAMES,
   FULL_SHEET_ROW_COUNT, BODY_TYPES, CATEGORY_Z_DEFAULTS,
   PATH_PREFIX_TO_CATEGORY, CATEGORY_TO_MATERIAL,
   MATERIAL_BASES, DIRLESS_ANIMS, DIRS_4, DIRS_1, getAnimDirs,
   loadItemMetadata,
+  loadCreditsFromCSV, formatCreditsAsTxt,
   buildRecolorMaterialMap,
   readPNGDimensions, detectFrameSize, isFullCompositeSheet,
   buildZPosMap, lookupZPos,

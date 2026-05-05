@@ -11,6 +11,7 @@ import { initAnimation, startAnimation } from './canvas/animation.js';
 import { buildCharacterSheet, renderCharacter, clearSwapCache } from './canvas/renderer.js';
 import { initDownload } from './canvas/download.js';
 import { initImport } from './canvas/import.js';
+import { resetFrame } from './canvas/animation.js';
 
 // ── 공유 index.json 경로 (모든 프로젝트가 하나의 index.json을 공유)
 const SHARED_INDEX_URL = '../spritesheets/index.json';
@@ -127,6 +128,12 @@ async function init() {
     initAnimControls();
     initDownload();
     initImport(loadProject);
+
+    // resBase 기본값: 현재 viewer URL 기준 ../spritesheets/ 절대 URL
+    const resBaseEl = document.getElementById('input-res-base');
+    if (resBaseEl && !resBaseEl.value) {
+      resBaseEl.value = new URL('../spritesheets/', window.location.href).href;
+    }
 
     // 5. Canvas + 애니메이션 루프 초기화
     canvas = document.getElementById('preview-canvas');

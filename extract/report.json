@@ -1,354 +1,129 @@
 {
   "summary": {
-    "total": 154113,
-    "mapped": 152857,
+    "total": 151877,
+    "mapped": 153392,
     "skipped": 8,
     "issues": 159,
-    "duplicates": 407,
-    "paletteErrors": 28
+    "duplicates": 394,
+    "paletteErrors": 0
   },
-  "paletteErrors": [
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[slash]/z110/body.ulpc.blue_blue_64_6_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/female/slash/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[slash]/z110/cloth.ulpc.gray_gray_64_6_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/female/slash/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[slash]/z110/cloth.ulpc.gray_orange_64_6_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/female/slash/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[slash]/z110/cloth.ulpc.red_gray_64_6_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/female/slash/kite_red_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[thrust]/z110/body.ulpc.blue_blue_64_8_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/female/thrust/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[thrust]/z110/cloth.ulpc.gray_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/female/thrust/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[thrust]/z110/cloth.ulpc.gray_orange_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/female/thrust/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[thrust]/z110/cloth.ulpc.red_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/female/thrust/kite_red_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[walk]/z110/body.ulpc.blue_blue_64_8_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/female/walk/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[walk]/z110/cloth.ulpc.gray_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/female/walk/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[walk]/z110/cloth.ulpc.gray_orange_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/female/walk/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[female]/a[walk]/z110/cloth.ulpc.red_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/female/walk/kite_red_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[slash]/z110/body.ulpc.blue_blue_64_6_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/male/slash/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[slash]/z110/cloth.ulpc.gray_gray_64_6_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/male/slash/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[slash]/z110/cloth.ulpc.gray_orange_64_6_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/male/slash/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[slash]/z110/cloth.ulpc.red_gray_64_6_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/male/slash/kite_red_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[thrust]/z110/body.ulpc.blue_blue_64_8_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/male/thrust/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[thrust]/z110/cloth.ulpc.gray_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/male/thrust/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[thrust]/z110/cloth.ulpc.gray_orange_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/male/thrust/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[thrust]/z110/cloth.ulpc.red_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/male/thrust/kite_red_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[walk]/z110/body.ulpc.blue_blue_64_8_0213.png",
-      "colorId": "body.ulpc.blue_blue",
-      "mat": "body",
-      "ver": "ulpc",
-      "col": "blue_blue",
-      "old": "shield/kite/male/walk/kite_blue_blue.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[walk]/z110/cloth.ulpc.gray_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_gray",
-      "old": "shield/kite/male/walk/kite_gray_gray.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[walk]/z110/cloth.ulpc.gray_orange_64_8_0213.png",
-      "colorId": "cloth.ulpc.gray_orange",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "gray_orange",
-      "old": "shield/kite/male/walk/kite_gray_orange.png"
-    },
-    {
-      "path": "weapons/p[shield]/p[kite]/p[male]/a[walk]/z110/cloth.ulpc.red_gray_64_8_0213.png",
-      "colorId": "cloth.ulpc.red_gray",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "red_gray",
-      "old": "shield/kite/male/walk/kite_red_gray.png"
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[hurt]/z35/cloth.ulpc.forest_green_64_6_1.png",
-      "colorId": "cloth.ulpc.forest_green",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "forest_green",
-      "old": "torso/clothes/robe/female/hurt/forest_green.png"
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[slash]/z35/cloth.ulpc.forest_green_64_6_0213.png",
-      "colorId": "cloth.ulpc.forest_green",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "forest_green",
-      "old": "torso/clothes/robe/female/slash/forest_green.png"
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[spellcast]/z35/cloth.ulpc.forest_green_64_7_0213.png",
-      "colorId": "cloth.ulpc.forest_green",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "forest_green",
-      "old": "torso/clothes/robe/female/spellcast/forest_green.png"
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[walk]/z35/cloth.ulpc.forest_green_64_8_0213.png",
-      "colorId": "cloth.ulpc.forest_green",
-      "mat": "cloth",
-      "ver": "ulpc",
-      "col": "forest_green",
-      "old": "torso/clothes/robe/female/walk/forest_green.png"
-    }
-  ],
+  "paletteErrors": [],
   "issues": [
     {
       "old": "body/wheelchair/adult/background/black.png",
-      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/variant.v1.black_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/black_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/background/blue.png",
-      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/variant.v1.blue_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/blue_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/background/pink.png",
-      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/variant.v1.pink_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/pink_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/background/tan.png",
-      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/variant.v1.tan_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/tan_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/background/white.png",
-      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/variant.v1.white_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[background]/a[all]/z-2/white_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/foreground/black.png",
-      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/variant.v1.black_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/black_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/foreground/blue.png",
-      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/variant.v1.blue_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/blue_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/foreground/pink.png",
-      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/variant.v1.pink_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/pink_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/foreground/tan.png",
-      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/variant.v1.tan_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/tan_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "body/wheelchair/adult/foreground/white.png",
-      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/variant.v1.white_64_2_0213.png",
+      "new": "body/p[wheelchair]/p[adult]/p[foreground]/a[all]/z140/white_64_2_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/black.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.black_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/black_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/blonde.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.blonde_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/blonde_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/blonde_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.blonde_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/blonde_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/blue.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.blue_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/blue_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/blue_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.blue_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/blue_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/brown.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.brown_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/brown_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/brown_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.brown_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/brown_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -390,21 +165,21 @@
     },
     {
       "old": "hair/braid/child/gold.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.gold_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/gold_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/green.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.green_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/green_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/green_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.green_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/green_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -432,49 +207,49 @@
     },
     {
       "old": "hair/braid/child/pink.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.pink_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/pink_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/purple.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.purple_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/purple_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/raven.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.raven_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/raven_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/raven_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.raven_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/raven_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/red.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.red_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/red_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/red_2.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.red_2_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/red_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/braid/child/ruby.png",
-      "new": "hair/p[braid]/p[child]/a[all]/z120/variant.v1.ruby_64_12_0213.png",
+      "new": "hair/p[braid]/p[child]/a[all]/z120/ruby_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -516,49 +291,49 @@
     },
     {
       "old": "hair/messy/child/black.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.black_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/black_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/blonde.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.blonde_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/blonde_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/blonde_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.blonde_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/blonde_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/blue.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.blue_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/blue_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/blue_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.blue_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/blue_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/brown.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.brown_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/brown_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/brown_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.brown_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/brown_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -600,21 +375,21 @@
     },
     {
       "old": "hair/messy/child/gold.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.gold_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/gold_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/green.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.green_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/green_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/green_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.green_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/green_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -642,49 +417,49 @@
     },
     {
       "old": "hair/messy/child/pink.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.pink_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/pink_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/purple.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.purple_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/purple_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/raven.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.raven_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/raven_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/raven_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.raven_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/raven_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/red.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.red_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/red_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/red_2.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.red_2_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/red_2_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/messy/child/ruby.png",
-      "new": "hair/p[messy]/p[child]/a[all]/z120/variant.v1.ruby_64_12_0213.png",
+      "new": "hair/p[messy]/p[child]/a[all]/z120/ruby_64_12_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -712,546 +487,546 @@
     },
     {
       "old": "hair/relm_ponytail/child/bg/ash.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.ash_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/ash_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/black.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.black_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/black_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/blonde.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.blonde_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/blonde_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/blue.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.blue_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/blue_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/carrot.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.carrot_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/carrot_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/chestnut.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.chestnut_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/chestnut_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/dark_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.dark_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/dark_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/dark_gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.dark_gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/dark_gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/ginger.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.ginger_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/ginger_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/gold.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.gold_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/gold_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/green.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.green_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/green_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/light_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.light_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/light_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/navy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.navy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/navy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/orange.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.orange_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/orange_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/pink.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.pink_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/pink_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/platinum.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.platinum_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/platinum_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/purple.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.purple_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/purple_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/raven.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.raven_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/raven_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/red.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.red_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/red_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/redhead.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.redhead_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/redhead_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/rose.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.rose_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/rose_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/sandy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.sandy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/sandy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/strawberry.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.strawberry_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/strawberry_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/violet.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.violet_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/violet_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/bg/white.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/variant.v1.white_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[bg]/a[all]/z9/white_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/ash.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.ash_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/ash_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/black.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.black_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/black_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/blonde.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.blonde_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/blonde_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/blue.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.blue_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/blue_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/carrot.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.carrot_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/carrot_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/chestnut.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.chestnut_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/chestnut_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/dark_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.dark_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/dark_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/dark_gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.dark_gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/dark_gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/ginger.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.ginger_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/ginger_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/gold.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.gold_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/gold_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/green.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.green_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/green_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/light_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.light_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/light_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/navy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.navy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/navy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/orange.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.orange_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/orange_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/pink.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.pink_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/pink_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/platinum.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.platinum_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/platinum_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/purple.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.purple_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/purple_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/raven.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.raven_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/raven_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/red.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.red_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/red_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/redhead.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.redhead_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/redhead_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/rose.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.rose_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/rose_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/sandy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.sandy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/sandy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/strawberry.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.strawberry_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/strawberry_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/violet.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.violet_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/violet_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/fg/white.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/variant.v1.white_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[fg]/a[all]/z145/white_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/ash.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.ash_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/ash_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/black.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.black_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/black_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/blonde.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.blonde_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/blonde_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/blue.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.blue_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/blue_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/carrot.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.carrot_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/carrot_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/chestnut.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.chestnut_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/chestnut_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/dark_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.dark_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/dark_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/dark_gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.dark_gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/dark_gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/ginger.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.ginger_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/ginger_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/gold.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.gold_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/gold_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/gray.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.gray_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/gray_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/green.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.green_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/green_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/light_brown.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.light_brown_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/light_brown_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/navy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.navy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/navy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/orange.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.orange_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/orange_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/pink.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.pink_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/pink_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/platinum.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.platinum_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/platinum_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/purple.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.purple_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/purple_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/raven.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.raven_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/raven_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/red.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.red_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/red_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/redhead.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.redhead_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/redhead_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/rose.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.rose_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/rose_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/sandy.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.sandy_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/sandy_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/strawberry.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.strawberry_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/strawberry_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/violet.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.violet_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/violet_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
     },
     {
       "old": "hair/relm_ponytail/child/mg/white.png",
-      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/variant.v1.white_64_13_0213.png",
+      "new": "hair/p[relm_ponytail]/p[child]/p[mg]/a[all]/z120/white_64_13_0213.png",
       "warnings": [
         "UNKNOWN_STRUCTURE"
       ]
@@ -1350,1631 +1125,1579 @@
   ],
   "duplicates": [
     {
-      "path": "arms/p[bauldron]/p[female]/a[hurt]/z65/variant.v1.brown_64_6_1.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[hurt]/z85/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "arms/p[bauldron]/p[female]/a[shoot]/z65/variant.v1.brown_64_13_0213.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[shoot]/z85/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[bauldron]/p[female]/a[slash]/z65/variant.v1.brown_64_6_0213.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[slash]/z85/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[bauldron]/p[female]/a[spellcast]/z65/variant.v1.brown_64_7_0213.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[spellcast]/z85/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[bauldron]/p[female]/a[thrust]/z65/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[thrust]/z85/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[bauldron]/p[female]/a[walk]/z65/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[solid]/p[female]/a[walk]/z85/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[hurt]/z85/variant.v1.brown_64_6_1.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[hurt]/z5/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[shoot]/z85/variant.v1.brown_64_13_0213.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[shoot]/z5/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[slash]/z85/variant.v1.brown_64_6_0213.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[slash]/z5/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[spellcast]/z85/variant.v1.brown_64_7_0213.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[spellcast]/z5/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[thrust]/z85/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[thrust]/z5/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid]/p[female]/a[walk]/z85/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[solid_behind]/a[walk]/z5/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[hurt]/z5/variant.v1.brown_64_6_1.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[hurt]/z85/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[shoot]/z5/variant.v1.brown_64_13_0213.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[shoot]/z85/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[slash]/z5/variant.v1.brown_64_6_0213.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[slash]/z85/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[spellcast]/z5/variant.v1.brown_64_7_0213.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[spellcast]/z85/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[thrust]/z5/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[thrust]/z85/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[solid_behind]/a[walk]/z5/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[tattered]/p[female]/a[walk]/z85/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[hurt]/z85/variant.v1.brown_64_6_1.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[hurt]/z5/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[shoot]/z85/variant.v1.brown_64_13_0213.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[shoot]/z5/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[slash]/z85/variant.v1.brown_64_6_0213.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[slash]/z5/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[spellcast]/z85/variant.v1.brown_64_7_0213.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[spellcast]/z5/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[thrust]/z85/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[thrust]/z5/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered]/p[female]/a[walk]/z85/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[cape]/p[tattered_behind]/a[walk]/z5/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[hurt]/z5/variant.v1.brown_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/gray_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[shoot]/z5/variant.v1.brown_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/red_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[slash]/z5/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/white_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[spellcast]/z5/variant.v1.brown_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[thrust]/z5/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[cape]/p[tattered_behind]/a[walk]/z5/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/white_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/variant.v1.gray_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/variant.v1.red_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[backslash]/z120/variant.v1.white_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[climb]/z120/variant.v1.white_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[combat_idle]/z120/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[emote]/z120/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/white_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[halfslash]/z120/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[hurt]/z120/variant.v1.white_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[idle]/z120/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/gray_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/red_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[jump]/z120/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/white_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[run]/z120/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/variant.v1.gray_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/variant.v1.red_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[shoot]/z120/variant.v1.white_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/gray_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/red_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[sit]/z120/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/white_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[slash]/z120/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/variant.v1.gray_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/variant.v1.red_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[spellcast]/z120/variant.v1.white_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/black_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/brown_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[thrust]/z120/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/white_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/black_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[bandana]/p[adult]/a[walk]/z120/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/white_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/variant.v1.black_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/variant.v1.brown_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[backslash]/z130/variant.v1.white_64_12_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/variant.v1.black_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/variant.v1.brown_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[climb]/z130/variant.v1.white_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[combat_idle]/z130/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/black_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[emote]/z130/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/white_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[halfslash]/z130/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/variant.v1.black_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/variant.v1.brown_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[hurt]/z130/variant.v1.white_64_6_1.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[idle]/z130/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/black_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[jump]/z130/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/white_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/variant.v1.black_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[run]/z130/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/white_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/variant.v1.black_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/variant.v1.brown_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[shoot]/z130/variant.v1.white_64_13_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/black_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[sit]/z130/variant.v1.white_64_3_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/white_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[slash]/z130/variant.v1.white_64_6_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/variant.v1.black_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/variant.v1.brown_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[spellcast]/z130/variant.v1.white_64_7_0213.png",
+      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/variant.v1.black_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/blue_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/gold_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[thrust]/z130/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/gray_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/variant.v1.black_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/red_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/blue_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[cloth]/p[hood]/p[adult]/a[walk]/z130/variant.v1.white_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/gold_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/variant.v1.blue_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/variant.v1.gold_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/variant.v1.gray_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/blue_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[backslash]/z130/variant.v1.red_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/variant.v1.blue_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/variant.v1.gold_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/blue_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[climb]/z130/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/variant.v1.blue_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/blue_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[combat_idle]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/variant.v1.blue_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/blue_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[emote]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/gold_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/variant.v1.blue_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/blue_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[halfslash]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/variant.v1.blue_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/variant.v1.gold_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/blue_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[hurt]/z130/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/variant.v1.blue_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/blue_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[idle]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/variant.v1.blue_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/blue_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[jump]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/gold_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/variant.v1.blue_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/gray_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/red_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/blue_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[run]/z130/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/variant.v1.blue_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/variant.v1.gold_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/variant.v1.gray_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/blue_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[shoot]/z130/variant.v1.red_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/variant.v1.blue_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/blue_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[sit]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/gold_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/variant.v1.blue_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/gray_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/red_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/blue_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[slash]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/variant.v1.blue_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/variant.v1.gold_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/variant.v1.gray_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/blue_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[spellcast]/z130/variant.v1.red_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/variant.v1.blue_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/bronze_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[thrust]/z130/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/gold_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/variant.v1.blue_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/iron_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/purple_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/silver_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[crown]/p[adult]/a[walk]/z130/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/bronze_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/variant.v1.bronze_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/gold_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/variant.v1.gold_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/iron_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/variant.v1.iron_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/purple_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/variant.v1.purple_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/silver_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[backslash]/z130/variant.v1.silver_64_12_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/bronze_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/variant.v1.bronze_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/variant.v1.gold_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/iron_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/variant.v1.iron_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/purple_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/variant.v1.purple_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/silver_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[climb]/z130/variant.v1.silver_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/bronze_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/variant.v1.bronze_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/iron_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/variant.v1.iron_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/purple_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/variant.v1.purple_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/silver_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[combat_idle]/z130/variant.v1.silver_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/bronze_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/variant.v1.bronze_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/iron_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/variant.v1.iron_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/purple_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/variant.v1.purple_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/silver_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[emote]/z130/variant.v1.silver_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/bronze_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/variant.v1.bronze_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/gold_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/iron_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/variant.v1.iron_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/purple_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/variant.v1.purple_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/silver_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[halfslash]/z130/variant.v1.silver_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/bronze_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/variant.v1.bronze_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/variant.v1.gold_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/iron_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/variant.v1.iron_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/purple_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/variant.v1.purple_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/silver_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[hurt]/z130/variant.v1.silver_64_6_1.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/bronze_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/variant.v1.bronze_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/iron_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/variant.v1.iron_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/purple_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/variant.v1.purple_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/silver_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[idle]/z130/variant.v1.silver_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/bronze_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/variant.v1.bronze_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/iron_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/variant.v1.iron_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/purple_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/variant.v1.purple_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/silver_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[jump]/z130/variant.v1.silver_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/bronze_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/variant.v1.bronze_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/gold_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/iron_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/variant.v1.iron_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/purple_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/variant.v1.purple_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/silver_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[run]/z130/variant.v1.silver_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/bronze_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/variant.v1.bronze_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/gold_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/variant.v1.gold_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/iron_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/variant.v1.iron_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/purple_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/variant.v1.purple_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/silver_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[shoot]/z130/variant.v1.silver_64_13_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/bronze_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/variant.v1.bronze_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/gold_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/variant.v1.gold_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/iron_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/variant.v1.iron_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/purple_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/variant.v1.purple_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/silver_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[sit]/z130/variant.v1.silver_64_3_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/bronze_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/variant.v1.bronze_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/gold_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/variant.v1.gold_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/iron_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/variant.v1.iron_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/purple_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/variant.v1.purple_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/silver_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[slash]/z130/variant.v1.silver_64_6_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/bronze_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/variant.v1.bronze_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/variant.v1.gold_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/iron_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/variant.v1.iron_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/purple_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/variant.v1.purple_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/silver_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[spellcast]/z130/variant.v1.silver_64_7_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/bronze_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/variant.v1.bronze_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/gold_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/iron_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/variant.v1.iron_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/purple_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/variant.v1.purple_64_8_0213.png",
+      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/silver_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[thrust]/z130/variant.v1.silver_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/black_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/variant.v1.bronze_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/brown_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/variant.v1.gold_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/gray_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/variant.v1.iron_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/red_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/variant.v1.purple_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/teal_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[formal]/p[tiara]/p[adult]/a[walk]/z130/variant.v1.silver_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/yellow_64_12_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.black_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/black_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.brown_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.gray_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.red_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.teal_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/teal_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[backslash]/z130/variant.v1.yellow_64_12_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/yellow_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.black_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.brown_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.teal_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/teal_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[climb]/z130/variant.v1.yellow_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/yellow_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.teal_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/teal_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[combat_idle]/z130/variant.v1.yellow_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/yellow_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.teal_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/teal_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[emote]/z130/variant.v1.yellow_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/yellow_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/black_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/gray_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.teal_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/teal_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[halfslash]/z130/variant.v1.yellow_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/yellow_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.black_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.brown_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.gray_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.red_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.teal_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/teal_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[hurt]/z130/variant.v1.yellow_64_6_1.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/yellow_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.teal_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/teal_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[idle]/z130/variant.v1.yellow_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/yellow_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.teal_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/teal_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[jump]/z130/variant.v1.yellow_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/yellow_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.black_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/black_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/gray_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/red_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.teal_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/teal_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[run]/z130/variant.v1.yellow_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/yellow_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.black_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/black_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.brown_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.gray_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/gray_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.red_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/red_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.teal_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/teal_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[shoot]/z130/variant.v1.yellow_64_13_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/yellow_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.black_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/black_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.brown_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.gray_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/gray_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.red_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.teal_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/teal_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[sit]/z130/variant.v1.yellow_64_3_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/yellow_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.black_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/black_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.brown_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.gray_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/gray_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.red_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/red_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.teal_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/teal_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[slash]/z130/variant.v1.yellow_64_6_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/yellow_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.black_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.brown_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.gray_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.red_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.teal_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/teal_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[spellcast]/z130/variant.v1.yellow_64_7_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/yellow_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.black_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/black_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/gray_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.red_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.teal_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/teal_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[thrust]/z130/variant.v1.yellow_64_8_0213.png",
+      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/yellow_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.black_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[hurt]/z20/red_64_6_1.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.brown_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[shoot]/z20/red_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.gray_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[slash]/z20/red_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.red_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[spellcast]/z20/red_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.teal_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[thrust]/z20/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]/a[walk]/z130/variant.v1.yellow_64_8_0213.png",
+      "path": "legs/p[pants]/p[female]/a[walk]/z20/red_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[hurt]/z20/variant.v1.red_64_6_1.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[hurt]/z90/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[shoot]/z20/variant.v1.red_64_13_0213.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[idle]/z90/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[slash]/z20/variant.v1.red_64_6_0213.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[shoot]/z90/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[spellcast]/z20/variant.v1.red_64_7_0213.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[slash]/z90/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[thrust]/z20/variant.v1.red_64_8_0213.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[spellcast]/z90/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "legs/p[pants]/p[female]/a[walk]/z20/variant.v1.red_64_8_0213.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[thrust]/z90/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[hurt]/z90/variant.v1.brown_64_6_1.png",
+      "path": "head/p[neck]/p[capeclip]/p[female]/a[walk]/z90/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[idle]/z90/variant.v1.brown_64_3_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[hurt]/z90/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[shoot]/z90/variant.v1.brown_64_13_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[idle]/z90/brown_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[slash]/z90/variant.v1.brown_64_6_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[shoot]/z90/brown_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[spellcast]/z90/variant.v1.brown_64_7_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[slash]/z90/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[thrust]/z90/variant.v1.brown_64_8_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[spellcast]/z90/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capeclip]/p[female]/a[walk]/z90/variant.v1.brown_64_8_0213.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[thrust]/z90/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[hurt]/z90/variant.v1.brown_64_6_1.png",
+      "path": "head/p[neck]/p[capetie]/p[female]/a[walk]/z90/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[idle]/z90/variant.v1.brown_64_3_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[hurt]/z60/steel_64_6_1.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[shoot]/z90/variant.v1.brown_64_13_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[idle]/z60/steel_64_3_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[slash]/z90/variant.v1.brown_64_6_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[shoot]/z60/steel_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[spellcast]/z90/variant.v1.brown_64_7_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[slash]/z60/steel_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[thrust]/z90/variant.v1.brown_64_8_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[spellcast]/z60/steel_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "head/p[neck]/p[capetie]/p[female]/a[walk]/z90/variant.v1.brown_64_8_0213.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[thrust]/z60/steel_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[hurt]/z60/variant.v1.brown_64_6_1.png",
+      "path": "arms/p[shoulders]/p[legion]/p[female]/a[walk]/z60/steel_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[idle]/z60/variant.v1.brown_64_3_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[hurt]/z110/white_64_6_1.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[shoot]/z60/variant.v1.brown_64_13_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[shoot]/z110/white_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[slash]/z60/variant.v1.brown_64_6_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[slash]/z110/white_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[spellcast]/z60/variant.v1.brown_64_7_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[spellcast]/z110/white_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[thrust]/z60/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[thrust]/z110/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[leather]/p[female]/a[walk]/z60/variant.v1.brown_64_8_0213.png",
+      "path": "torso/p[bandage]/p[female]/a[walk]/z110/white_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[hurt]/z60/variant.v1.steel_64_6_1.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[hurt]/z35/leather_64_6_1.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[idle]/z60/variant.v1.steel_64_3_0213.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[shoot]/z35/leather_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[shoot]/z60/variant.v1.steel_64_13_0213.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[slash]/z35/leather_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[slash]/z60/variant.v1.steel_64_6_0213.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[spellcast]/z35/leather_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[spellcast]/z60/variant.v1.steel_64_7_0213.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[thrust]/z35/leather_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[thrust]/z60/variant.v1.steel_64_8_0213.png",
+      "path": "torso/p[clothes]/p[blouse]/p[female]/a[walk]/z35/leather_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "arms/p[shoulders]/p[legion]/p[female]/a[walk]/z60/variant.v1.steel_64_8_0213.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[hurt]/z45/leather_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[hurt]/z110/variant.v1.white_64_6_1.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[shoot]/z45/leather_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[shoot]/z110/variant.v1.white_64_13_0213.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[slash]/z45/leather_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[slash]/z110/variant.v1.white_64_6_0213.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[spellcast]/z45/leather_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[spellcast]/z110/variant.v1.white_64_7_0213.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[thrust]/z45/leather_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[thrust]/z110/variant.v1.white_64_8_0213.png",
+      "path": "torso/p[clothes]/p[corset]/p[female]/a[walk]/z45/leather_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[bandage]/p[female]/a[walk]/z110/variant.v1.white_64_8_0213.png",
+      "path": "torso/p[clothes]/p[robe]/p[female]/a[hurt]/z35/brown_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[hurt]/z35/variant.v1.leather_64_6_1.png",
+      "path": "torso/p[clothes]/p[robe]/p[female]/a[slash]/z35/brown_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[shoot]/z35/variant.v1.leather_64_13_0213.png",
+      "path": "torso/p[clothes]/p[robe]/p[female]/a[spellcast]/z35/brown_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[slash]/z35/variant.v1.leather_64_6_0213.png",
+      "path": "torso/p[clothes]/p[robe]/p[female]/a[walk]/z35/brown_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[spellcast]/z35/variant.v1.leather_64_7_0213.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[hurt]/z35/leather_64_6_1.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[thrust]/z35/variant.v1.leather_64_8_0213.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[shoot]/z35/leather_64_13_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[blouse]/p[female]/a[walk]/z35/variant.v1.leather_64_8_0213.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[slash]/z35/leather_64_6_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[hurt]/z45/variant.v1.leather_64_6_1.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[spellcast]/z35/leather_64_7_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[shoot]/z45/variant.v1.leather_64_13_0213.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[thrust]/z35/leather_64_8_0213.png",
       "count": 2
     },
     {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[slash]/z45/variant.v1.leather_64_6_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[spellcast]/z45/variant.v1.leather_64_7_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[thrust]/z45/variant.v1.leather_64_8_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[corset]/p[female]/a[walk]/z45/variant.v1.leather_64_8_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[hurt]/z35/variant.v1.brown_64_6_1.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[slash]/z35/variant.v1.brown_64_6_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[spellcast]/z35/variant.v1.brown_64_7_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[robe]/p[female]/a[walk]/z35/variant.v1.brown_64_8_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[hurt]/z35/variant.v1.leather_64_6_1.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[shoot]/z35/variant.v1.leather_64_13_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[slash]/z35/variant.v1.leather_64_6_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[spellcast]/z35/variant.v1.leather_64_7_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[thrust]/z35/variant.v1.leather_64_8_0213.png",
-      "count": 2
-    },
-    {
-      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[walk]/z35/variant.v1.leather_64_8_0213.png",
+      "path": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[walk]/z35/leather_64_8_0213.png",
       "count": 2
     }
   ],

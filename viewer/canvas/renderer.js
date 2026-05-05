@@ -34,6 +34,10 @@ const imageCache = new Map();
 // 팔레트 스왑 캐시 (url::fromColor::toColor → HTMLCanvasElement | null)
 const swapCache = new Map();
 
+// buildCharacterSheet 동시 실행 방지용 버전 카운터
+// 새 호출이 시작되면 이전 호출은 결과를 버림 (race condition 방지)
+let _buildVersion = 0;
+
 export function clearSwapCache() {
   swapCache.clear();
 }
@@ -129,9 +133,12 @@ function showError(msg) {
  * [Phase 4] 베이크: 각 애니 × 방향 × 프레임에 레이어 합성
  */
 export async function buildCharacterSheet() {
+  const myVersion = ++_buildVersion;
+
   const prefixes = Object.keys(state.selections);
 
   if (prefixes.length === 0) {
+    if (myVersion !== _buildVersion) return;
     state.characterSheet = null;
     state.animLayout = {};
     showError('');
@@ -272,9 +279,11 @@ export async function buildCharacterSheet() {
     // 이미지 로드 + 팔레트 스왑
     const readyLayers = [];
     for (const def of layerDefs) {
+      if (myVersion !== _buildVersion) return; // 새 빌드가 시작됨 — 현재 빌드 중단
       const url = imageBase + encodeFilePath(def.filePath);
       try {
         const img = await loadImage(url);
+        if (myVersion !== _buildVersion) return; // 이미지 로드 중 새 빌드 시작됨
 
         // 실제 frameSize 결정
         // - all 시트: 파일명 파싱값 (54행 전체이므로 높이/dirCount 불가)
@@ -292,6 +301,7 @@ export async function buildCharacterSheet() {
               img, url, parsed.material, parsed.version,
               def.fileBaseColor, def.selectedColor, state.palettes
             );
+            if (myVersion !== _buildVersion) return;
             if (swapped) source = swapped;
           }
         }
@@ -340,6 +350,8 @@ export async function buildCharacterSheet() {
     }
   }
 
+  // 이 빌드가 가장 최신인지 최종 확인 후 state 반영
+  if (myVersion !== _buildVersion) return;
   state.characterSheet = sheet;
   state.animLayout     = animLayout;
   showError('');

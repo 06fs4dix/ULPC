@@ -2,6 +2,12 @@
 
 이 프로젝트는 [Universal-LPC-Spritesheet-Character-Generator](https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator)를 포크(Fork)하여 특정 목적에 맞게 수정 및 개선한 프로젝트입니다. 기본적인 작동 방식과 상세한 이력은 원본 사이트를 참조해 주시기 바랍니다.
 
+# Demo
+
+[Demo](https://06fs4dix.github.io/ULPC/viewer/) : Demo
+
+
+
 ## 🛠 주요 변경사항 (Key Changes)
 
 ### 1. 저장 방식 및 파일 네이밍 규칙 변경

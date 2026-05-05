@@ -222,7 +222,7 @@ export function getAvailableColors(prefix, itemMap, palettes) {
 
   // 파일들에서 material.version별 실제 컬러 Set 수집
   const groupFileColors = new Map(); // "material.version" → Set<color>
-  let hasDefault = false;
+  const rawColors = new Set();       // material=null 파일: 실제 색상명 추적
 
   for (const f of files) {
     const segs = f.split('/');
@@ -233,7 +233,8 @@ export function getAvailableColors(prefix, itemMap, palettes) {
     const parsed = parseFilename(fname);
     if (!parsed) continue;
     if (!parsed.material) {
-      hasDefault = true;
+      // material 없는 파일(예: black_64_8_0213.png): 실제 색상명으로 추적
+      rawColors.add(parsed.color);
     } else {
       const key = `${parsed.material}.${parsed.version}`;
       if (!groupFileColors.has(key)) groupFileColors.set(key, new Set());
@@ -241,9 +242,17 @@ export function getAvailableColors(prefix, itemMap, palettes) {
     }
   }
 
-  // material 그룹이 없으면 default만 반환
+  const result = [];
+
+  // material=null 파일: 팔레트 확장 없이 실제 파일 색상만 반환
+  if (rawColors.size > 0) {
+    const colors = [...rawColors].sort((a, b) => a.localeCompare(b));
+    result.push({ material: null, version: null, colors, fileColors: colors });
+  }
+
+  // material 그룹이 없으면 raw 색상만 반환
   if (groupFileColors.size === 0) {
-    return hasDefault ? [{ material: null, version: null, colors: ['default'], fileColors: ['default'] }] : [];
+    return result;
   }
 
   // 단일 material 그룹이면 팔레트 전체 확장 가능
@@ -252,8 +261,6 @@ export function getAvailableColors(prefix, itemMap, palettes) {
   // 복수 material이라도 모든 그룹이 단일 색상 파일이면 각 그룹을 팔레트 전체로 확장 가능
   // (예: 글로우소드 body.ulpc.blue + cloth.ulpc.red — 각각 독립 recolor 가능)
   const hasMultiColorGroup = [...groupFileColors.values()].some(s => s.size > 1);
-
-  const result = [];
 
   for (const [key, colorSet] of groupFileColors) {
     const dotIdx = key.indexOf('.');
