@@ -2,8 +2,8 @@
 
 This project is a fork of the [Universal-LPC-Spritesheet-Character-Generator](https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator), modified and enhanced to meet specific workflow requirements. For basic operations and historical context, please refer to the original repository.
 
-[Korea](https://06fs4dix.github.io/ULPC/viewer/) : Korea
-> Language **[한국어](https://github.com/06fs4dix/ULPC/blob/main/README-ko.md)**
+
+Language **[한국어](https://github.com/06fs4dix/ULPC/blob/main/README-ko.md)**
 
 # Demo
 
