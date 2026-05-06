@@ -222,9 +222,12 @@
 
         <!-- Credits -->
         <div class="card border-0 shadow-sm">
-          <div class="card-header bg-white fw-semibold" style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#credits-collapse">
+          <div class="card-header bg-white fw-semibold d-flex align-items-center" style="cursor:pointer" data-bs-toggle="collapse" data-bs-target="#credits-collapse">
             <i class="bi bi-person-lines-fill me-1"></i> Credits
             <span class="text-secondary fw-normal ms-2" style="font-size:0.75rem">— A huge thank you to all the contributors behind the amazing LPC standards and assets.</span>
+            <button id="btn-download-credits" class="btn btn-outline-secondary btn-sm ms-auto" style="font-size:0.72rem;padding:2px 8px;" onclick="event.stopPropagation()">
+              <i class="bi bi-download me-1"></i>Download
+            </button>
           </div>
           <div id="credits-collapse" class="collapse show">
             <div class="card-body p-2" style="max-height:200px;overflow-y:auto">

@@ -29,7 +29,7 @@ const {
   SPRITES_DIR, META_FILE, OUT_ROOT, OUT_SPRITES,
   ANIMATION_NAMES, ANIMATION_OFFSETS, BODY_TYPES,
   MATERIAL_BASES, DIRLESS_ANIMS, getAnimDirs,
-  loadCreditsFromCSV, formatCreditsAsTxt,
+  loadCreditsFromCSV, formatCreditsAsTxt, formatCreditsAsJson,
   buildRecolorMaterialMap,
   readPNGDimensions, detectFrameSize, isFullCompositeSheet,
   buildZPosMap, lookupZPos,
@@ -1097,8 +1097,8 @@ const nonSynthetic = mapping.filter(e => !e.synthetic && e.dstPath != null);
   if (!isDryRun) {
     if (!fs.existsSync(projectDir)) fs.mkdirSync(projectDir, { recursive: true });
     fs.writeFileSync(path.join(projectDir, 'palette.json'), JSON.stringify(palettes, null, 2), 'utf8');
-    fs.writeFileSync(path.join(projectDir, 'credits.txt'), formatCreditsAsTxt(credits), 'utf8');
-    console.log(`  → palette.json / credits.txt 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
+    fs.writeFileSync(path.join(projectDir, 'credits.json'), JSON.stringify(formatCreditsAsJson(credits), null, 2), 'utf8');
+    console.log(`  → palette.json / credits.json 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
   }
 
   console.log('\n=== 추출 완료 ===');

@@ -3911,5 +3911,35 @@
     "synthetic": true,
     "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[idle]/z140/steel_64_3_0213.png",
     "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[foreground]\\a[walk]\\z140\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "removed_dup_postclean",
+    "dup": "gold_64_12_0213_dup2.png",
+    "kept": "variant.v1.crown_red_64_12_0213.png",
+    "dir": "D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\headwear\\p[hat]\\p[formal]\\p[tiara]\\p[adult]\\a[backslash]\\z130"
+  },
+  {
+    "status": "removed_dup_postclean",
+    "dup": "gold_64_3_0213_dup2.png",
+    "kept": "variant.v1.crown_red_64_3_0213.png",
+    "dir": "D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\headwear\\p[hat]\\p[formal]\\p[tiara]\\p[adult]\\a[combat_idle]\\z130"
+  },
+  {
+    "status": "removed_dup_postclean",
+    "dup": "gold_64_3_0213_dup2.png",
+    "kept": "variant.v1.crown_red_64_3_0213.png",
+    "dir": "D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\headwear\\p[hat]\\p[formal]\\p[tiara]\\p[adult]\\a[idle]\\z130"
+  },
+  {
+    "status": "removed_dup_postclean",
+    "dup": "gold_64_6_0213_dup2.png",
+    "kept": "variant.v1.crown_red_64_6_0213.png",
+    "dir": "D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\headwear\\p[hat]\\p[formal]\\p[tiara]\\p[adult]\\a[jump]\\z130"
+  },
+  {
+    "status": "removed_dup_postclean",
+    "dup": "gold_64_8_0213_dup2.png",
+    "kept": "variant.v1.crown_red_64_8_0213.png",
+    "dir": "D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\headwear\\p[hat]\\p[formal]\\p[tiara]\\p[adult]\\a[walk]\\z130"
   }
 ]

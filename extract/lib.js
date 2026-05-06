@@ -582,6 +582,23 @@ function loadCreditsFromCSV() {
   }));
 }
 
+// credits 배열 → { Authors, Licenses, URLs } JSON 구조
+function formatCreditsAsJson(credits) {
+  const authorsSet   = new Set();
+  const licensesSet  = new Set();
+  const urls         = [];
+  for (const c of credits) {
+    for (const a of c.authors)  authorsSet.add(a);
+    for (const l of c.licenses) licensesSet.add(l);
+    for (const u of c.urls)     urls.push(u);
+  }
+  return {
+    Authors:  [...authorsSet].map(name => ({ name, url: '' })),
+    Licenses: [...licensesSet],
+    URLs:     [...new Set(urls)].map(url => ({ label: url, url })),
+  };
+}
+
 // credits 배열 → 사람이 읽기 좋은 txt 문자열
 function formatCreditsAsTxt(credits) {
   const SEP  = '='.repeat(80);
@@ -610,7 +627,7 @@ module.exports = {
   PATH_PREFIX_TO_CATEGORY, CATEGORY_TO_MATERIAL,
   MATERIAL_BASES, DIRLESS_ANIMS, DIRS_4, DIRS_1, getAnimDirs,
   loadItemMetadata,
-  loadCreditsFromCSV, formatCreditsAsTxt,
+  loadCreditsFromCSV, formatCreditsAsTxt, formatCreditsAsJson,
   buildRecolorMaterialMap,
   readPNGDimensions, detectFrameSize, isFullCompositeSheet,
   buildZPosMap, lookupZPos,

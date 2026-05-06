@@ -1,0 +1,29 @@
+{
+  "Authors": [
+    {
+      "name": "Pixel-boy",
+      "url": "https://pixel-boy.itch.io/"
+    },
+    {
+      "name": "AAA",
+      "url": "https://www.instagram.com/challenger.aaa/?hl=fr"
+    }
+  ],
+  "Licenses": [
+    "Creative Commons Zero"
+  ],
+  "URLs": [
+    {
+      "label": "Patreon",
+      "url": "https://www.patreon.com/pixelarchipel"
+    },
+    {
+      "label": "Itchio Page",
+      "url": "https://pixel-boy.itch.io/"
+    },
+    {
+      "label": "Pack Page",
+      "url": "https://pixel-boy.itch.io/ninja-adventure-asset-pack"
+    }
+  ]
+}

@@ -118,6 +118,18 @@ function renderCredits() {
   el.innerHTML = parts.join('') || '<p class="text-secondary small mb-0">No credits available.</p>';
 }
 
+function downloadCredits() {
+  const credits = state.credits;
+  if (!credits) return;
+  const blob = new Blob([JSON.stringify(credits, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `credits_${state.selectedProject}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 // ── 초기화 ────────────────────────────────────────────────────────────────────────
 async function init() {
   const statusEl = document.getElementById('status-text');
@@ -184,6 +196,9 @@ async function init() {
     document.getElementById('btn-collapse-all')?.addEventListener('click', () => {
       collapseAll();
     });
+
+    // 9. Credits 다운로드 버튼
+    document.getElementById('btn-download-credits')?.addEventListener('click', downloadCredits);
 
   } catch (err) {
     console.error('Init failed:', err);
