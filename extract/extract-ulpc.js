@@ -20,8 +20,9 @@
  * 이후 Step 3: node build-index.js
  */
 
-const fs   = require('fs');
-const path = require('path');
+const fs     = require('fs');
+const path   = require('path');
+const crypto = require('crypto');
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
 const os = require('os');
 const {
@@ -43,11 +44,20 @@ const PROJECT_NAME = 'ULPC';
 // walk 애니메이션 프레임 0(idle 자세) 제거: 첫 번째 열(frameSize px)을 잘라낸다.
 const PNG = require('pngjs').PNG;
 
+function isFullyTransparent(png) {
+  for (let i = 3; i < png.data.length; i += 4) {
+    if (png.data[i] > 0) return false;
+  }
+  return true;
+}
+
 function writePNG(dst, dstPath) {
+  if (isFullyTransparent(dst)) { dst.data = null; return false; } // 완전 투명 → 저장 생략
   const dstDir = path.dirname(dstPath);
   if (!fs.existsSync(dstDir)) fs.mkdirSync(dstDir, { recursive: true });
   fs.writeFileSync(dstPath, PNG.sync.write(dst));
   dst.data = null; // 버퍼 즉시 해제
+  return true;
 }
 
 // targetFrames: null이면 소스 그대로(-1), 지정하면 그 수로 정규화
@@ -233,9 +243,14 @@ if (!isMainThread) {
           else if (e.animName === 'backslash')                            deleteFrame(e.srcPath, e.dstPath, e.frameSize, 6);
           else if (e.targetFrames)                                        cropToFrames(e.srcPath, e.dstPath, e.frameSize, e.targetFrames);
           else {
-            const dir = path.dirname(e.dstPath);
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-            fs.writeFileSync(e.dstPath, fs.readFileSync(e.srcPath));
+            const srcBuf = fs.readFileSync(e.srcPath);
+            const srcPng = PNG.sync.read(srcBuf);
+            if (!isFullyTransparent(srcPng)) {
+              const dir = path.dirname(e.dstPath);
+              if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+              fs.writeFileSync(e.dstPath, srcBuf);
+            }
+            srcPng.data = null;
           }
           copied++;
         } catch (err) { log.push({ status: 'error', old: e.oldPath, error: err.message }); errors++; }
@@ -325,6 +340,13 @@ const palettes = {};
       }
     }
   }
+}
+
+// all.lpcr.source = metal.ulpc.steel 픽셀값 (cross-palette 스왑 기준점)
+// all.lpcr 아이템은 metal.ulpc.steel 픽셀을 그대로 사용하며,
+// 뷰어에서 all.lpcr.source → all.lpcr.{targetColor} 스왑으로 75가지 색상을 구현한다.
+if (palettes['all']?.['lpcr'] && palettes['metal']?.['ulpc']?.['steel']) {
+  palettes['all']['lpcr']['source'] = [...palettes['metal']['ulpc']['steel']];
 }
 
 let totalPalColors = 0;
@@ -454,10 +476,22 @@ function mapFile(fullPath) {
   }
 
   let color, extraParts, colorId;
+  let _recolorPalettes = null; // 멀티 팔레트 포스트 프로세싱용 (임시)
+
   if (colorStem === null) {
-    // 애니메이션명 파일 (walk.png 등): recolor material 맵에서 base 색상 직접 결정
+    // 애니메이션명 파일 (hurt.png 등): recolor material 맵에서 base 색상 직접 결정
     // resolveColorId 의 카테고리 기반 우선순위를 우회해 정확한 material.version 사용
-    const recolorEntry = recolorMaterialMap[lookupPath];
+    //
+    // recolorMaterialMap 키는 디렉터리 단위 ("arms/armour/plate/male") 이므로
+    // lookupPath("arms/armour/plate/male/hurt") 대신 preAnimSegs 기반으로 조회한다.
+    // postAnimSegs가 있는 경우를 포함해 가장 긴 일치 키를 역순으로 탐색한다.
+    let recolorEntry = recolorMaterialMap[lookupPath]; // 기존 방식 먼저 시도
+    if (!recolorEntry) {
+      for (let end = preAnimSegs.length; end >= 1; end--) {
+        const probe = preAnimSegs.slice(0, end).join('/');
+        if (recolorMaterialMap[probe]) { recolorEntry = recolorMaterialMap[probe]; break; }
+      }
+    }
     const recolorMat   = recolorEntry ? recolorEntry.material : null;
     const matBase      = recolorMat ? MATERIAL_BASES[recolorMat] : null;
     if (matBase) {
@@ -473,6 +507,10 @@ function mapFile(fullPath) {
       }
       color   = baseColor;
       colorId = `${recolorMat}.${baseVersion}.${baseColor}`; // e.g. "body.ulpc.fur_brown"
+      // 팔레트가 여러 버전이면 포스트 프로세싱에서 추가 생성
+      if (recolorEntry.palettes && Object.keys(recolorEntry.palettes).length > 1) {
+        _recolorPalettes = recolorEntry.palettes;
+      }
     } else {
       color   = 'default';
       colorId = 'default';
@@ -549,7 +587,7 @@ function mapFile(fullPath) {
   const targetFrames = animName === 'walk' ? ANIM_FRAME_CAPS.walk
                      : needsCrop           ? effectiveFrameCount
                      : null;
-  return { oldPath: relPath, newPath, zPos, yOffset, animName, color: colorId, frameSize, frameCount: effectiveFrameCount, targetFrames, warnings };
+  return { oldPath: relPath, newPath, zPos, yOffset, animName, color: colorId, frameSize, frameCount: effectiveFrameCount, targetFrames, warnings, _recolorPalettes };
 }
 
 const mapping = [];
@@ -567,26 +605,136 @@ walkDir(SPRITES_DIR, (fullPath) => {
   }
 });
 
-// ── variant가 있는 디렉토리의 default 제거 ────────────────────────────────────
-// 같은 디렉토리에 variant.v1.* 파일이 있으면 default_* 파일은 불필요
-// (뷰어 colorPicker가 variant를 우선 선택하므로 default는 fallback으로 쓰이지 않음)
-// default만 있는 디렉토리(6000+개)는 그대로 유지
+// ── 멀티 팔레트: 동일 픽셀 파일을 하나로 합쳐 파일명에 팔레트 ID 목록 인코딩 ──────
+// 별도 파일 생성 없이 primary 파일명에 추가 팔레트 ID를 '-'로 이어붙임
+//
+// 예: metal.ulpc.steel (primary) + metal.lpcr.steel + all.lpcr.source
+//     → metal.ulpc.steel-metal.lpcr.steel-all.lpcr.source_64_8_0213.png (파일 1개)
+//
+// 뷰어는 '-' 구분자로 팔레트 ID 목록을 파싱하고, 모든 팔레트의 색상을
+// 하나의 컬러픽커에 통합해 표시한다. 선택값은 "material.version.color" 형태의
+// 풀 팔레트 ID로 저장되어 renderer가 올바른 cross-palette 스왑을 수행한다.
 {
-  const dirsWithVariant = new Set();
-  for (const e of mapping) {
-    if (e.newPath.split('/').pop().startsWith('variant.')) {
-      dirsWithVariant.add(e.newPath.substring(0, e.newPath.lastIndexOf('/')));
+  let merged = 0;
+  for (const entry of mapping) {
+    if (entry.synthetic || !entry._recolorPalettes) continue;
+
+    const fname  = entry.newPath.split('/').pop().replace(/\.png$/i, '');
+    const fparts = fname.split('_');
+    if (fparts.length < 4) continue;
+    const colorId = fparts.slice(0, fparts.length - 3).join('_');
+    const dirs    = fparts[fparts.length - 1];
+
+    // primary palKey 파싱: "metal.ulpc.steel" → palKey="metal.ulpc", base="steel"
+    const firstDot  = colorId.indexOf('.');
+    const secondDot = colorId.indexOf('.', firstDot + 1);
+    if (firstDot < 0 || secondDot < 0) continue;
+    const primaryPalKey = colorId.slice(0, secondDot);
+    const baseColor     = colorId.slice(secondDot + 1);
+
+    const dirPart = entry.newPath.slice(0, entry.newPath.lastIndexOf('/'));
+
+    // 추가 팔레트 ID 수집
+    const extraIds = [];
+    for (const [palKey, palColors] of Object.entries(entry._recolorPalettes)) {
+      if (palKey === primaryPalKey) continue;
+
+      let extraColor;
+      if (palKey.startsWith('all.')) {
+        // all.lpcr은 항상 "source" (metal.ulpc.steel 픽셀을 기준점으로 사용)
+        extraColor = 'source';
+      } else {
+        // 해당 팔레트 버전의 base 색상: primary와 동일하면 사용, 없으면 첫 번째
+        extraColor = Array.isArray(palColors) && palColors.includes(baseColor)
+          ? baseColor
+          : (Array.isArray(palColors) && palColors.length > 0 ? palColors[0] : null);
+      }
+      if (!extraColor) continue;
+      extraIds.push(`${palKey}.${extraColor}`);
     }
+
+    if (extraIds.length === 0) continue;
+
+    // primary 파일명에 추가 팔레트 ID를 '-'로 이어붙여 단일 파일로 표현
+    const combinedColorId = [colorId, ...extraIds].join('-');
+    const newFilename     = `${combinedColorId}_${entry.frameSize}_${entry.frameCount}_${dirs}.png`;
+    entry.newPath  = `${dirPart}/${newFilename}`;
+    entry.color    = combinedColorId;
+    merged++;
   }
+  console.log(`  멀티 팔레트 통합: ${merged}개 엔트리 (파일 추가 생성 없음)`);
+  // 임시 필드 제거 (mapping.json 에 포함되지 않도록)
+  for (const entry of mapping) delete entry._recolorPalettes;
+}
+
+// ── 팔레트 색상 파일이 있는 디렉토리의 default 제거 ─────────────────────────
+// 같은 디렉토리에 variant.v1.* 또는 팔레트 등록 색상 파일이 있으면 default_* 불필요
+// (뷰어에서 X버튼(원본)으로 리컬러 없이 원본 표시 가능하므로 default 파일 불필요)
+// default만 있는 디렉토리는 그대로 유지
+//
+// 확장: 같은 디렉토리뿐 아니라 자식 아이템 경로(p[...] 추가)에도 동일 anim/z로
+// 팔레트 색상 파일이 있으면 부모의 default도 제거한다.
+// (예: p[adult]/a[spellcast]/z131/default 가 있고,
+//      p[adult]/p[cast]/a[spellcast]/z131/white 가 있으면 → default 제거)
+{
+  // 팔레트 색상 파일 또는 variant가 있는 디렉토리 수집
+  const dirsWithPaletteColor = new Set();
+  for (const e of mapping) {
+    const fname = e.newPath.split('/').pop();
+    if (fname.startsWith('default') || fname.startsWith('variant.')) {
+      if (fname.startsWith('variant.')) {
+        dirsWithPaletteColor.add(e.newPath.substring(0, e.newPath.lastIndexOf('/')));
+      }
+      continue;
+    }
+    dirsWithPaletteColor.add(e.newPath.substring(0, e.newPath.lastIndexOf('/')));
+  }
+
+  // 자식 경로 감지: 아이템 prefix(a[ 이전) + "a[animName]/zN" 조합으로 색상 파일 보유 여부 색인
+  // key: itemPrefix, value: Set<"a[anim]/zN">
+  const childPaletteIndex = new Map();
+  for (const e of mapping) {
+    const fname = e.newPath.split('/').pop();
+    if (fname.startsWith('default') || fname.startsWith('variant.')) continue;
+    const animIdx = e.newPath.indexOf('/a[');
+    if (animIdx < 0) continue;
+    const itemPrefix = e.newPath.slice(0, animIdx);
+    const zIdx      = e.newPath.indexOf('/z', animIdx);
+    const zEnd      = e.newPath.indexOf('/', zIdx + 1);
+    if (zIdx < 0) continue;
+    const animZ = e.newPath.slice(animIdx + 1, zEnd < 0 ? undefined : zEnd); // "a[spellcast]/z131"
+    if (!childPaletteIndex.has(itemPrefix)) childPaletteIndex.set(itemPrefix, new Set());
+    childPaletteIndex.get(itemPrefix).add(animZ);
+  }
+
   let removed = 0;
   for (let i = mapping.length - 1; i >= 0; i--) {
     const fname = mapping[i].newPath.split('/').pop();
-    if (fname.startsWith('default')) {
-      const dir = mapping[i].newPath.substring(0, mapping[i].newPath.lastIndexOf('/'));
-      if (dirsWithVariant.has(dir)) { mapping.splice(i, 1); removed++; }
+    if (!fname.startsWith('default')) continue;
+    const dir = mapping[i].newPath.substring(0, mapping[i].newPath.lastIndexOf('/'));
+
+    // 기존: 같은 디렉토리에 팔레트 색상 파일 존재
+    if (dirsWithPaletteColor.has(dir)) { mapping.splice(i, 1); removed++; continue; }
+
+    // 확장: 자식 아이템 경로에 동일 anim/z 팔레트 색상 파일 존재
+    const animIdx = mapping[i].newPath.indexOf('/a[');
+    if (animIdx < 0) continue;
+    const itemPrefix = mapping[i].newPath.slice(0, animIdx);
+    const zIdx      = mapping[i].newPath.indexOf('/z', animIdx);
+    const zEnd      = mapping[i].newPath.indexOf('/', zIdx + 1);
+    if (zIdx < 0) continue;
+    const animZ = mapping[i].newPath.slice(animIdx + 1, zEnd < 0 ? undefined : zEnd);
+
+    let shouldRemove = false;
+    for (const [childPrefix, animZSet] of childPaletteIndex) {
+      if (childPrefix.startsWith(itemPrefix + '/') && animZSet.has(animZ)) {
+        shouldRemove = true;
+        break;
+      }
     }
+    if (shouldRemove) { mapping.splice(i, 1); removed++; }
   }
-  console.log(`  variant 공존 디렉토리의 default 제거: ${removed}개`);
+  console.log(`  팔레트 색상 공존 디렉토리의 default 제거: ${removed}개`);
 }
 
 const newPathCount = {};
@@ -604,22 +752,28 @@ const issues     = mapping.filter(e => e.warnings.length > 0);
 //   이중 material: "metal.ulpc.brass_cloth.ulpc.blue" (언더바로 구분)
 //   → 이중 material은 각 그룹(점 2개 이상 토큰에서 시작)을 독립 검증
 function parseColorIdGroups(colorId) {
-  // 언더바로 split 후, 점이 2개인 토큰 = 새 그룹 시작
-  const tokens = colorId.split('_');
+  // 새 형식: '-'로 구분된 복수 팔레트 ID (동일 픽셀, 다른 팔레트 시스템)
+  //   예) "metal.ulpc.steel-metal.lpcr.steel-all.lpcr.source"
+  // 구 형식: '_'로 구분된 복수 material 그룹 (서로 다른 픽셀 영역)
+  //   예) "metal.ulpc.brass_cloth.ulpc.blue"
+  // 두 형식 모두 지원: '-' 분리 후 각 세그먼트를 '_' 기반으로 추가 파싱
   const groups = [];
-  let cur = null;
-  for (const tok of tokens) {
-    if ((tok.match(/\./g) || []).length === 2) {
-      // "material.version.color" 형식 → 새 그룹 시작
-      if (cur) groups.push(cur);
-      const dotParts = tok.split('.');
-      cur = { mat: dotParts[0], ver: dotParts[1], col: dotParts[2] };
-    } else if (cur) {
-      // 점 없음 → 이전 그룹의 color 연속 (e.g. "blue" + "gray" → "blue_gray")
-      cur.col += '_' + tok;
+  for (const seg of colorId.split('-')) {
+    const tokens = seg.split('_');
+    let cur = null;
+    for (const tok of tokens) {
+      const dots = (tok.match(/\./g) || []).length;
+      if (dots >= 2) {
+        if (cur) groups.push(cur);
+        const d1 = tok.indexOf('.');
+        const d2 = tok.indexOf('.', d1 + 1);
+        cur = { mat: tok.slice(0, d1), ver: tok.slice(d1 + 1, d2), col: tok.slice(d2 + 1) };
+      } else if (cur && dots === 0) {
+        cur.col += '_' + tok; // 예: "blue_gray" → color 연속
+      }
     }
+    if (cur) groups.push(cur);
   }
-  if (cur) groups.push(cur);
   return groups;
 }
 
@@ -722,25 +876,100 @@ if (!isDryRun && fs.existsSync(OUT_SPRITES_PROJECT)) {
 }
 
 // 메인 스레드에서 srcPath/dstPath 사전 배정 (dedup 포함) → 워커는 그대로 사용
-let duped = 0;
+let duped = 0, skippedSame = 0, removedSameDirPixel = 0;
 const copyLog = [];
+// key: newPath → { dupCount: number, srcPath: string, hash: string|null }
 const pathUsed = {};
 for (const entry of mapping) {
   if (entry.synthetic) continue;
   entry.srcPath = path.join(SPRITES_DIR, entry.oldPath);
   const key = entry.newPath;
-  if (pathUsed[key] === undefined) {
-    pathUsed[key] = 0;
+  if (!pathUsed[key]) {
+    pathUsed[key] = { dupCount: 0, srcPath: entry.srcPath, hash: null };
     entry.dstPath = path.join(OUT_SPRITES, PROJECT_NAME, key);
   } else {
-    pathUsed[key]++;
-    const ext = path.extname(key), base = path.basename(key, ext), dir = path.dirname(key);
-    const actualRel = `${dir}/${base}_dup${pathUsed[key] + 1}${ext}`;
-    entry.dstPath = path.join(OUT_SPRITES, PROJECT_NAME, actualRel);
-    copyLog.push({ status: 'dup', old: entry.oldPath, intended: key, actual: actualRel });
-    duped++;
+    // 충돌: 소스 파일 내용 비교 (lazy hash)
+    if (pathUsed[key].hash === null) {
+      pathUsed[key].hash = crypto.createHash('md5').update(fs.readFileSync(pathUsed[key].srcPath)).digest('hex');
+    }
+    const h2 = crypto.createHash('md5').update(fs.readFileSync(entry.srcPath)).digest('hex');
+    if (pathUsed[key].hash === h2) {
+      // 내용 동일 → 복사 건너뜀 (dstPath = null → 워커에서 제외)
+      entry.dstPath = null;
+      copyLog.push({ status: 'skipped_same', old: entry.oldPath, intended: key });
+      skippedSame++;
+    } else {
+      // 내용 다름 → _dup suffix 유지 (진짜 충돌)
+      pathUsed[key].dupCount++;
+      const ext = path.extname(key), base = path.basename(key, ext), dir = path.dirname(key);
+      const actualRel = `${dir}/${base}_dup${pathUsed[key].dupCount + 1}${ext}`;
+      entry.dstPath = path.join(OUT_SPRITES, PROJECT_NAME, actualRel);
+      copyLog.push({ status: 'dup', old: entry.oldPath, intended: key, actual: actualRel });
+      duped++;
+    }
   }
 }
+// ── 같은 출력 디렉토리 내 다른 이름이지만 픽셀 동일한 파일 제거 ──────────────
+// 원인: 소스에 leather.png / walnut.png 처럼 픽셀이 같은 파일이 별개로 존재하거나
+//       애니메이션명 파일(base → palette_id)과 색상 파일(white)이 동일 픽셀인 경우.
+// 우선순위: palette_id(ulpc/lpcr 포함) > plain_color > variant.v1.*
+// 같은 우선순위면 mapping 순서(먼저 처리된 파일)를 유지.
+{
+  function getSameDirPriority(newPath) {
+    const fname = path.basename(newPath);
+    if (fname.includes('.ulpc.') || fname.includes('.lpcr.')) return 0; // palette_id
+    if (fname.startsWith('variant.'))                                   return 2; // variant
+    return 1;                                                                     // plain_color
+  }
+
+  // 해시 캐시 (srcPath → md5)
+  const hashCache = new Map();
+  function srcHash(e) {
+    if (!hashCache.has(e.srcPath)) {
+      hashCache.set(e.srcPath, crypto.createHash('md5').update(fs.readFileSync(e.srcPath)).digest('hex'));
+    }
+    return hashCache.get(e.srcPath);
+  }
+
+  // 출력 디렉토리별 그룹화 (dstPath가 있는 비합성 항목만)
+  const dirMap = new Map(); // outputDir → entry[]
+  for (const e of mapping) {
+    if (e.synthetic || !e.dstPath) continue;
+    const outDir = path.dirname(e.dstPath);
+    if (!dirMap.has(outDir)) dirMap.set(outDir, []);
+    dirMap.get(outDir).push(e);
+  }
+
+  for (const [outDir, entries] of dirMap) {
+    if (entries.length < 2) continue;
+    // 같은 디렉토리 내 hash → 유지 항목
+    const hashWinner = new Map(); // hash → entry (우선순위 승자)
+    for (const e of entries) {
+      const h = srcHash(e);
+      if (!hashWinner.has(h)) {
+        hashWinner.set(h, e);
+      } else {
+        const winner  = hashWinner.get(h);
+        const wPri    = getSameDirPriority(winner.newPath);
+        const ePri    = getSameDirPriority(e.newPath);
+        if (ePri < wPri) {
+          // 현재 항목이 더 높은 우선순위 → 기존 winner를 제거
+          winner.dstPath = null;
+          copyLog.push({ status: 'skipped_same_dir', old: winner.oldPath, kept: e.newPath });
+          removedSameDirPixel++;
+          hashWinner.set(h, e);
+        } else {
+          // 현재 항목이 낮거나 같은 우선순위 → 현재 항목 제거
+          e.dstPath = null;
+          copyLog.push({ status: 'skipped_same_dir', old: e.oldPath, kept: winner.newPath });
+          removedSameDirPixel++;
+        }
+      }
+    }
+  }
+  console.log(`  같은 폴더 내 픽셀 중복 제거: ${removedSameDirPixel}개`);
+}
+
 // 합성 idle용 경로도 사전 배정
 for (const entry of syntheticIdleEntries) {
   entry.walkDstPath = path.join(OUT_SPRITES, PROJECT_NAME, entry.walkNewPath);
@@ -793,7 +1022,7 @@ function runWorkers(chunks, dataKey, total, printLabel) {
 }
 
 const NUM_WORKERS  = Math.min(os.cpus().length, 8);
-const nonSynthetic = mapping.filter(e => !e.synthetic);
+const nonSynthetic = mapping.filter(e => !e.synthetic && e.dstPath != null);
 
 (async () => {
   let copied = 0, errors = 0, synthDone = 0;
@@ -816,12 +1045,48 @@ const nonSynthetic = mapping.filter(e => !e.synthetic);
       for (const r of sr) { synthDone += r.synthDone; errors += r.errors; copyLog.push(...r.copyLog); }
       console.log(`  합성 완료: ${synthDone.toLocaleString()}개 (${((Date.now() - t1) / 1000).toFixed(1)}s)`);
     }
+
+    // ── _dup 파일 post-write 중복 제거 ──────────────────────────────────────
+    // 원인: 소스 바이트는 달라 사전 dedup 미작동, 프레임 처리 후 출력이 동일한 경우
+    //       파일 쓰기 완료 후 실제 output 해시로 비교해 제거
+    {
+      console.log('\n  _dup 파일 post-cleanup 중...');
+      let dupCleaned = 0;
+
+      function walkForDup(dir, results = []) {
+        for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+          const full = path.join(dir, e.name);
+          if (e.isDirectory()) walkForDup(full, results);
+          else if (/_dup\d+\.png$/i.test(e.name)) results.push(full);
+        }
+        return results;
+      }
+
+      const dupFiles = walkForDup(path.join(OUT_SPRITES, PROJECT_NAME));
+      for (const dupFile of dupFiles) {
+        if (!fs.existsSync(dupFile)) continue;
+        const dupHash = crypto.createHash('md5').update(fs.readFileSync(dupFile)).digest('hex');
+        const dir = path.dirname(dupFile);
+        const siblings = fs.readdirSync(dir).filter(n => !/_dup\d+\.png$/i.test(n) && n.endsWith('.png'));
+        let matched = null;
+        for (const sib of siblings) {
+          const sibHash = crypto.createHash('md5').update(fs.readFileSync(path.join(dir, sib))).digest('hex');
+          if (sibHash === dupHash) { matched = sib; break; }
+        }
+        if (matched) {
+          fs.unlinkSync(dupFile);
+          copyLog.push({ status: 'removed_dup_postclean', dup: path.basename(dupFile), kept: matched, dir });
+          dupCleaned++;
+        }
+      }
+      console.log(`  _dup post-cleanup: ${dupCleaned}개 제거 (총 ${dupFiles.length}개 검사)`);
+    }
   } else {
     copied = nonSynthetic.length;
     synthDone = syntheticIdleEntries.length;
   }
 
-  console.log(`\n  복사: ${copied}개 | 합성: ${synthDone}개 | 중복: ${duped}개 | 오류: ${errors}개`);
+  console.log(`\n  복사: ${copied}개 | 합성: ${synthDone}개 | 동일내용 건너뜀(경로충돌): ${skippedSame}개 | 동일내용 건너뜀(같은폴더): ${removedSameDirPixel}개 | 중복(내용다름): ${duped}개 | 오류: ${errors}개`);
 
   if (copyLog.length > 0) {
     fs.writeFileSync(path.join(OUT_ROOT, 'convert-log.json'), JSON.stringify(copyLog, null, 2), 'utf8');

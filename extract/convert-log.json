@@ -2160,10 +2160,9 @@
     "actual": "arms/p[shoulders]/p[legion]/p[female]/a[hurt]/z60/steel_64_6_1_dup2.png"
   },
   {
-    "status": "dup",
+    "status": "skipped_same",
     "old": "shoulders/legion/female/idle/_steel.png",
-    "intended": "arms/p[shoulders]/p[legion]/p[female]/a[idle]/z60/steel_64_3_0213.png",
-    "actual": "arms/p[shoulders]/p[legion]/p[female]/a[idle]/z60/steel_64_3_0213_dup2.png"
+    "intended": "arms/p[shoulders]/p[legion]/p[female]/a[idle]/z60/steel_64_3_0213.png"
   },
   {
     "status": "dup",
@@ -2362,5 +2361,1555 @@
     "old": "torso/clothes/sleeveless/tanktop/female/walk/_leather.png",
     "intended": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[walk]/z35/leather_64_8_0213.png",
     "actual": "torso/p[clothes]/p[sleeveless]/p[tanktop]/p[female]/a[walk]/z35/leather_64_8_0213_dup2.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/normal/trim/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[normal]/p[trim]/p[universal]/p[female]/a[idle]/z31/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/normal/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[normal]/p[universal]/p[female]/a[idle]/z30/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/sleeves/trim/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[sleeves]/p[trim]/p[universal]/p[female]/a[idle]/z32/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/sleeves/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[sleeves]/p[universal]/p[female]/a[idle]/z31/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/sleeves_oversize/trim/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[sleeves_oversize]/p[trim]/p[universal]/p[female]/a[idle]/z32/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/sleeves_oversize/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[sleeves_oversize]/p[universal]/p[female]/a[idle]/z31/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/split/trim/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[split]/p[trim]/p[universal]/p[female]/a[idle]/z31/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "dress/kimono/split/universal/female/idle/walnut.png",
+    "kept": "torso/p[dress]/p[kimono]/p[split]/p[universal]/p[female]/a[idle]/z30/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "facial/patches/eyepatch/right/adult/climb/rose.png",
+    "kept": "headwear/p[facial]/p[patches]/p[eyepatch]/p[right]/p[adult]/a[climb]/z115/red_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/climb/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/emote/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/idle/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/jump/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/run/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/sit/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/slash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/male/walk/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[male]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/climb/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/emote/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/idle/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/jump/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/run/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/sit/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/slash/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/basic/thin/walk/walnut.png",
+    "kept": "feet/p[boots]/p[basic]/p[thin]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/climb/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/emote/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/idle/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/jump/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/run/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/male/sit/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[male]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/climb/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/emote/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/idle/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/jump/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/run/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/sit/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/slash/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/fold/thin/walk/walnut.png",
+    "kept": "feet/p[boots]/p[fold]/p[thin]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/emote/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/idle/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/jump/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/run/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/sit/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/slash/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/male/walk/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[male]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/emote/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/idle/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/jump/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/run/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/sit/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/slash/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/revised/thin/walk/walnut.png",
+    "kept": "feet/p[boots]/p[revised]/p[thin]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/climb/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/emote/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/idle/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/jump/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/run/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/male/sit/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[male]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/backslash/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[backslash]/z25/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/climb/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[climb]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/combat_idle/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[combat_idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/emote/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[emote]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/halfslash/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[halfslash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/hurt/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[hurt]/z25/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/idle/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[idle]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/jump/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[jump]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/run/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[run]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/shoot/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[shoot]/z25/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/sit/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[sit]/z25/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/slash/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[slash]/z25/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/spellcast/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[spellcast]/z25/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/thrust/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[thrust]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/boots/rimmed/thin/walk/walnut.png",
+    "kept": "feet/p[boots]/p[rimmed]/p[thin]/a[walk]/z25/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/backslash/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/climb/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/combat_idle/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/emote/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/halfslash/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/hurt/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/idle/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/jump/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/run/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/shoot/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/sit/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/slash/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/spellcast/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/thrust/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/male/walk/walnut.png",
+    "kept": "feet/p[sandals]/p[male]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/backslash/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/climb/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/combat_idle/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/emote/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/halfslash/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/hurt/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/idle/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/jump/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/run/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/shoot/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/sit/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/slash/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/spellcast/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/thrust/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/sandals/thin/walk/walnut.png",
+    "kept": "feet/p[sandals]/p[thin]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/backslash/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/climb/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/combat_idle/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/halfslash/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/hurt/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/run/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/spellcast/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/thrust/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/male/walk/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[male]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/backslash/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/climb/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/combat_idle/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/halfslash/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/run/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/basic/thin/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[basic]/p[thin]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/backslash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/climb/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/combat_idle/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/halfslash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/hurt/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/run/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/shoot/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/slash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/spellcast/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/thrust/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/male/walk/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[male]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/backslash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[backslash]/z15/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/climb/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[climb]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/combat_idle/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[combat_idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/halfslash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[halfslash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/hurt/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/run/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/shoot/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/slash/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/spellcast/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/thrust/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/ghillies/thin/walk/walnut.png",
+    "kept": "feet/p[shoes]/p[ghillies]/p[thin]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/hurt/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[hurt]/z15/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/run/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/shoot/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/slash/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/spellcast/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/thrust/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/male/walk/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[male]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/emote/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[emote]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/idle/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[idle]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/jump/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[jump]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/run/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[run]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/shoot/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[shoot]/z15/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/sit/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[sit]/z15/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/slash/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[slash]/z15/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/spellcast/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[spellcast]/z15/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/thrust/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[thrust]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/shoes/revised/thin/walk/walnut.png",
+    "kept": "feet/p[shoes]/p[revised]/p[thin]/a[walk]/z15/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/slippers/male/climb/red.png",
+    "kept": "feet/p[slippers]/p[male]/a[climb]/z15/maroon_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "feet/slippers/thin/climb/red.png",
+    "kept": "feet/p[slippers]/p[thin]/a[climb]/z15/maroon_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/backslash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[backslash]/z131/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/climb/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[climb]/z131/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/combat_idle/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[combat_idle]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/emote/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[emote]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/halfslash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[halfslash]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/hurt/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[hurt]/z131/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/idle/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[idle]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/jump/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[jump]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/run/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[run]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/shoot/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[shoot]/z131/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/sit/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[sit]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/slash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[slash]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/spellcast/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[spellcast]/z131/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/thrust/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[thrust]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial/trim/adult/walk/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial]/p[trim]/p[adult]/a[walk]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/backslash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[backslash]/z131/leather_64_12_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/cast/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/p[cast]/a[spellcast]/z131/leather_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/climb/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[climb]/z131/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/combat_idle/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[combat_idle]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/emote/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[emote]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/halfslash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[halfslash]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/hurt/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[hurt]/z131/leather_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/idle/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[idle]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/jump/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[jump]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/run/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[run]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/shoot/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[shoot]/z131/leather_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/sit/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[sit]/z131/leather_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/slash/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[slash]/z131/leather_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/thrust/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[thrust]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "hat/magic/celestial_moon/trim/adult/walk/walnut.png",
+    "kept": "headwear/p[hat]/p[magic]/p[celestial_moon]/p[trim]/p[adult]/a[walk]/z131/leather_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/brass_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/brass_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/brass_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/gold_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/gold_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/hurt/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[hurt]/z80/gold_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/gold.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/idle/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[idle]/z80/brass_64_3_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/brass_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/brass_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/brass_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/gold_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/gold_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/shoot/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[shoot]/z80/gold_64_13_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/brass_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/brass_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/brass_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/gold_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/gold_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/slash/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[slash]/z80/gold_64_6_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/spellcast/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[spellcast]/z80/brass_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/spellcast/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[spellcast]/z80/brass_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/spellcast/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[spellcast]/z80/brass_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/spellcast/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[spellcast]/z80/iron_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/spellcast/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[spellcast]/z80/iron_64_7_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/thrust/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[thrust]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/bronze.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/ceramic.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/copper.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/brass_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/iron.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/silver.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "neck/necklace/female/walk/steel.png",
+    "kept": "head/p[neck]/p[necklace]/p[female]/a[walk]/z80/gold_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/crystal/universal/background/hurt/crystal.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[background]/a[hurt]/z9/blue_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/crystal/universal/foreground/hurt/crystal.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[hurt]/z140/blue_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/crystal/universal/foreground/walk/crystal.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[walk]/z140/blue_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/background/hurt/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[hurt]/z9/silver_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/background/thrust/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[thrust]/z9/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/background/walk/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[walk]/z9/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/foreground/hurt/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[hurt]/z140/silver_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/foreground/thrust/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[thrust]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/foreground/walk/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[walk]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/background/hurt/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[hurt]/z140/silver_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/background/thrust/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[thrust]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/background/walk/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[walk]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/foreground/hurt/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[hurt]/z140/silver_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/foreground/thrust/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[thrust]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/foreground/walk/steel.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[walk]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/ranged/bow/great/universal/background/hurt/great.png",
+    "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[great]/p[universal]/p[background]/a[hurt]/z-1/light_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/ranged/bow/recurve/universal/foreground/hurt/recurve.png",
+    "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[recurve]/p[universal]/p[foreground]/a[hurt]/z140/light_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/ranged/bow/recurve/universal/foreground/shoot/recurve.png",
+    "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[recurve]/p[universal]/p[foreground]/a[shoot]/z140/light_64_13_0213.png"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.crystal_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[crystal]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.crystal_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[idle]/z9/steel_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear]\\p[background]\\a[walk]\\z9\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[idle]/z140/steel_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear]\\p[foreground]\\a[walk]\\z140\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[idle]/z140/steel_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[background]\\a[walk]\\z140\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[idle]/z140/steel_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[foreground]\\a[walk]\\z140\\steel_64_8_0213.png'"
   }
 ]

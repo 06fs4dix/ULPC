@@ -70,11 +70,11 @@ async function loadProject(projectId) {
   state.pathPrefix = pathPrefix;
   state.imageBase  = SHARED_IMAGE_BASE;
 
-  // credits.txt 로드
+  // credits.json 로드
   try {
-    const creditsUrl = SHARED_IMAGE_BASE + projectId + '/credits.txt';
+    const creditsUrl = SHARED_IMAGE_BASE + projectId + '/credits.json';
     const cr = await fetch(creditsUrl);
-    state.credits = cr.ok ? await cr.text() : null;
+    state.credits = cr.ok ? await cr.json() : null;
   } catch { state.credits = null; }
   renderCredits();
 
@@ -92,8 +92,30 @@ function renderCredits() {
     el.innerHTML = '<p class="text-secondary small mb-0">No credits available.</p>';
     return;
   }
-  const escaped = credits.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  el.innerHTML = `<pre style="font-size:0.72rem;white-space:pre-wrap;word-break:break-word;margin:0">${escaped}</pre>`;
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const parts = [];
+  if (credits.Authors?.length) {
+    parts.push('<p class="mb-1 fw-semibold" style="font-size:0.72rem">Authors</p><ul class="mb-2 ps-3" style="font-size:0.72rem">');
+    for (const a of credits.Authors) {
+      parts.push(a.url
+        ? `<li><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a></li>`
+        : `<li>${esc(a.name)}</li>`);
+    }
+    parts.push('</ul>');
+  }
+  if (credits.Licenses?.length) {
+    parts.push('<p class="mb-1 fw-semibold" style="font-size:0.72rem">License</p><ul class="mb-2 ps-3" style="font-size:0.72rem">');
+    for (const l of credits.Licenses) parts.push(`<li>${esc(l)}</li>`);
+    parts.push('</ul>');
+  }
+  if (credits.URLs?.length) {
+    parts.push('<p class="mb-1 fw-semibold" style="font-size:0.72rem">Links</p><ul class="mb-0 ps-3" style="font-size:0.72rem">');
+    for (const u of credits.URLs) {
+      parts.push(`<li><a href="${esc(u.url)}" target="_blank" rel="noopener">${esc(u.label)}</a></li>`);
+    }
+    parts.push('</ul>');
+  }
+  el.innerHTML = parts.join('') || '<p class="text-secondary small mb-0">No credits available.</p>';
 }
 
 // ── 초기화 ────────────────────────────────────────────────────────────────────────

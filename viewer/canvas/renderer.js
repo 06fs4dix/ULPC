@@ -74,13 +74,17 @@ function hexToRGB(hex) {
   return { r: parseInt(h.slice(0,2),16), g: parseInt(h.slice(2,4),16), b: parseInt(h.slice(4,6),16) };
 }
 
-/** 팔레트 스왑 (픽셀 치환) */
-async function getPaletteSwapped(img, url, material, version, fromColor, toColor, palettes) {
-  const cacheKey = `${url}::${fromColor}::${toColor}`;
+/**
+ * 팔레트 스왑 (픽셀 치환)
+ * srcMat/srcVer/fromColor: 파일 내 픽셀의 팔레트 (소스)
+ * dstMat/dstVer/toColor:   목표 팔레트 (다른 material.version도 허용 — cross-palette)
+ */
+async function getPaletteSwapped(img, url, srcMat, srcVer, fromColor, dstMat, dstVer, toColor, palettes) {
+  const cacheKey = `${url}::${srcMat}.${srcVer}.${fromColor}::${dstMat}.${dstVer}.${toColor}`;
   if (swapCache.has(cacheKey)) return swapCache.get(cacheKey);
 
-  const srcHexArr = palettes?.[material]?.[version]?.[fromColor];
-  const dstHexArr = palettes?.[material]?.[version]?.[toColor];
+  const srcHexArr = palettes?.[srcMat]?.[srcVer]?.[fromColor];
+  const dstHexArr = palettes?.[dstMat]?.[dstVer]?.[toColor];
   if (!srcHexArr || !dstHexArr) { swapCache.set(cacheKey, null); return null; }
 
   const pixelMap = new Map();
@@ -264,11 +268,17 @@ export async function buildCharacterSheet() {
         }
 
         for (const [matKey, entries] of matGroups.entries()) {
-          // 머티리얼별 독립 선택 색상: sel.colors["body.ulpc"], sel.colors["cloth.ulpc"] 등
-          const matSelectedColor = sel?.colors?.[matKey] ?? null;
+          // 선택값은 풀 ID("metal.ulpc.brass") 또는 단순 색상명("brass")
+          const matSelectedFull = sel?.colors?.[matKey] ?? null;
+          // 풀 ID에서 단순 색상명 추출 (파일 매칭용)
+          let matSelectedColor = matSelectedFull;
+          if (matSelectedFull && (matSelectedFull.match(/\./g) || []).length >= 2) {
+            matSelectedColor = matSelectedFull.slice(matSelectedFull.lastIndexOf('.') + 1);
+          }
           let chosen = entries.find(e => e.color === matSelectedColor);
           if (!chosen) chosen = entries[0];
-          const effectiveColor = matSelectedColor ?? chosen.color;
+          // effectiveColor: 스왑 목표 (항상 풀 ID 또는 단순 색상명 그대로)
+          const effectiveColor = matSelectedFull ?? chosen.color;
           layerDefs.push({ zPos, filePath: chosen.filePath, fileBaseColor: chosen.color, selectedColor: effectiveColor, fromAll, fileFs });
         }
       }
@@ -294,12 +304,31 @@ export async function buildCharacterSheet() {
 
         // 팔레트 스왑
         let source = img;
-        if (def.fileBaseColor && def.selectedColor && def.fileBaseColor !== def.selectedColor) {
-          const parsed = parseFilename(def.filePath.split('/').pop());
-          if (parsed?.material) {
+        if (def.fileBaseColor && def.selectedColor && def.selectedColor !== '__original__' && def.fileBaseColor !== def.selectedColor) {
+          const fileParsed = parseFilename(def.filePath.split('/').pop());
+          if (fileParsed?.material) {
+            // 선택값이 풀 팔레트 ID("all.lpcr.black")인지 단순 색상명("brass")인지 판별
+            const selDots = (def.selectedColor.match(/\./g) || []).length;
+            let dstMat, dstVer, dstColor;
+            if (selDots >= 2) {
+              // 풀 ID: "material.version.color"
+              const d1 = def.selectedColor.indexOf('.');
+              const d2 = def.selectedColor.indexOf('.', d1 + 1);
+              dstMat   = def.selectedColor.slice(0, d1);
+              dstVer   = def.selectedColor.slice(d1 + 1, d2);
+              dstColor = def.selectedColor.slice(d2 + 1);
+            } else {
+              // 단순 색상명: 파일의 primary palette 사용
+              dstMat   = fileParsed.material;
+              dstVer   = fileParsed.version;
+              dstColor = def.selectedColor;
+            }
+            // 소스 팔레트: 항상 파일의 primary palette 사용
+            // 파일 픽셀은 primary palette 색상이므로 srcMat/srcVer는 파일 파싱값 그대로
+            const srcMat = fileParsed.material, srcVer = fileParsed.version;
             const swapped = await getPaletteSwapped(
-              img, url, parsed.material, parsed.version,
-              def.fileBaseColor, def.selectedColor, state.palettes
+              img, url, srcMat, srcVer, def.fileBaseColor,
+              dstMat, dstVer, dstColor, state.palettes
             );
             if (myVersion !== _buildVersion) return;
             if (swapped) source = swapped;

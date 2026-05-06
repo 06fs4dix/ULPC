@@ -69,41 +69,71 @@ function buildItemRow(prefix) {
   // 하위 호환: 구형 { color } 구조를 { colors } 로 마이그레이션
   if (!sel.colors) sel.colors = {};
 
-  for (const group of colorGroups) {
-    const matKey = group.material ? `${group.material}.${group.version}` : 'default';
+  // 모든 팔레트 그룹이 공유하는 단일 선택 키 (첫 번째 non-null 그룹 기준)
+  const firstGroup = colorGroups.find(g => g.material !== null);
+  if (!firstGroup) return wrapper;
+  const primaryKey = `${firstGroup.material}.${firstGroup.version}`;
 
-    // 초기 선택값: 실제 파일 색상(fileColors[0]) 우선, 없으면 팔레트 첫 번째
-    if (!sel.colors[matKey]) {
-      sel.colors[matKey] = group.fileColors?.[0] ?? group.colors[0] ?? null;
-    }
+  // 초기 선택값 설정 (한 번만) — 기본은 원본 그대로(__original__)
+  if (!sel.colors[primaryKey]) {
+    sel.colors[primaryKey] = '__original__';
+  }
+
+  // 구형 키들(다른 matKey)이 남아 있으면 제거하고 primaryKey로 통합
+  for (const key of Object.keys(sel.colors)) {
+    if (key !== primaryKey) delete sel.colors[key];
+  }
+
+  const nonNullGroups = colorGroups.filter(g => g.material !== null);
+
+  for (const group of nonNullGroups) {
+    const makeFullId = (colorName) => `${group.material}.${group.version}.${colorName}`;
 
     // 그룹 레이블 (머티리얼이 2개 이상일 때만 표시)
-    if (group.material && colorGroups.length > 1) {
+    if (nonNullGroups.length > 1) {
       const label = document.createElement('div');
       label.className = 'swatch-group-label';
-      label.textContent = group.material;
+      label.textContent = group.material === 'all'
+        ? `all (${group.version})`
+        : `${group.material} (${group.version})`;
       wrapper.appendChild(label);
     }
 
     const swatchWrap = document.createElement('div');
     swatchWrap.className = 'd-flex flex-wrap gap-1';
 
+    // X 버튼 — 리컬러 없이 원본 그대로 표시
+    {
+      const btn = document.createElement('button');
+      btn.className = 'swatch-btn swatch-original';
+      btn.title = '원본 (리컬러 없음)';
+      btn.innerHTML = '<i class="bi bi-x-lg"></i>';
+      if (sel.colors[primaryKey] === '__original__') btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        wrapper.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        sel.colors[primaryKey] = '__original__';
+        onSelectionChange();
+      });
+      swatchWrap.appendChild(btn);
+    }
+
     for (const colorName of group.colors) {
       let hexArr = state.palettes?.[group.material]?.[group.version]?.[colorName];
-      // material=null 파일: 팔레트 전체를 검색해 같은 색상명의 hex를 찾아 표시
       if (!hexArr && !group.material) {
         hexArr = findColorHexAnywhere(state.palettes, colorName);
       }
       const hex = hexArr ? hexArr[Math.floor(hexArr.length / 2)] : null;
+      const fullId = makeFullId(colorName);
       const btn = document.createElement('button');
       btn.className = 'swatch-btn';
       btn.title = colorName;
       btn.style.background = hex || '#ccc';
-      if (colorName === sel.colors[matKey]) btn.classList.add('active');
+      if (fullId === sel.colors[primaryKey]) btn.classList.add('active');
       btn.addEventListener('click', () => {
-        sel.colors[matKey] = colorName;
-        swatchWrap.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
+        wrapper.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        sel.colors[primaryKey] = fullId;
         onSelectionChange();
       });
       swatchWrap.appendChild(btn);

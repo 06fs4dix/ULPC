@@ -22,7 +22,7 @@ export const state = {
   searchQuery: '',
 
   // 크레딧
-  credits: null,   // credits.txt 텍스트
+  credits: null,   // credits.json { Authors, Licenses, URLs }
 
   // 애니메이션
   selectedAnimation: 'walk',

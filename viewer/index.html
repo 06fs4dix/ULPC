@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="../external/bootstrap-icons/font/bootstrap-icons.min.css">
   <style>
     /* ── Layout ── */
-    body { font-size: 0.875rem; }
-    #left-panel  { height: calc(100vh - 60px); overflow-y: auto; }
-    #right-panel { position: sticky; top: 60px; }
+    body { font-size: 0.875rem; overflow: hidden; }
+    #main-content { height: calc(100vh - 60px); overflow: hidden; }
+    #main-row { height: 100%; }
+    #left-panel  { height: 100%; overflow-y: auto; }
+    #right-panel { height: 100%; overflow-y: auto; }
 
     /* ── Tree ── */
     .tree-root { list-style: none; padding: 0; margin: 0; }
@@ -41,6 +43,8 @@
       cursor: pointer; padding: 0; display: inline-block; flex-shrink: 0;
     }
     .swatch-btn.active { border-color: var(--bs-emphasis-color); box-shadow: 0 0 0 2px var(--bs-body-bg); }
+    .swatch-btn.swatch-original { background: var(--bs-body-bg); border-color: var(--bs-border-color); color: var(--bs-body-color); font-size: 11px; line-height: 18px; }
+    .swatch-btn.swatch-original.active { border-color: var(--bs-emphasis-color); }
     .swatch-group-label { font-size: 0.7rem; color: var(--bs-secondary-color); margin-top: 3px; text-transform: capitalize; }
 
     /* ── Canvas / Preview ── */
@@ -88,8 +92,8 @@
   </div>
 </header>
 
-<main class="container-fluid py-3">
-  <div class="row g-3 align-items-start">
+<main class="container-fluid py-3" id="main-content">
+  <div class="row g-3 h-100" id="main-row">
 
     <!-- ══ LEFT PANEL ══ -->
     <aside class="col-12 col-xxl-5" id="left-panel">
@@ -204,9 +208,15 @@
               <i class="bi bi-upload me-1"></i> Import JSON
             </button>
           </div>
-          <div class="card-body pt-0">
+          <div class="card-body pt-0 d-flex flex-column gap-2">
             <input id="input-res-base" type="text" class="form-control form-control-sm"
               placeholder="resBase (optional, e.g. assets/sprites/)">
+            <div class="form-check form-check-sm mb-0">
+              <input class="form-check-input" type="checkbox" id="chk-export-base64">
+              <label class="form-check-label small" for="chk-export-base64">
+                base64로 내보내기 (이미지 데이터 포함)
+              </label>
+            </div>
           </div>
         </div>
 

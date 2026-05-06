@@ -167,7 +167,7 @@ const SEPARATE_ANIM_MAP = {
   'walk':     { anim: 'walk',     dirs: DIRS_4, frameSize: 16 },
   'idle':     { anim: 'idle',     dirs: DIRS_4, frameSize: 16 }, // 4방향×1프레임: 64×16 → 16×64
   'jump':     { anim: 'jump',     dirs: DIRS_4, frameSize: 16 }, // 4방향×1프레임: 64×16 → 16×64
-  'attack':   { anim: 'attack',   dirs: DIRS_1, frameSize: 16 },
+  'attack':   { anim: 'attack',   dirs: DIRS_4, frameSize: 16 }, // 4방향×1프레임: 64×16 → 16×64
   'dead':     { anim: 'dead',     dirs: DIRS_1, frameSize: 16 },
   'item':     { anim: 'item',     dirs: DIRS_1, frameSize: 16 },
   'special1': { anim: 'special1', dirs: DIRS_1, frameSize: 16 },
@@ -239,10 +239,10 @@ function processCharacterSpriteSheet(charDir, charName) {
   if (w === 64 && h === 112) {
     // walk (y=0..63): col=방향(4), row=프레임(4) → 전치
     addTranspose(sheetFile, buildDst('Character', charName, 'walk', 'default', FRAME, 4, DIRS_4), 0, 0,  FRAME, 4, 4);
-    // attack: 좌→우 단방향
-    addCrop(sheetFile,     buildDst('Character', charName, 'attack', 'default', FRAME, 4, DIRS_1), 0, 64, 64, 16);
+    // attack: 4방향×1프레임 → 전치하여 위→아래 (64×16 → 16×64)
+    addTranspose(sheetFile, buildDst('Character', charName, 'attack', 'default', FRAME, 1, DIRS_4), 0, 64, FRAME, 4, 1);
     // jump: 4방향×1프레임 → 전치하여 위→아래 (64×16 → 16×64)
-    addTranspose(sheetFile, buildDst('Character', charName, 'jump',  'default', FRAME, 1, DIRS_4), 0, 80, FRAME, 4, 1);
+    addTranspose(sheetFile, buildDst('Character', charName, 'jump',   'default', FRAME, 1, DIRS_4), 0, 80, FRAME, 4, 1);
     addCrop(sheetFile, buildDst('Character', charName, 'dead',     'default', FRAME, 1, DIRS_1), 0, 96,  16, 16);
     addCrop(sheetFile, buildDst('Character', charName, 'item',     'default', FRAME, 1, DIRS_1), 16, 96, 16, 16);
     addCrop(sheetFile, buildDst('Character', charName, 'special1', 'default', FRAME, 1, DIRS_1), 32, 96, 16, 16);
@@ -478,17 +478,78 @@ if (skipped.length > 0) {
 
 console.log(`\n완료: ${done}개 처리 | 오류: ${errors}개`);
 
-// ─── credits.txt 복사 ─────────────────────────────────────────────────────────
+// ─── credits.json 생성 ────────────────────────────────────────────────────────
 if (!isDryRun) {
   const readmeSrc = path.join(__dirname, '../../NinjaAdventure/README.md');
-  const creditsDst = path.join(OUT_ROOT, 'credits.txt');
+  const creditsDst = path.join(OUT_ROOT, 'credits.json');
   if (fs.existsSync(readmeSrc)) {
     ensureDir(OUT_ROOT);
-    fs.copyFileSync(readmeSrc, creditsDst);
-    console.log('  → credits.txt 저장 완료 (spritesheets/NinjaAdventure/)');
+    const credits = parseReadmeCredits(fs.readFileSync(readmeSrc, 'utf8'));
+    fs.writeFileSync(creditsDst, JSON.stringify(credits, null, 2), 'utf8');
+    console.log('  → credits.json 저장 완료 (spritesheets/NinjaAdventure/)');
   } else {
-    console.log('  ⚠ README.md를 찾을 수 없어 credits.txt 생성 건너뜀');
+    console.log('  ⚠ README.md를 찾을 수 없어 credits.json 생성 건너뜀');
   }
+}
+
+// ─── README.md 파싱 → { Authors, Licenses, URLs } ────────────────────────────
+function parseReadmeCredits(text) {
+  const authors  = [];
+  const licenses = [];
+  const urls     = [];
+
+  // Markdown 링크 추출: [Name](url)
+  const mdLinkRe = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+  // 작성자 섹션: "Assets created by:" 이후 빈 줄 전까지
+  const authorBlock = text.match(/assets created by:\s*([\s\S]*?)(?:\n\n|\n#)/i);
+  if (authorBlock) {
+    let m;
+    mdLinkRe.lastIndex = 0;
+    while ((m = mdLinkRe.exec(authorBlock[1])) !== null) {
+      authors.push({ name: m[1].trim(), url: m[2].trim() });
+    }
+    // 링크 없는 일반 텍스트 이름도 수집
+    const plainNames = authorBlock[1]
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '') // 이미 처리된 링크 제거
+      .split('\n')
+      .map(l => l.trim())
+      .filter(l => l.length > 0);
+    for (const name of plainNames) {
+      authors.push({ name, url: '' });
+    }
+  }
+
+  // 라이선스: "CC0", "Creative Commons" 포함 줄 추출
+  for (const line of text.split('\n')) {
+    if (/creative commons|cc0|mit\b|apache|gpl|lgpl/i.test(line)) {
+      // 괄호 포함 라이선스 식별자 추출 시도
+      const licMatch = line.match(/Creative Commons[^.,()\n]*(Zero|\d\.\d)?[^.,()\n]*/i)
+        || line.match(/\b(CC0|CC BY[^.,()\n]*|MIT|Apache[^.,()\n]*|GPL[^.,()\n]*)/i);
+      if (licMatch) {
+        const lic = licMatch[0].trim();
+        if (!licenses.includes(lic)) licenses.push(lic);
+      }
+    }
+  }
+
+  // URL 섹션: "Label: https://..." 형태
+  const urlLineRe = /^([^:\n]+):\s*(https?:\/\/\S+)/gm;
+  let um;
+  while ((um = urlLineRe.exec(text)) !== null) {
+    urls.push({ label: um[1].trim(), url: um[2].trim() });
+  }
+  // Markdown 링크 형태의 URL도 수집 (작성자 섹션 외)
+  mdLinkRe.lastIndex = 0;
+  let lm;
+  while ((lm = mdLinkRe.exec(text)) !== null) {
+    const isAuthor = authors.some(a => a.url === lm[2].trim());
+    if (!isAuthor) {
+      urls.push({ label: lm[1].trim(), url: lm[2].trim() });
+    }
+  }
+
+  return { Authors: authors, Licenses: licenses, URLs: urls };
 }
 
 console.log('다음 단계: node build-index.js');

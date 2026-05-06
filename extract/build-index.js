@@ -1,6 +1,6 @@
 'use strict';
 /**
- * build-index.js — index.json 생성 (Step 3)
+ * build-index.js — index.json + index.json.gz 생성 (Step 3)
  *
  * spritesheets/ 하위의 모든 프로젝트 폴더를 자동 감지한다.
  *   spritesheets/ULPC/    → ULPC/arms/... 경로 + ULPC/palette.json
@@ -14,6 +14,7 @@
  */
 const fs   = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 const { OUT_ROOT, OUT_SPRITES } = require('./lib');
 
 // ── 사전 조건 확인 ────────────────────────────────────────────────────────────
@@ -92,11 +93,15 @@ walkDir(OUT_SPRITES, OUT_SPRITES);
 files.sort();
 console.log(`파일 수: ${files.length}개`);
 
-// ── 4. index.json 저장 ────────────────────────────────────────────────────────
+// ── 4. index.json.gz 저장 ────────────────────────────────────────────────────
 const output  = { files, palettes };
-const outPath = path.join(OUT_SPRITES, 'index.json');
-fs.writeFileSync(outPath, JSON.stringify(output, null, 2), 'utf8');
+const jsonStr = JSON.stringify(output);
+const gzPath  = path.join(OUT_SPRITES, 'index.json.gz');
 
-const sizeMB = (fs.statSync(outPath).size / 1024 / 1024).toFixed(2);
-console.log(`\n✅ index.json 저장 완료: ${outPath}`);
-console.log(`   파일 크기: ${sizeMB} MB`);
+const gzBuffer = zlib.gzipSync(Buffer.from(jsonStr, 'utf8'));
+fs.writeFileSync(gzPath, gzBuffer);
+const rawSizeMB = (Buffer.byteLength(jsonStr, 'utf8') / 1024 / 1024).toFixed(2);
+const gzSizeMB  = (gzBuffer.length / 1024 / 1024).toFixed(2);
+const ratio     = (100 - (gzBuffer.length / Buffer.byteLength(jsonStr, 'utf8') * 100)).toFixed(1);
+console.log(`\n✅ index.json.gz 저장 완료: ${gzPath}`);
+console.log(`   원본 크기: ${rawSizeMB} MB → 압축 크기: ${gzSizeMB} MB (${ratio}% 절감)`);

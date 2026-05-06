@@ -1,11 +1,41 @@
 /**
- * loader.js — index.json 로드 및 트리/아이템맵 빌드
+ * loader.js — index.json / index.json.gz 로드 및 트리/아이템맵 빌드
  */
 
 // 최상단 카테고리 목록 (프로젝트 접두어와 구별용)
 const KNOWN_CATEGORIES = new Set([
   'arms','body','hair','head','headwear','legs','feet','tools','torso','weapons',
 ]);
+
+/**
+ * URL에서 JSON을 fetch한다.
+ * .gz 확장자면 DecompressionStream으로 gzip 해제 후 파싱.
+ * 일반 URL이면 .gz를 먼저 시도하고, 없으면 원본 URL로 fallback.
+ */
+async function fetchJson(url) {
+  if (url.endsWith('.gz')) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+    const ds         = new DecompressionStream('gzip');
+    const decompressed = res.body.pipeThrough(ds);
+    const text       = await new Response(decompressed).text();
+    return JSON.parse(text);
+  }
+
+  // .gz 먼저 시도
+  const gzRes = await fetch(url + '.gz');
+  if (gzRes.ok) {
+    const ds         = new DecompressionStream('gzip');
+    const decompressed = gzRes.body.pipeThrough(ds);
+    const text       = await new Response(decompressed).text();
+    return JSON.parse(text);
+  }
+
+  // fallback: 원본 json
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+  return res.json();
+}
 
 /**
  * index.json 경로에서 프로젝트 접두어 자동 감지
@@ -20,9 +50,7 @@ export function detectPathPrefix(files) {
 }
 
 export async function loadIndex(indexUrl = '../index.json', filterPrefix = null) {
-  const res = await fetch(indexUrl);
-  if (!res.ok) throw new Error(`Failed to load index.json: ${res.status}`);
-  const idx = await res.json();
+  const idx = await fetchJson(indexUrl);
 
   // filterPrefix 지정 시 해당 프로젝트 파일만 사용
   const allFiles = idx.files;
@@ -32,9 +60,17 @@ export async function loadIndex(indexUrl = '../index.json', filterPrefix = null)
 
   const skip = filterPrefix ? 1 : (detectPathPrefix(files) ? 1 : 0);
 
+  const tree    = buildTree(files, skip);
+  const itemMap = buildItemMap(files, skip);
+
+  // material=null 복수 색상 파일을 트리/아이템맵에서 색상별 리프로 분리
+  expandMultiColorLeaves(tree, itemMap);
+  // material.version 그룹이 복수인 아이템을 그룹별 리프로 분리
+  expandMultiMaterialLeaves(tree, itemMap);
+
   return {
-    tree:       buildTree(files, skip),
-    itemMap:    buildItemMap(files, skip),
+    tree,
+    itemMap,
     palettes:   idx.palettes,
     files,
     totalFiles: allFiles.length,
@@ -48,9 +84,7 @@ export async function loadIndex(indexUrl = '../index.json', filterPrefix = null)
  * 반환: [{ id, label }]
  */
 export async function detectProjects(indexUrl) {
-  const res = await fetch(indexUrl);
-  if (!res.ok) throw new Error(`Failed to load index.json: ${res.status}`);
-  const idx = await res.json();
+  const idx = await fetchJson(indexUrl);
 
   const seen = new Set();
   for (const f of (idx.files || [])) {
@@ -169,20 +203,17 @@ export function parseFilename(fname) {
   const last  = parseInt(tokens[tokens.length - 1]);
   const prev  = parseInt(tokens[tokens.length - 2]);
   if (!isNaN(last) && (prev === 64 || prev === 128)) {
-    // 구형식: no dirs
     const t = [...tokens];
     frameCount = parseInt(t.pop());
     frameSize  = parseInt(t.pop());
     dirs = null;
     rest = t.join('_');
   } else {
-    // 신규 형식: dirs가 마지막
     const t = [...tokens];
     dirs       = t.pop();
     frameCount = parseInt(t.pop());
     frameSize  = parseInt(t.pop());
     if (isNaN(frameCount) || isNaN(frameSize)) return null;
-    // dirs 유효성: 0-3 숫자만 허용 (_dup2 등 이상 파일 차단)
     if (!/^[0-3]+$/.test(dirs)) return null;
     rest = t.join('_');
   }
@@ -190,39 +221,181 @@ export function parseFilename(fname) {
   if (!rest) return null;
 
   const dotIdx = rest.indexOf('.');
-  // dot 없는 경우: "default" → material=null, version=null, color=rest
+  // dot 없는 경우: "default" → material=null
   if (dotIdx < 0) {
-    return { material: null, version: null, color: rest, frameSize, frameCount, dirs };
+    return { material: null, version: null, color: rest, frameSize, frameCount, dirs, palettes: null };
   }
   const dot2 = rest.indexOf('.', dotIdx + 1);
   if (dot2 < 0) return null;
 
+  // '-' 포함 여부로 멀티 팔레트 형식 판별
+  // 멀티 팔레트: "metal.ulpc.steel-metal.lpcr.steel-all.lpcr.source"
+  // 단일 팔레트: "metal.ulpc.steel" 또는 "metal.ulpc.blue_gray"
+  if (rest.includes('-')) {
+    const palettes = rest.split('-').map(seg => {
+      const d1 = seg.indexOf('.');
+      if (d1 < 0) return null;
+      const d2 = seg.indexOf('.', d1 + 1);
+      if (d2 < 0) return null;
+      return { material: seg.slice(0, d1), version: seg.slice(d1 + 1, d2), color: seg.slice(d2 + 1) };
+    }).filter(Boolean);
+    if (palettes.length === 0) return null;
+    const primary = palettes[0];
+    return { ...primary, frameSize, frameCount, dirs, palettes };
+  }
+
   const material = rest.slice(0, dotIdx);
   const version  = rest.slice(dotIdx + 1, dot2);
   const color    = rest.slice(dot2 + 1); // 복합 컬러(blue_gray) 그대로 유지
+  return { material, version, color, frameSize, frameCount, dirs, palettes: null };
+}
 
-  return { material, version, color, frameSize, frameCount, dirs };
+/**
+ * material=null 파일이 복수의 색상을 가진 프리픽스를 색상별 트리 리프로 분리
+ *
+ * 동작:
+ *  - 해당 프리픽스의 트리 노드에 색상명 자식을 추가 (리프 → 폴더)
+ *  - itemMap에 "prefix/colorName" 서브 엔트리 생성 (해당 색상 파일만 포함)
+ *  - material.version 파일이 없으면 원본 엔트리 삭제, 있으면 해당 파일만 남김
+ */
+function expandMultiColorLeaves(tree, itemMap) {
+  for (const [prefix, files] of Object.entries(itemMap)) {
+    // material=null 색상 수집
+    const nullColors = new Set();
+    for (const f of files) {
+      const segs = f.split('/');
+      const aIdx = segs.findIndex(s => /^a\[/.test(s));
+      if (aIdx < 0) continue;
+      const fname = segs[aIdx + 2];
+      if (!fname) continue;
+      const parsed = parseFilename(fname);
+      if (parsed && parsed.material === null) nullColors.add(parsed.color);
+    }
+    if (nullColors.size <= 1) continue; // 단일 색상: 분리 불필요
+
+    // 트리에서 해당 노드 탐색
+    const prefixSegs = prefix.split('/');
+    let node = tree;
+    let valid = true;
+    for (const seg of prefixSegs) {
+      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
+      node = node[seg];
+    }
+    if (!valid || typeof node !== 'object') continue;
+
+    // 트리 노드에 색상별 자식 리프 추가
+    for (const colorName of nullColors) {
+      node[colorName] = {};
+    }
+
+    // itemMap: 색상별 서브 엔트리 생성
+    for (const colorName of nullColors) {
+      itemMap[`${prefix}/${colorName}`] = files.filter(f => {
+        const segs = f.split('/');
+        const aIdx = segs.findIndex(s => /^a\[/.test(s));
+        if (aIdx < 0) return false;
+        const fname = segs[aIdx + 2];
+        if (!fname) return false;
+        const parsed = parseFilename(fname);
+        return parsed && parsed.material === null && parsed.color === colorName;
+      });
+    }
+
+    // 원본 엔트리: material.version 파일이 있으면 해당 파일만 유지, 없으면 삭제
+    const matFiles = files.filter(f => {
+      const segs = f.split('/');
+      const aIdx = segs.findIndex(s => /^a\[/.test(s));
+      if (aIdx < 0) return false;
+      const fname = segs[aIdx + 2];
+      if (!fname) return false;
+      const parsed = parseFilename(fname);
+      return parsed && parsed.material !== null;
+    });
+    if (matFiles.length > 0) {
+      itemMap[prefix] = matFiles;
+    } else {
+      delete itemMap[prefix];
+    }
+  }
+}
+
+/**
+ * material.version 그룹이 복수인 아이템을 그룹별 트리 리프로 분리
+ *
+ * 동작:
+ *  - 해당 프리픽스의 트리 노드에 "material.version" 자식을 추가 (리프 → 폴더)
+ *  - itemMap에 "prefix/material.version" 서브 엔트리 생성 (해당 그룹 파일만 포함)
+ *  - 원본 엔트리 삭제
+ *
+ * 예: arms/p[armour]/p[plate]/p[male] 에 all.lpcr + metal.lpcr + metal.ulpc 가 있으면
+ *     → arms/p[armour]/p[plate]/p[male]/all.lpcr
+ *     → arms/p[armour]/p[plate]/p[male]/metal.lpcr
+ *     → arms/p[armour]/p[plate]/p[male]/metal.ulpc  로 분리
+ */
+function expandMultiMaterialLeaves(tree, itemMap) {
+  for (const [prefix, files] of Object.entries(itemMap)) {
+    // material.version 별 파일 분류 (material=null 제외)
+    const matGroups = new Map(); // "material.version" → [filePath, ...]
+    for (const f of files) {
+      const segs = f.split('/');
+      const aIdx = segs.findIndex(s => /^a\[/.test(s));
+      if (aIdx < 0) continue;
+      const fname = segs[aIdx + 2];
+      if (!fname) continue;
+      const parsed = parseFilename(fname);
+      if (!parsed || parsed.material === null) continue;
+      const matKey = `${parsed.material}.${parsed.version}`;
+      if (!matGroups.has(matKey)) matGroups.set(matKey, []);
+      matGroups.get(matKey).push(f);
+    }
+
+    if (matGroups.size <= 1) continue; // 단일 그룹: 분리 불필요
+
+    // 트리에서 해당 노드 탐색
+    const prefixSegs = prefix.split('/');
+    let node = tree;
+    let valid = true;
+    for (const seg of prefixSegs) {
+      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
+      node = node[seg];
+    }
+    if (!valid || typeof node !== 'object') continue;
+
+    // 이미 자식이 있는 노드(색상 분리 등)는 건너뜀
+    if (Object.keys(node).length > 0) continue;
+
+    // 트리 노드에 material.version 자식 리프 추가
+    for (const matKey of matGroups.keys()) {
+      node[matKey] = {};
+    }
+
+    // itemMap: 그룹별 서브 엔트리 생성
+    for (const [matKey, groupFiles] of matGroups.entries()) {
+      itemMap[`${prefix}/${matKey}`] = groupFiles;
+    }
+
+    // 원본 엔트리 삭제 (자식으로 분리됐으므로)
+    delete itemMap[prefix];
+  }
 }
 
 /**
  * 아이템 prefix 에서 머티리얼 그룹별 사용 가능한 컬러 목록 반환
  *
- * 확장 규칙:
- * - material 그룹이 1개뿐인 아이템 → 팔레트 전체 컬러로 확장 (base + swap 방식)
- * - material 그룹이 2개 이상인 아이템 → 각 그룹을 독립적으로 팔레트 확장
- *   (고정 색상 파트는 선택 목록에서 제외)
+ * 멀티 팔레트 파일(예: metal.ulpc.steel-metal.lpcr.steel-all.lpcr.source_...)은
+ * 파일명에 내포된 모든 팔레트 그룹의 색상을 각각 독립 항목으로 반환한다.
+ * 모든 그룹은 같은 파일을 공유하며, 색상 선택값은 "material.version.color" 풀 ID로 저장된다.
  *
  * 반환: [{ material, version, colors: string[], fileColors: string[] }]
- *   - colors: 선택 가능한 전체 색상 목록 (팔레트 확장 포함)
- *   - fileColors: 실제 파일에 존재하는 색상 (초기값 설정용)
  */
 export function getAvailableColors(prefix, itemMap, palettes) {
   const files = itemMap[prefix];
   if (!files) return [];
 
-  // 파일들에서 material.version별 실제 컬러 Set 수집
   const groupFileColors = new Map(); // "material.version" → Set<color>
-  const rawColors = new Set();       // material=null 파일: 실제 색상명 추적
+  const rawColors = new Set();
+  // 멀티 팔레트 파일에 내포된 추가 팔레트 그룹 (파일 별도 없음)
+  const extraGroups = new Map();     // "material.version" → baseColor
 
   for (const f of files) {
     const segs = f.split('/');
@@ -233,54 +406,50 @@ export function getAvailableColors(prefix, itemMap, palettes) {
     const parsed = parseFilename(fname);
     if (!parsed) continue;
     if (!parsed.material) {
-      // material 없는 파일(예: black_64_8_0213.png): 실제 색상명으로 추적
       rawColors.add(parsed.color);
     } else {
       const key = `${parsed.material}.${parsed.version}`;
       if (!groupFileColors.has(key)) groupFileColors.set(key, new Set());
       groupFileColors.get(key).add(parsed.color);
+      // 멀티 팔레트: alias 그룹도 수집
+      if (parsed.palettes && parsed.palettes.length > 1) {
+        for (const p of parsed.palettes.slice(1)) {
+          const pKey = `${p.material}.${p.version}`;
+          if (!groupFileColors.has(pKey) && !extraGroups.has(pKey)) {
+            extraGroups.set(pKey, p.color);
+          }
+        }
+      }
     }
   }
 
   const result = [];
 
-  // material=null 파일: 팔레트 확장 없이 실제 파일 색상만 반환
   if (rawColors.size > 0) {
     const colors = [...rawColors].sort((a, b) => a.localeCompare(b));
     result.push({ material: null, version: null, colors, fileColors: colors });
   }
 
-  // material 그룹이 없으면 raw 색상만 반환
-  if (groupFileColors.size === 0) {
-    return result;
-  }
+  if (groupFileColors.size === 0) return result;
 
-  // 단일 material 그룹이면 팔레트 전체 확장 가능
+  const hasMultiColorGroup = [...groupFileColors.values()].some(s => s.size > 1);
+  // 파일 그룹이 1개이거나 멀티 팔레트 통합 파일이면 팔레트 전체 확장 허용
   const canExpand = groupFileColors.size === 1;
 
-  // 복수 material이라도 모든 그룹이 단일 색상 파일이면 각 그룹을 팔레트 전체로 확장 가능
-  // (예: 글로우소드 body.ulpc.blue + cloth.ulpc.red — 각각 독립 recolor 가능)
-  const hasMultiColorGroup = [...groupFileColors.values()].some(s => s.size > 1);
-
   for (const [key, colorSet] of groupFileColors) {
-    const dotIdx = key.indexOf('.');
+    const dotIdx   = key.indexOf('.');
     const material = key.slice(0, dotIdx);
     const version  = key.slice(dotIdx + 1);
     const paletteColors = palettes?.[material]?.[version];
 
     let colorsToAdd;
     if (canExpand && paletteColors) {
-      // 단일 material: 팔레트 전체로 확장 (1개 파일이라도 swap으로 모든 컬러 지원)
-      colorsToAdd = Object.keys(paletteColors);
+      colorsToAdd = Object.keys(paletteColors).filter(c => c !== 'source');
     } else if (colorSet.size > 1) {
-      // 복수 material 중 실제 여러 색상 파일이 있는 그룹 → 파일 색상만 표시
       colorsToAdd = [...colorSet];
     } else if (!hasMultiColorGroup) {
-      // 복수 material이고 모든 그룹이 단일 색상 파일만 있는 경우 (예: 글로우소드)
-      // 스프라이트 픽셀이 팔레트와 일치하지 않아 swap 불가 → 실제 파일 색상만 표시
       colorsToAdd = [...colorSet];
     } else {
-      // 복수 material + 다른 그룹에 여러 색상 파일이 있음 → 고정 색상 파트는 목록 제외
       continue;
     }
 
@@ -288,7 +457,22 @@ export function getAvailableColors(prefix, itemMap, palettes) {
       material,
       version,
       colors: [...colorsToAdd].sort((a, b) => a.localeCompare(b)),
-      fileColors: [...colorSet],  // 실제 파일에 존재하는 색상 (초기값 설정용)
+      fileColors: [...colorSet],
+    });
+  }
+
+  // 멀티 팔레트 파일에 내포된 추가 팔레트 그룹 (all.lpcr 등)
+  for (const [key, baseColor] of extraGroups) {
+    const dotIdx   = key.indexOf('.');
+    const material = key.slice(0, dotIdx);
+    const version  = key.slice(dotIdx + 1);
+    const paletteColors = palettes?.[material]?.[version];
+    if (!paletteColors) continue;
+    result.push({
+      material,
+      version,
+      colors: Object.keys(paletteColors).filter(c => c !== 'source').sort((a, b) => a.localeCompare(b)),
+      fileColors: [baseColor],
     });
   }
 

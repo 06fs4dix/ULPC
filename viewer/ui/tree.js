@@ -1,12 +1,16 @@
 /**
- * tree.js — Bootstrap 기반 재귀 폴더 트리 렌더
+ * tree.js — Bootstrap 기반 재귀 폴더 트리 렌더 (lazy DOM 빌드)
+ *
+ * 초기 렌더에서는 카테고리 헤더만 생성하고,
+ * 자식 DOM은 노드를 펼칠 때 그 시점에 생성한다 (lazy rendering).
+ * leafCount는 DOM 없이 트리 데이터를 경량 순회해 계산한다.
  */
 import { displayName, isLeaf, parseFilename } from '../data/loader.js';
 import { state, onSelectionChange } from '../state.js';
 
 // ── 썸네일 ──────────────────────────────────────────────────────────────────
 
-const THUMB_SIZE = 20; // CSS + canvas px
+const THUMB_SIZE = 20;
 const THUMB_ANIM_PRIORITY = ['walk', 'idle', 'combat_idle', 'slash', 'thrust', 'spellcast', 'shoot'];
 const _imgCache = new Map();
 
@@ -57,19 +61,16 @@ async function _drawThumb(canvas, path) {
   const fname    = segs[aIdx + 2];
   if (!fname) return;
 
-  // parseFilename으로 frameSize와 dirs 추출 (구/신 형식 모두 대응)
   const parsed = parseFilename(fname);
   if (!parsed) return;
   const { frameSize, dirs } = parsed;
 
-  // dirs === '1' 이면 방향 없음, 나머지는 S(앞면) 행 사용
-  // ULPC 코드 S=1: dirs에서 '1'의 위치가 South 행
   const dirless = dirs === '1' || animName === 'hurt' || animName === 'climb';
   const srcX = 0;
   const southRow = dirless ? 0 : (dirs ? Math.max(0, dirs.indexOf('1')) : 2);
   const srcY = southRow * frameSize;
 
-  const imageBase  = state.imageBase  || '../spritesheets/';
+  const imageBase = state.imageBase || '../spritesheets/';
   const url = imageBase + _encodeFilePath(file);
   try {
     const img = await _loadImage(url);
@@ -97,7 +98,6 @@ function _getObserver() {
   return _thumbObserver;
 }
 
-/** 썸네일 canvas 엘리먼트 생성 */
 function makeThumb(path) {
   const c = document.createElement('canvas');
   c.width  = THUMB_SIZE;
@@ -109,40 +109,62 @@ function makeThumb(path) {
   return c;
 }
 
-/**
- * 트리 전체를 #tree-container 에 렌더링
- */
+// ── leafCount 경량 계산 (DOM 없이 트리 데이터 순회) ────────────────────────
+
+function countLeaves(treeNode, nodePath) {
+  if (isLeaf(treeNode)) return 1;
+  let count = state.itemMap?.[nodePath] ? 1 : 0;
+  for (const seg of Object.keys(treeNode)) {
+    count += countLeaves(treeNode[seg], `${nodePath}/${seg}`);
+  }
+  return count;
+}
+
+// ── 검색용 전체 강제 빌드 ────────────────────────────────────────────────────
+
+function ensureFullBuild(container) {
+  let ul = container.querySelector('ul.tree-root');
+  if (!ul) ul = container;
+  _buildAllPending(ul);
+}
+
+function _buildAllPending(el) {
+  for (const child of el.children) {
+    if (child.tagName === 'UL' && child._buildFn) {
+      child._buildFn();
+    }
+    _buildAllPending(child);
+  }
+}
+
+// ── 트리 렌더 진입점 ─────────────────────────────────────────────────────────
+
 export function renderTree() {
   const container = document.getElementById('tree-container');
   if (!container || !state.tree) return;
   container.innerHTML = '';
+  _thumbObserver = null; // 기존 observer 초기화
 
   const ul = document.createElement('ul');
   ul.className = 'tree-root';
 
-  // 카테고리(최상위 키) 순 정렬
   const categories = Object.keys(state.tree).sort();
   for (const cat of categories) {
-    const li = buildCategoryNode(cat, state.tree[cat], cat);
-    ul.appendChild(li);
+    ul.appendChild(buildCategoryNode(cat, state.tree[cat], cat));
   }
   container.appendChild(ul);
 }
 
-/** 카테고리 루트 노드 (특별 표시) */
+// ── 카테고리 루트 노드 ───────────────────────────────────────────────────────
+
 function buildCategoryNode(seg, children, path) {
   const li = document.createElement('li');
 
-  // 헤더 행
   const header = document.createElement('div');
   header.className = 'tree-node-toggle d-flex align-items-center gap-1 py-1';
   header.dataset.path = path;
 
   const icon = document.createElement('i');
-  icon.className = state.expandedNodes[path]
-    ? 'bi bi-chevron-down text-secondary'
-    : 'bi bi-chevron-right text-secondary';
-
   const folderIcon = document.createElement('i');
   folderIcon.className = 'bi bi-folder2 text-warning';
 
@@ -150,40 +172,49 @@ function buildCategoryNode(seg, children, path) {
   label.className = 'tree-category-label';
   label.textContent = displayName(seg);
 
-  // 아이템 수 뱃지
   const countBadge = document.createElement('span');
   countBadge.className = 'badge bg-secondary-subtle text-secondary-emphasis ms-1';
   countBadge.style.fontSize = '0.7rem';
+  countBadge.textContent = countLeaves(children, path);
 
   header.appendChild(icon);
   header.appendChild(folderIcon);
   header.appendChild(label);
   header.appendChild(countBadge);
 
-  // 자식 컨테이너
   const childUl = document.createElement('ul');
   childUl.className = 'tree-children';
-  if (!state.expandedNodes[path]) childUl.style.display = 'none';
 
-  // 자식 노드 재귀 빌드
-  let leafCount = 0;
-  const childSegs = Object.keys(children).sort();
-  for (const childSeg of childSegs) {
-    const childPath = `${path}/${childSeg}`;
-    const childNode = children[childSeg];
-    const { li: childLi, leafCount: lc } = buildNode(childSeg, childNode, childPath);
-    leafCount += lc;
-    childUl.appendChild(childLi);
+  const expanded = !!state.expandedNodes[path];
+  icon.className = expanded
+    ? 'bi bi-chevron-down text-secondary'
+    : 'bi bi-chevron-right text-secondary';
+
+  // 자식 lazy 빌드 함수 등록
+  childUl._buildFn = () => {
+    childUl._buildFn = null;
+    const segs = Object.keys(children).sort();
+    for (const childSeg of segs) {
+      const childPath = `${path}/${childSeg}`;
+      const { li: childLi } = buildNode(childSeg, children[childSeg], childPath);
+      childUl.appendChild(childLi);
+    }
+  };
+
+  if (expanded) {
+    childUl._buildFn();
+    childUl.style.display = '';
+  } else {
+    childUl.style.display = 'none';
   }
-  countBadge.textContent = leafCount;
 
-  // 토글 이벤트
   header.addEventListener('click', () => {
-    const expanded = state.expandedNodes[path] = !state.expandedNodes[path];
-    icon.className = expanded
+    const nowExpanded = state.expandedNodes[path] = !state.expandedNodes[path];
+    icon.className = nowExpanded
       ? 'bi bi-chevron-down text-secondary'
       : 'bi bi-chevron-right text-secondary';
-    childUl.style.display = expanded ? '' : 'none';
+    if (nowExpanded && childUl._buildFn) childUl._buildFn();
+    childUl.style.display = nowExpanded ? '' : 'none';
   });
 
   li.appendChild(header);
@@ -191,98 +222,96 @@ function buildCategoryNode(seg, children, path) {
   return li;
 }
 
-/**
- * 일반 노드 (재귀)
- * 반환: { li, leafCount }
- */
+// ── 일반 노드 (재귀, lazy) ───────────────────────────────────────────────────
+
 function buildNode(seg, children, path) {
   const li = document.createElement('li');
-  let leafCount = 0;
-
-  // itemMap에 파일이 있으면 선택 가능 (리프이든 중간 노드이든)
   const hasFiles = !!(state.itemMap && state.itemMap[path]);
 
   if (isLeaf(children)) {
-    // 순수 리프 노드 = 선택 가능한 아이템
-    leafCount = 1;
-    const row = buildLeafRow(seg, path);
-    li.appendChild(row);
-    li.dataset.path = path;
+    li.appendChild(buildLeafRow(seg, path));
+    li.dataset.path   = path;
     li.dataset.isLeaf = '1';
-
-    // 검색 필터 적용
-    applySearchFilter(li, seg);
-  } else {
-    // 중간 노드 (폴더)
-    const header = document.createElement('div');
-    header.className = 'tree-node-toggle';
-    header.dataset.path = path;
-
-    const icon = document.createElement('i');
-    icon.className = state.expandedNodes[path]
-      ? 'bi bi-chevron-down text-secondary'
-      : 'bi bi-chevron-right text-secondary';
-
-    header.appendChild(icon);
-
-    // 이 노드 자체도 itemMap에 파일이 있으면 선택 버튼 + 썸네일 추가
-    if (hasFiles) {
-      leafCount = 1;
-      const checkIcon = document.createElement('i');
-      checkIcon.className = state.selections[path]
-        ? 'bi bi-check-circle-fill text-success'
-        : 'bi bi-circle text-secondary';
-      checkIcon.dataset.checkIcon = '1';
-      checkIcon.style.fontSize = '0.75rem';
-      checkIcon.style.cursor = 'pointer';
-      checkIcon.style.marginRight = '4px';
-      checkIcon.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const row = header; // 헤더를 row 대역으로 사용
-        toggleLeafSelection(path, row, checkIcon);
-      });
-      header.appendChild(checkIcon);
-      header.appendChild(makeThumb(path));
-
-      // data-leaf-path 도 header에 부여 (syncLeafUI 대응)
-      header.dataset.leafPath = path;
-      li.dataset.isLeaf = '1';
-    }
-
-    const label = document.createElement('span');
-    label.textContent = displayName(seg);
-    header.appendChild(label);
-
-    const childUl = document.createElement('ul');
-    childUl.className = 'tree-children';
-    if (!state.expandedNodes[path]) childUl.style.display = 'none';
-
-    const childSegs = Object.keys(children).sort();
-    for (const childSeg of childSegs) {
-      const childPath = `${path}/${childSeg}`;
-      const childNode = children[childSeg];
-      const { li: childLi, leafCount: lc } = buildNode(childSeg, childNode, childPath);
-      leafCount += lc;
-      childUl.appendChild(childLi);
-    }
-
-    header.addEventListener('click', () => {
-      const expanded = state.expandedNodes[path] = !state.expandedNodes[path];
-      icon.className = expanded
-        ? 'bi bi-chevron-down text-secondary'
-        : 'bi bi-chevron-right text-secondary';
-      childUl.style.display = expanded ? '' : 'none';
-    });
-
-    li.appendChild(header);
-    li.appendChild(childUl);
-    li.dataset.path = path;
+    applySearchFilter(li, seg, path);
+    return { li };
   }
 
-  return { li, leafCount };
+  // 중간 노드
+  const header = document.createElement('div');
+  header.className = 'tree-node-toggle';
+  header.dataset.path = path;
+
+  const icon = document.createElement('i');
+
+  header.appendChild(icon);
+
+  if (hasFiles) {
+    const checkIcon = document.createElement('i');
+    checkIcon.className = state.selections[path]
+      ? 'bi bi-check-circle-fill text-success'
+      : 'bi bi-circle text-secondary';
+    checkIcon.dataset.checkIcon = '1';
+    checkIcon.style.fontSize  = '0.75rem';
+    checkIcon.style.cursor    = 'pointer';
+    checkIcon.style.marginRight = '4px';
+    checkIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLeafSelection(path, header, checkIcon);
+    });
+    header.appendChild(checkIcon);
+    header.appendChild(makeThumb(path));
+    header.dataset.leafPath = path;
+    li.dataset.isLeaf = '1';
+  }
+
+  const label = document.createElement('span');
+  label.textContent = displayName(seg);
+  header.appendChild(label);
+
+  const childUl = document.createElement('ul');
+  childUl.className = 'tree-children';
+
+  const expanded = !!state.expandedNodes[path];
+  icon.className = expanded
+    ? 'bi bi-chevron-down text-secondary'
+    : 'bi bi-chevron-right text-secondary';
+
+  // 자식 lazy 빌드 함수 등록
+  childUl._buildFn = () => {
+    childUl._buildFn = null;
+    const segs = Object.keys(children).sort();
+    for (const childSeg of segs) {
+      const childPath = `${path}/${childSeg}`;
+      const { li: childLi } = buildNode(childSeg, children[childSeg], childPath);
+      childUl.appendChild(childLi);
+    }
+  };
+
+  if (expanded) {
+    childUl._buildFn();
+    childUl.style.display = '';
+  } else {
+    childUl.style.display = 'none';
+  }
+
+  header.addEventListener('click', () => {
+    const nowExpanded = state.expandedNodes[path] = !state.expandedNodes[path];
+    icon.className = nowExpanded
+      ? 'bi bi-chevron-down text-secondary'
+      : 'bi bi-chevron-right text-secondary';
+    if (nowExpanded && childUl._buildFn) childUl._buildFn();
+    childUl.style.display = nowExpanded ? '' : 'none';
+  });
+
+  li.appendChild(header);
+  li.appendChild(childUl);
+  li.dataset.path = path;
+
+  return { li };
 }
 
-/** 리프 행 엘리먼트 생성 */
+// ── 리프 행 ──────────────────────────────────────────────────────────────────
+
 function buildLeafRow(seg, path) {
   const row = document.createElement('div');
   row.className = 'tree-leaf';
@@ -307,7 +336,8 @@ function buildLeafRow(seg, path) {
   return row;
 }
 
-/** 리프 선택/해제 토글 */
+// ── 선택 토글 ────────────────────────────────────────────────────────────────
+
 function toggleLeafSelection(path, row, checkIcon) {
   if (state.selections[path]) {
     delete state.selections[path];
@@ -321,7 +351,8 @@ function toggleLeafSelection(path, row, checkIcon) {
   onSelectionChange();
 }
 
-/** 선택된 리프의 check 아이콘 동기화 */
+// ── syncLeafUI ───────────────────────────────────────────────────────────────
+
 export function syncLeafUI(path, selected) {
   const row = document.querySelector(`[data-leaf-path="${CSS.escape(path)}"]`);
   if (!row) return;
@@ -336,14 +367,11 @@ export function syncLeafUI(path, selected) {
   }
 }
 
+// ── 검색 ─────────────────────────────────────────────────────────────────────
 
-/** 검색 필터 적용 */
-function applySearchFilter(li, seg) {
+function applySearchFilter(li, seg, path) {
   const query = (state.searchQuery || '').toLowerCase().trim();
-  if (!query) {
-    li.classList.remove('tree-hidden');
-    return;
-  }
+  if (!query) { li.classList.remove('tree-hidden'); return; }
   if (displayName(seg).toLowerCase().includes(query)) {
     li.classList.remove('tree-hidden');
   } else {
@@ -351,15 +379,19 @@ function applySearchFilter(li, seg) {
   }
 }
 
-/**
- * 검색 필터 재적용 (트리 DOM 순회)
- */
 export function applySearchToTree() {
+  const container = document.getElementById('tree-container');
+  if (!container) return;
+
   const query = (state.searchQuery || '').toLowerCase().trim();
-  const allLeaves = document.querySelectorAll('[data-is-leaf="1"]');
+
+  // 검색어가 있으면 먼저 전체 DOM 강제 빌드
+  if (query) ensureFullBuild(container);
+
+  const allLeaves = container.querySelectorAll('[data-is-leaf="1"]');
   allLeaves.forEach(li => {
     const path = li.dataset.path || '';
-    const seg = path.split('/').pop();
+    const seg  = path.split('/').pop();
 
     if (!query) {
       li.classList.remove('tree-hidden');
@@ -368,7 +400,6 @@ export function applySearchToTree() {
     const name = displayName(seg).toLowerCase();
     if (name.includes(query) || path.toLowerCase().includes(query)) {
       li.classList.remove('tree-hidden');
-      // 부모 자동 펼침
       expandParents(li);
     } else {
       li.classList.add('tree-hidden');
@@ -376,14 +407,11 @@ export function applySearchToTree() {
   });
 }
 
-
-/** 검색 매칭 아이템의 조상 accordion 노드 자동 펼침 */
 function expandParents(li) {
   let parent = li.parentElement;
   while (parent && parent.id !== 'tree-container') {
     if (parent.tagName === 'UL' && parent.classList.contains('tree-children')) {
       parent.style.display = '';
-      // 아이콘 업데이트
       const prevSibling = parent.previousElementSibling;
       if (prevSibling && prevSibling.classList.contains('tree-node-toggle')) {
         const icon = prevSibling.querySelector('i:first-child');
@@ -396,7 +424,8 @@ function expandParents(li) {
   }
 }
 
-/** 모든 노드 접기 */
+// ── 전체 접기 ────────────────────────────────────────────────────────────────
+
 export function collapseAll() {
   state.expandedNodes = {};
   const allUls = document.querySelectorAll('.tree-children');
