@@ -552,4 +552,36 @@ function parseReadmeCredits(text) {
   return { Authors: authors, Licenses: licenses, URLs: urls };
 }
 
-console.log('다음 단계: node build-index.js');
+// ─── index.json 생성 ─────────────────────────────────────────────────────────
+if (!isDryRun && fs.existsSync(OUT_ROOT)) {
+  console.log('\n=== index.json 생성 ===');
+
+  // 파일 목록 수집 (OUT_ROOT 기준 상대경로)
+  const files = [];
+  function walkForIndex(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walkForIndex(full);
+      } else if (entry.name.endsWith('.png')) {
+        files.push(path.relative(OUT_ROOT, full).replace(/\\/g, '/'));
+      }
+    }
+  }
+  walkForIndex(OUT_ROOT);
+  files.sort();
+  console.log(`파일 수: ${files.length}개`);
+
+  // palette.json 로드 (없으면 빈 객체)
+  const palPath = path.join(OUT_ROOT, 'palette.json');
+  const palettes = fs.existsSync(palPath)
+    ? JSON.parse(fs.readFileSync(palPath, 'utf8'))
+    : {};
+
+  const jsonPath = path.join(OUT_ROOT, 'index.json');
+  fs.writeFileSync(jsonPath, JSON.stringify({ files, palettes }), 'utf8');
+
+  const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);
+  console.log(`✅ index.json 저장: ${jsonPath}`);
+  console.log(`   크기: ${sizeKB} KB`);
+}

@@ -1,44 +1,52 @@
 /**
  * app.js — NEW ULPC Viewer 진입점
  */
-import { loadIndex, detectProjects } from './data/loader.js';
+import { loadIndex } from './data/loader.js';
 import { state, addChangeListener } from './state.js';
 import { renderTree, collapseAll } from './ui/tree.js';
 import { initSearch } from './ui/search.js';
 import { renderSelectedPanel } from './ui/colorPicker.js';
 import { initAnimControls, refreshAnimButtons } from './ui/animControls.js';
 import { initAnimation, startAnimation } from './canvas/animation.js';
-import { buildCharacterSheet, renderCharacter, clearSwapCache } from './canvas/renderer.js';
+import { buildCharacterSheet, renderCharacter, clearSwapCache, clearImageCache } from './canvas/renderer.js';
 import { initDownload } from './canvas/download.js';
 import { initImport } from './canvas/import.js';
 import { resetFrame } from './canvas/animation.js';
+import { clearZipBlobs, loadFromZip, loadFromZipFile } from './data/zip-loader.js';
 
-// ── 공유 index.json 경로 (모든 프로젝트가 하나의 index.json을 공유)
-const SHARED_INDEX_URL = '../spritesheets/index.json';
-const SHARED_IMAGE_BASE = '../spritesheets/';
+// ── 프로젝트 목록 (상수)
+const PROJECTS = [
+  { id: 'ULPC',           label: 'ULPC' },
+  { id: 'NinjaAdventure', label: 'Ninja Adventure' },
+];
 
-// 런타임에 감지된 프로젝트 목록
-let PROJECTS = [];
+// ── 동적으로 추가된 ZIP 프로젝트 (로컬 파일 선택, 새로고침하면 초기화)
+// key: projectId (파일명 without .zip), value: File 객체
+const dynamicProjects = new Map();
 
 // ── 프로젝트 셀렉트 박스 초기화 ──────────────────────────────────────────────────
-function initProjectSelector(projects, onProjectChange) {
+function initProjectSelector(onProjectChange) {
   const select = document.getElementById('project-select');
   if (!select) return;
 
-  select.innerHTML = '';
-  for (const proj of projects) {
+  // 빈 기본 옵션 (선택 안 된 상태)
+  const empty = document.createElement('option');
+  empty.value    = '';
+  empty.textContent = '— Select project —';
+  empty.selected = true;
+  empty.disabled = true;
+  select.appendChild(empty);
+
+  for (const proj of PROJECTS) {
     const opt = document.createElement('option');
     opt.value = proj.id;
     opt.textContent = proj.label;
-    if (proj.id === state.selectedProject) opt.selected = true;
     select.appendChild(opt);
   }
 
   select.addEventListener('change', () => {
     const projectId = select.value;
-    if (projectId !== state.selectedProject) {
-      onProjectChange(projectId);
-    }
+    if (projectId) onProjectChange(projectId);
   });
 }
 
@@ -53,29 +61,53 @@ async function loadProject(projectId) {
   state.expandedNodes   = {};
   state.selectedProject = projectId;
   clearSwapCache();
+  clearImageCache();
+  clearZipBlobs();
 
   const treeContainer = document.getElementById('tree-container');
   if (treeContainer) {
     treeContainer.innerHTML =
       '<div class="text-center text-secondary py-5">' +
-      '<div class="spinner-border spinner-border-sm me-2"></div>Loading index.json…</div>';
+      '<div class="spinner-border spinner-border-sm me-2"></div>Loading…</div>';
   }
 
-  const { tree, itemMap, palettes, files, totalFiles, pathPrefix } = await loadIndex(SHARED_INDEX_URL, projectId);
+  const dynFile = dynamicProjects.get(projectId);
+  const proj    = PROJECTS.find(p => p.id === projectId);
+  let result;
 
+  if (dynFile) {
+    // 로컬 파일로 추가된 ZIP 프로젝트
+    if (statusEl) statusEl.textContent = `Loading ${projectId}.zip…`;
+    result = await loadFromZipFile(dynFile);
+    state.imageBase = '';
+  } else if (proj?.zip) {
+    // 서버 경로 ZIP 프로젝트
+    if (statusEl) statusEl.textContent = `Downloading ${projectId}.zip…`;
+    result = await loadFromZip(`../spritesheets/${projectId}.zip`);
+    state.imageBase = '';
+  } else {
+    const indexUrl = `../spritesheets/${projectId}/index.json`;
+    result = await loadIndex(indexUrl);
+    state.imageBase = `../spritesheets/${projectId}/`;
+  }
+
+  const { tree, itemMap, palettes, files, totalFiles } = result;
   state.tree       = tree;
   state.itemMap    = itemMap;
   state.palettes   = palettes;
   state.files      = files;
-  state.pathPrefix = pathPrefix;
-  state.imageBase  = SHARED_IMAGE_BASE;
+  state.pathPrefix = '';
 
-  // credits.json 로드
-  try {
-    const creditsUrl = SHARED_IMAGE_BASE + projectId + '/credits.json';
-    const cr = await fetch(creditsUrl);
-    state.credits = cr.ok ? await cr.json() : null;
-  } catch { state.credits = null; }
+  // credits.json 로드 (ZIP이면 zip 내부에서, 아니면 HTTP)
+  if (result.credits !== undefined) {
+    state.credits = result.credits;
+  } else {
+    try {
+      const creditsUrl = `../spritesheets/${projectId}/credits.json`;
+      const cr = await fetch(creditsUrl);
+      state.credits = cr.ok ? await cr.json() : null;
+    } catch { state.credits = null; }
+  }
   renderCredits();
 
   if (statusEl) statusEl.textContent = `${totalFiles.toLocaleString()} files`;
@@ -135,29 +167,24 @@ async function init() {
   const statusEl = document.getElementById('status-text');
 
   try {
-    // 1. index.json에서 프로젝트 자동 감지
-    PROJECTS = await detectProjects(SHARED_INDEX_URL);
-    if (PROJECTS.length === 0) throw new Error('index.json에 프로젝트가 없습니다.');
-
-    // 초기 선택: 저장된 프로젝트가 없거나 목록에 없으면 첫 번째 사용
-    if (!PROJECTS.find(p => p.id === state.selectedProject)) {
-      state.selectedProject = PROJECTS[0].id;
-    }
-
-    // 2. 프로젝트 셀렉터 초기화
-    initProjectSelector(PROJECTS, async (projectId) => {
+    // 1. 프로젝트 셀렉터 초기화 (상수 기반, 초기 로드 없음)
+    initProjectSelector(async (projectId) => {
       try {
         await loadProject(projectId);
       } catch (err) {
         console.error('Project load failed:', err);
         if (statusEl) statusEl.textContent = `Error: ${err.message}`;
+        document.getElementById('tree-container').innerHTML =
+          `<div class="alert alert-danger m-2">Failed to load: ${err.message}</div>`;
       }
     });
 
-    // 3. 기본 프로젝트 로드
-    await loadProject(state.selectedProject);
+    // 2. 초기 트리: 프로젝트 선택 안내
+    document.getElementById('tree-container').innerHTML =
+      '<div class="text-center text-secondary py-5 small">Select a project above.</div>';
+    if (statusEl) statusEl.textContent = '';
 
-    // 4. UI 초기화
+    // 3. UI 초기화
     initSearch();
     initAnimControls();
     initDownload();
@@ -169,7 +196,7 @@ async function init() {
       resBaseEl.value = new URL('../spritesheets/', window.location.href).href;
     }
 
-    // 5. Canvas + 애니메이션 루프 초기화
+    // 4. Canvas + 애니메이션 루프 초기화
     canvas = document.getElementById('preview-canvas');
     initAnimation(canvas, (frame) => {
       const el = document.getElementById('frame-indicator');
@@ -199,6 +226,40 @@ async function init() {
 
     // 9. Credits 다운로드 버튼
     document.getElementById('btn-download-credits')?.addEventListener('click', downloadCredits);
+
+    // 10. ZIP 프로젝트 추가 버튼
+    const inputAddZip = document.getElementById('input-add-zip');
+    document.getElementById('btn-add-project')?.addEventListener('click', () => {
+      inputAddZip?.click();
+    });
+    inputAddZip?.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      e.target.value = ''; // 동일 파일 재선택 허용
+      if (!file) return;
+
+      const projectId = file.name.replace(/\.zip$/i, '');
+      dynamicProjects.set(projectId, file);
+
+      // 셀렉트에 옵션 추가 (중복 방지)
+      const select = document.getElementById('project-select');
+      if (select && !select.querySelector(`option[value="${CSS.escape(projectId)}"]`)) {
+        const opt = document.createElement('option');
+        opt.value = projectId;
+        opt.textContent = projectId;
+        select.appendChild(opt);
+      }
+
+      // 선택 후 로드
+      if (select) select.value = projectId;
+      try {
+        await loadProject(projectId);
+      } catch (err) {
+        console.error('ZIP load failed:', err);
+        if (statusEl) statusEl.textContent = `Error: ${err.message}`;
+        document.getElementById('tree-container').innerHTML =
+          `<div class="alert alert-danger m-2">Failed to load: ${err.message}</div>`;
+      }
+    });
 
   } catch (err) {
     console.error('Init failed:', err);

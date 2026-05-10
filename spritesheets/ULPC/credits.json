@@ -1,0 +1,973 @@
+{
+  "Authors": [
+    {
+      "name": "bluecarrot16",
+      "url": ""
+    },
+    {
+      "name": "JaidynReiman",
+      "url": ""
+    },
+    {
+      "name": "Benjamin K. Smith (BenCreating)",
+      "url": ""
+    },
+    {
+      "name": "Evert",
+      "url": ""
+    },
+    {
+      "name": "Eliza Wyatt (ElizaWy)",
+      "url": ""
+    },
+    {
+      "name": "TheraHedwig",
+      "url": ""
+    },
+    {
+      "name": "MuffinElZangano",
+      "url": ""
+    },
+    {
+      "name": "Durrani",
+      "url": ""
+    },
+    {
+      "name": "Johannes Sjölund (wulax)",
+      "url": ""
+    },
+    {
+      "name": "Stephen Challener (Redshrike)",
+      "url": ""
+    },
+    {
+      "name": "Pierre Vigier (pvigier)",
+      "url": ""
+    },
+    {
+      "name": "ElizaWy",
+      "url": ""
+    },
+    {
+      "name": "Matthew Krohn (makrohn)",
+      "url": ""
+    },
+    {
+      "name": "Nila122",
+      "url": ""
+    },
+    {
+      "name": "kheftel",
+      "url": ""
+    },
+    {
+      "name": "Sander Frenken (castelonia)",
+      "url": ""
+    },
+    {
+      "name": "dalonedrau",
+      "url": ""
+    },
+    {
+      "name": "drjamgo@hotmail.com",
+      "url": ""
+    },
+    {
+      "name": "Eliza Wyatt",
+      "url": ""
+    },
+    {
+      "name": "The Foreman",
+      "url": ""
+    },
+    {
+      "name": "??",
+      "url": ""
+    },
+    {
+      "name": "Joshua Taylor",
+      "url": ""
+    },
+    {
+      "name": "William.Thomsponj",
+      "url": ""
+    },
+    {
+      "name": "Marcel van de Steeg (MadMarcel)",
+      "url": ""
+    },
+    {
+      "name": "Zi Ye",
+      "url": ""
+    },
+    {
+      "name": "AntumDeluge",
+      "url": ""
+    },
+    {
+      "name": "Tuomo Untinen (reemax)",
+      "url": ""
+    },
+    {
+      "name": "Daniel Eddeland (daneeklu)",
+      "url": ""
+    },
+    {
+      "name": "William.Thompsonj",
+      "url": ""
+    },
+    {
+      "name": "Napsio (Vitruvian Studio)",
+      "url": ""
+    },
+    {
+      "name": "kirts",
+      "url": ""
+    },
+    {
+      "name": "Thane Brimhall (pennomi)",
+      "url": ""
+    },
+    {
+      "name": "laetissima",
+      "url": ""
+    },
+    {
+      "name": "Makrohn",
+      "url": ""
+    },
+    {
+      "name": "Luke Mehl",
+      "url": ""
+    },
+    {
+      "name": "7Soul",
+      "url": ""
+    },
+    {
+      "name": "Carlo Enrico Victoria (Nemisys)",
+      "url": ""
+    },
+    {
+      "name": "Skorpio",
+      "url": ""
+    },
+    {
+      "name": "Manuel Riecke (MrBeast)",
+      "url": ""
+    },
+    {
+      "name": "Lanea Zimmerman (Sharm)",
+      "url": ""
+    },
+    {
+      "name": "Page",
+      "url": ""
+    },
+    {
+      "name": "Fabzy",
+      "url": ""
+    },
+    {
+      "name": "Mandi Paugh",
+      "url": ""
+    },
+    {
+      "name": "thecilekli",
+      "url": ""
+    },
+    {
+      "name": "Radomir Dopieralski",
+      "url": ""
+    },
+    {
+      "name": "Joe White",
+      "url": ""
+    },
+    {
+      "name": "Cobra Hubbard (BlueVortexGames)",
+      "url": ""
+    },
+    {
+      "name": "kcilds/Rocetti/Eredah",
+      "url": ""
+    },
+    {
+      "name": "Barbara Riviera",
+      "url": ""
+    },
+    {
+      "name": "Emilio J. Sanchez-Sierra",
+      "url": ""
+    },
+    {
+      "name": "Yamilian",
+      "url": ""
+    },
+    {
+      "name": "Matthew Krohn (Makrohn)",
+      "url": ""
+    },
+    {
+      "name": "Michael Whitlock (bigbeargames)",
+      "url": ""
+    },
+    {
+      "name": "Tracy",
+      "url": ""
+    },
+    {
+      "name": "Stafford McIntyre",
+      "url": ""
+    },
+    {
+      "name": "PlatForge project",
+      "url": ""
+    },
+    {
+      "name": "DarkwallLKE",
+      "url": ""
+    },
+    {
+      "name": "Charles Sanchez (CharlesGabriel)",
+      "url": ""
+    },
+    {
+      "name": "Shaun Williams",
+      "url": ""
+    },
+    {
+      "name": "DCSS authors",
+      "url": ""
+    },
+    {
+      "name": "Ahmad3366",
+      "url": ""
+    },
+    {
+      "name": "Inboxninja",
+      "url": ""
+    },
+    {
+      "name": "Bluecarrot16",
+      "url": ""
+    },
+    {
+      "name": "Nyom",
+      "url": ""
+    },
+    {
+      "name": "macmanmatty",
+      "url": ""
+    },
+    {
+      "name": "and Inboxninja",
+      "url": ""
+    },
+    {
+      "name": "gr3yh47",
+      "url": ""
+    },
+    {
+      "name": "ElizaWy; walk and down by JaidynReiman",
+      "url": ""
+    },
+    {
+      "name": "tskaufma",
+      "url": ""
+    },
+    {
+      "name": "Pierre Vigier and DCSS artists (see https://github.com/crawl/tiles/blob/master/ARTISTS.md)",
+      "url": ""
+    },
+    {
+      "name": "LordNeo",
+      "url": ""
+    },
+    {
+      "name": "Dr. Jamgo",
+      "url": ""
+    }
+  ],
+  "Licenses": [
+    "OGA-BY 3.0",
+    "CC-BY-SA 3.0",
+    "GPL 3.0",
+    "CC0",
+    "CC-BY 3.0",
+    "OGA-BY 4.0",
+    "CC-BY-SA 4.0",
+    "OGA-BY 3.0+",
+    "CC-BY 3.0+",
+    "CC-BY 4.0",
+    "GPL 2.0",
+    "OGA-SA 3.0",
+    "GPL 3.0+"
+  ],
+  "URLs": [
+    {
+      "label": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles",
+      "url": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-be-seated",
+      "url": "https://opengameart.org/content/lpc-be-seated"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-character-bases",
+      "url": "https://opengameart.org/content/lpc-character-bases"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-jump-expanded",
+      "url": "https://opengameart.org/content/lpc-jump-expanded"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani",
+      "url": "https://opengameart.org/content/lpc-male-jumping-animation-by-durrani"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites",
+      "url": "https://opengameart.org/content/lpc-medieval-fantasy-character-sprites"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-revised-character-basics",
+      "url": "https://opengameart.org/content/lpc-revised-character-basics"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle",
+      "url": "https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads",
+      "url": "https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads"
+    },
+    {
+      "label": "https://gitlab.com/vagabondgame/lpc-characters",
+      "url": "https://gitlab.com/vagabondgame/lpc-characters"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-7-womens-shirts",
+      "url": "https://opengameart.org/content/lpc-7-womens-shirts"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-ladies",
+      "url": "https://opengameart.org/content/lpc-ladies"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-teen-unisex-base-clothes",
+      "url": "https://opengameart.org/content/lpc-teen-unisex-base-clothes"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-child-standing-template",
+      "url": "https://opengameart.org/content/lpc-child-standing-template"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-children-walk-animation",
+      "url": "https://opengameart.org/content/lpc-children-walk-animation"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-barbarian-sprite-base",
+      "url": "https://opengameart.org/content/lpc-barbarian-sprite-base"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-muscular-hurt-animation",
+      "url": "https://opengameart.org/content/lpc-muscular-hurt-animation"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-muscular-swing-animation",
+      "url": "https://opengameart.org/content/lpc-muscular-swing-animation"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear",
+      "url": "https://opengameart.org/content/lpc-pregnancy-bases-maternity-wear"
+    },
+    {
+      "label": "https://opengameart.org/content/shadow-for-lpc-sprite",
+      "url": "https://opengameart.org/content/shadow-for-lpc-sprite"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-revised-elders",
+      "url": "https://opengameart.org/content/lpc-revised-elders"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-skeleton",
+      "url": "https://opengameart.org/content/lpc-skeleton"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-zombie",
+      "url": "https://opengameart.org/content/lpc-zombie"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-pirates",
+      "url": "https://opengameart.org/content/lpc-pirates"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-wings-new-animations",
+      "url": "https://opengameart.org/content/lpc-wings-new-animations"
+    },
+    {
+      "label": "https://opengameart.org/content/drakes-and-lizardfolk",
+      "url": "https://opengameart.org/content/drakes-and-lizardfolk"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-fairy-wings-pack-2",
+      "url": "https://opengameart.org/content/lpc-fairy-wings-pack-2"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-fairy-wings",
+      "url": "https://opengameart.org/content/lpc-fairy-wings"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-furry-ears-tails-for-rpg-sprites",
+      "url": "https://opengameart.org/content/lpc-furry-ears-tails-for-rpg-sprites"
+    },
+    {
+      "label": "https://opengameart.org/content/",
+      "url": "https://opengameart.org/content/"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-folk",
+      "url": "https://opengameart.org/content/lpc-folk"
+    },
+    {
+      "label": "https://opengameart.org/content/fruit-and-veggie-inventory",
+      "url": "https://opengameart.org/content/fruit-and-veggie-inventory"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-goblin",
+      "url": "https://opengameart.org/content/lpc-goblin"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle",
+      "url": "https://opengameart.org/content/lpc-female-orcogregoblintroll-base-walkcycle"
+    },
+    {
+      "label": "https://opengameart.org/content/four-characters-my-lpc-entries",
+      "url": "https://opengameart.org/content/four-characters-my-lpc-entries"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-male-sheets",
+      "url": "https://opengameart.org/content/lpc-male-sheets"
+    },
+    {
+      "label": "https://opengameart.org/content/sinbad-the-ogre",
+      "url": "https://opengameart.org/content/sinbad-the-ogre"
+    },
+    {
+      "label": "https://opengameart.org/content/musclemanogreminotaur",
+      "url": "https://opengameart.org/content/musclemanogreminotaur"
+    },
+    {
+      "label": "https://opengameart.org/content/trolls-0",
+      "url": "https://opengameart.org/content/trolls-0"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-boarman",
+      "url": "https://opengameart.org/content/lpc-boarman"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-style-farm-animals",
+      "url": "https://opengameart.org/content/lpc-style-farm-animals"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-wild-boar",
+      "url": "https://opengameart.org/content/lpc-wild-boar"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-faun-and-minotaur",
+      "url": "https://opengameart.org/content/lpc-faun-and-minotaur"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-lizard-headgear",
+      "url": "https://opengameart.org/content/lpc-lizard-headgear"
+    },
+    {
+      "label": "https://opengameart.org/content/tower-defense-prototyping-assets-4-monsters-some-tiles-a-background-image",
+      "url": "https://opengameart.org/content/tower-defense-prototyping-assets-4-monsters-some-tiles-a-background-image"
+    },
+    {
+      "label": "https://opengameart.org/content/wartotaur-4-directions",
+      "url": "https://opengameart.org/content/wartotaur-4-directions"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-wolf-animation",
+      "url": "https://opengameart.org/content/lpc-wolf-animation"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-wolfman",
+      "url": "https://opengameart.org/content/lpc-wolfman"
+    },
+    {
+      "label": "http://opengameart.org/content/lpc-folk",
+      "url": "http://opengameart.org/content/lpc-folk"
+    },
+    {
+      "label": "https://opengameart.org/content/bunny-rabbit-lpc-style-for-pixelfarm",
+      "url": "https://opengameart.org/content/bunny-rabbit-lpc-style-for-pixelfarm"
+    },
+    {
+      "label": "https://opengameart.org/content/cyclops-and-his-eye",
+      "url": "https://opengameart.org/content/cyclops-and-his-eye"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "url": "https://opengameart.org/content/lpc-expanded-sit-run-jump-more"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head"
+    },
+    {
+      "label": "https://opengameart.org/content/ulpc-expanded-expressions",
+      "url": "https://opengameart.org/content/ulpc-expanded-expressions"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-base-character-expressions",
+      "url": "https://opengameart.org/content/lpc-base-character-expressions"
+    },
+    {
+      "label": "http://opengameart.org/content/lpc-clothing-updates",
+      "url": "http://opengameart.org/content/lpc-clothing-updates"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-new-elven-ear-variants",
+      "url": "https://opengameart.org/content/lpc-new-elven-ear-variants"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-long-ears",
+      "url": "https://opengameart.org/content/lpc-long-ears"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head/Head%20Overlay%2001%20-%20Large%20Nose",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head/Head%20Overlay%2001%20-%20Large%20Nose"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-2-characters",
+      "url": "https://opengameart.org/content/lpc-2-characters"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-gentleman",
+      "url": "https://opengameart.org/content/lpc-gentleman"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Feminine%2C%20Thin/Accessories",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Feminine%2C%20Thin/Accessories"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Masculine%2C%20Thin/Accessories/Neckwear%2001%20-%20Bowtie",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing/Masculine%2C%20Thin/Accessories/Neckwear%2001%20-%20Bowtie"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more",
+      "url": "https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-jewelry",
+      "url": "https://opengameart.org/content/lpc-jewelry"
+    },
+    {
+      "label": "https://opengameart.org/content/female-mage-clothing-set",
+      "url": "https://opengameart.org/content/female-mage-clothing-set"
+    },
+    {
+      "label": "https://opengameart.org/content/more-lpc-clothes-and-hair",
+      "url": "https://opengameart.org/content/more-lpc-clothes-and-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/cc0-jewelry-icons",
+      "url": "https://opengameart.org/content/cc0-jewelry-icons"
+    },
+    {
+      "label": "https://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "url": "https://opengameart.org/content/dungeon-crawl-32x32-tiles"
+    },
+    {
+      "label": "https://www.deviantart.com/7soul1/art/129892453",
+      "url": "https://www.deviantart.com/7soul1/art/129892453"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-white-beard",
+      "url": "https://opengameart.org/content/lpc-white-beard"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-santa",
+      "url": "https://opengameart.org/content/lpc-santa"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-brunet-mustache",
+      "url": "https://opengameart.org/content/lpc-brunet-mustache"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-1-hairstyle-2-hair-extensions-3-previously-unofficially-released-hairstyles",
+      "url": "https://opengameart.org/content/lpc-1-hairstyle-2-hair-extensions-3-previously-unofficially-released-hairstyles"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-long-hair",
+      "url": "https://opengameart.org/content/lpc-expanded-long-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-xlong-hair",
+      "url": "https://opengameart.org/content/lpc-expanded-xlong-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail",
+      "url": "https://opengameart.org/content/lpc-relm-hair-xlong-ponytail"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-hair",
+      "url": "https://opengameart.org/content/lpc-hair"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/blob/main/Characters/Hair",
+      "url": "https://github.com/ElizaWy/LPC/blob/main/Characters/Hair"
+    },
+    {
+      "label": "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/46ddcf05a0e43e7aa6ffd47d350eef0eb529ac24",
+      "url": "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/46ddcf05a0e43e7aa6ffd47d350eef0eb529ac24"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-skorpios-scifi-sprite-pack",
+      "url": "https://opengameart.org/content/lpc-skorpios-scifi-sprite-pack"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-hair",
+      "url": "https://opengameart.org/content/lpc-expanded-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/the-revolution-hair",
+      "url": "https://opengameart.org/content/the-revolution-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/star-overland",
+      "url": "https://opengameart.org/content/star-overland"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-korean-idol-hairstyle-male-with-12-colors",
+      "url": "https://opengameart.org/content/lpc-korean-idol-hairstyle-male-with-12-colors"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-clothes-for-children",
+      "url": "https://opengameart.org/content/lpc-clothes-for-children"
+    },
+    {
+      "label": "https://opengameart.org/content/alternate-lpc-character-sprites-george",
+      "url": "https://opengameart.org/content/alternate-lpc-character-sprites-george"
+    },
+    {
+      "label": "https://opengameart.org/content/ponytail-and-plain-hairstyles",
+      "url": "https://opengameart.org/content/ponytail-and-plain-hairstyles"
+    },
+    {
+      "label": "https://opengameart.org/content/3-hairs-for-lpc",
+      "url": "https://opengameart.org/content/3-hairs-for-lpc"
+    },
+    {
+      "label": "https://opengameart.org/content/anime-lpc-hair",
+      "url": "https://opengameart.org/content/anime-lpc-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/eredah-rpg-character-base-48x64-ongoing",
+      "url": "https://opengameart.org/content/eredah-rpg-character-base-48x64-ongoing"
+    },
+    {
+      "label": "https://opengameart.org/content/concept-art-for-lpc-entry",
+      "url": "https://opengameart.org/content/concept-art-for-lpc-entry"
+    },
+    {
+      "label": "https://opengameart.org/content/steampun-a-fy-with-concept-art",
+      "url": "https://opengameart.org/content/steampun-a-fy-with-concept-art"
+    },
+    {
+      "label": "https://opengameart.org/content/one-more-lpc-alternate-character",
+      "url": "https://opengameart.org/content/one-more-lpc-alternate-character"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-pink-short-hair",
+      "url": "https://opengameart.org/content/lpc-pink-short-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-heroine",
+      "url": "https://opengameart.org/content/lpc-heroine"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-long-tied-hair-with-12-colors",
+      "url": "https://opengameart.org/content/lpc-long-tied-hair-with-12-colors"
+    },
+    {
+      "label": "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/c32ce8a7edd9fc7fe7daa62a39cf64e5946020a2",
+      "url": "https://github.com/jrconway3/Universal-LPC-spritesheet/commit/c32ce8a7edd9fc7fe7daa62a39cf64e5946020a2"
+    },
+    {
+      "label": "https://opengameart.org/content/trevor-overland",
+      "url": "https://opengameart.org/content/trevor-overland"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-long-straight-hair-with-12-colors",
+      "url": "https://opengameart.org/content/lpc-long-straight-hair-with-12-colors"
+    },
+    {
+      "label": "https://opengameart.org/content/puck-overland",
+      "url": "https://opengameart.org/content/puck-overland"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-heroine-2",
+      "url": "https://opengameart.org/content/lpc-heroine-2"
+    },
+    {
+      "label": "https://opengameart.org/content/fantasy-rpg-npcs",
+      "url": "https://opengameart.org/content/fantasy-rpg-npcs"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-sara",
+      "url": "https://opengameart.org/content/lpc-sara"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-clothes-and-hair",
+      "url": "https://opengameart.org/content/lpc-clothes-and-hair"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "url": "https://opengameart.org/content/lpc-expanded-hats-facial-helmets"
+    },
+    {
+      "label": "https:/opengameart.org/content/lpc-celestial-wizard-hats",
+      "url": "https:/opengameart.org/content/lpc-celestial-wizard-hats"
+    },
+    {
+      "label": "https:/opengameart.org/content/lpc-expanded-hats-facial-helmets",
+      "url": "https:/opengameart.org/content/lpc-expanded-hats-facial-helmets"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-celestial-wizard-hats",
+      "url": "https://opengameart.org/content/lpc-celestial-wizard-hats"
+    },
+    {
+      "label": "https://opengameart.org/content/wizard-2",
+      "url": "https://opengameart.org/content/wizard-2"
+    },
+    {
+      "label": "https://opengameart.org/content/wizard-hat",
+      "url": "https://opengameart.org/content/wizard-hat"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-items-and-game-effects",
+      "url": "https://opengameart.org/content/lpc-items-and-game-effects"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-pointed-hats",
+      "url": "https://opengameart.org/content/lpc-pointed-hats"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-crown",
+      "url": "https://opengameart.org/content/lpc-crown"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-hijab",
+      "url": "https://opengameart.org/content/lpc-hijab"
+    },
+    {
+      "label": "https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75",
+      "url": "https://github.com/makrohn/Universal-LPC-spritesheet/commit/f50007cb47c235d8896cafae7a613f0b6a9a09a8?short_path=02b86d4#diff-02b86d45789a3e3e8e79519c7d17d15c9e6ecc9b4ddecb1bcd8dfbbaef430b75"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-helmets",
+      "url": "https://opengameart.org/content/lpc-helmets"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-helmets-mega-pack",
+      "url": "https://opengameart.org/content/lpc-helmets-mega-pack"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-realistic-helmet-pack",
+      "url": "https://opengameart.org/content/lpc-realistic-helmet-pack"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-full-plate-golden-armor",
+      "url": "https://opengameart.org/content/lpc-full-plate-golden-armor"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-full-plate-golden-armor-0",
+      "url": "https://opengameart.org/content/lpc-full-plate-golden-armor-0"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-roman-armor",
+      "url": "https://opengameart.org/content/lpc-roman-armor"
+    },
+    {
+      "label": "http://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "url": "http://opengameart.org/content/dungeon-crawl-32x32-tiles"
+    },
+    {
+      "label": "https://opengameart.org/content/cc0-headgear-icons",
+      "url": "https://opengameart.org/content/cc0-headgear-icons"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-masks",
+      "url": "https://opengameart.org/content/lpc-masks"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head%20Accessories",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Head%20Accessories"
+    },
+    {
+      "label": "https://opengameart.org/content/clothing-facial-features-and-ui-elements",
+      "url": "https://opengameart.org/content/clothing-facial-features-and-ui-elements"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-combat-armor-for-women",
+      "url": "https://opengameart.org/content/lpc-combat-armor-for-women"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-bandages",
+      "url": "https://opengameart.org/content/lpc-bandages"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-dress-in-combat-poses",
+      "url": "https://opengameart.org/content/lpc-dress-in-combat-poses"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-kimono-relm",
+      "url": "https://opengameart.org/content/lpc-kimono-relm"
+    },
+    {
+      "label": "http://opengameart.org/content/sara-wizard",
+      "url": "http://opengameart.org/content/sara-wizard"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Clothing"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-simple-shirts",
+      "url": "https://opengameart.org/content/lpc-expanded-simple-shirts"
+    },
+    {
+      "label": "http://opengameart.org/content/lpc-revised-character-basics",
+      "url": "http://opengameart.org/content/lpc-revised-character-basics"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-teen-androgynous-short-sleeve-shirt",
+      "url": "https://opengameart.org/content/lpc-teen-androgynous-short-sleeve-shirt"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-aprons",
+      "url": "https://opengameart.org/content/lpc-aprons"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-clothing-updates",
+      "url": "https://opengameart.org/content/lpc-clothing-updates"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-armor",
+      "url": "https://opengameart.org/content/lpc-expanded-armor"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-more-backpacks",
+      "url": "https://opengameart.org/content/lpc-more-backpacks"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-backpacks",
+      "url": "https://opengameart.org/content/lpc-backpacks"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements",
+      "url": "https://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-pants",
+      "url": "https://opengameart.org/content/lpc-expanded-pants"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-muscular-pants",
+      "url": "https://opengameart.org/content/lpc-muscular-pants"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "url": "https://opengameart.org/content/lpc-expanded-socks-shoes"
+    },
+    {
+      "label": "https://opengameart.org/content/thin-mage-clothing-set",
+      "url": "https://opengameart.org/content/thin-mage-clothing-set"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-hand-tools",
+      "url": "https://opengameart.org/content/lpc-hand-tools"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-more-weapons",
+      "url": "https://opengameart.org/content/lpc-more-weapons"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-kite-shield",
+      "url": "https://opengameart.org/content/lpc-kite-shield"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-shields-pack",
+      "url": "https://opengameart.org/content/lpc-shields-pack"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-shields",
+      "url": "https://opengameart.org/content/lpc-shields"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Shield%2001%20-%20Heater%20Shield",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Shield%2001%20-%20Heater%20Shield"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-crossbow-final",
+      "url": "https://opengameart.org/content/lpc-crossbow-final"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-walk-animations-for-bows",
+      "url": "https://opengameart.org/content/lpc-walk-animations-for-bows"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident",
+      "url": "https://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident"
+    },
+    {
+      "label": "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Sword%2001%20-%20Arming%20Sword",
+      "url": "https://github.com/ElizaWy/LPC/tree/main/Characters/Props/Sword%2001%20-%20Arming%20Sword"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-extended-weapon-animations",
+      "url": "https://opengameart.org/content/lpc-extended-weapon-animations"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-glow-sword",
+      "url": "https://opengameart.org/content/lpc-glow-sword"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-dcss-swords",
+      "url": "https://opengameart.org/content/lpc-dcss-swords"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-medieval-weapons",
+      "url": "https://opengameart.org/content/lpc-medieval-weapons"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-spear-and-shovel-reworked",
+      "url": "https://opengameart.org/content/lpc-spear-and-shovel-reworked"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-magic-staff",
+      "url": "https://opengameart.org/content/lpc-magic-staff"
+    },
+    {
+      "label": "https://opengameart.org/content/staff-64-x64",
+      "url": "https://opengameart.org/content/staff-64-x64"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-simple-staff",
+      "url": "https://opengameart.org/content/lpc-simple-staff"
+    },
+    {
+      "label": "https://opengameart.org/content/lpc-wands",
+      "url": "https://opengameart.org/content/lpc-wands"
+    }
+  ]
+}

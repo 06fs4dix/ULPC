@@ -49,33 +49,29 @@ export function detectPathPrefix(files) {
   return firstSeg + '/';
 }
 
-export async function loadIndex(indexUrl = '../index.json', filterPrefix = null) {
-  const idx = await fetchJson(indexUrl);
-
-  // filterPrefix 지정 시 해당 프로젝트 파일만 사용
-  const allFiles = idx.files;
-  const files    = filterPrefix
-    ? allFiles.filter(f => f.startsWith(filterPrefix + '/'))
-    : allFiles;
-
-  const skip = filterPrefix ? 1 : (detectPathPrefix(files) ? 1 : 0);
-
-  const tree    = buildTree(files, skip);
-  const itemMap = buildItemMap(files, skip);
-
-  // material=null 복수 색상 파일을 트리/아이템맵에서 색상별 리프로 분리
+/**
+ * 파싱된 index 데이터 객체에서 tree/itemMap을 빌드하고 결과 반환
+ * (loadIndex 내부, zip-loader 공유)
+ */
+export function processIndexData(idx) {
+  const files   = idx.files;
+  const tree    = buildTree(files, 0);
+  const itemMap = buildItemMap(files, 0);
   expandMultiColorLeaves(tree, itemMap);
-  // material.version 그룹이 복수인 아이템을 그룹별 리프로 분리
   expandMultiMaterialLeaves(tree, itemMap);
-
   return {
     tree,
     itemMap,
     palettes:   idx.palettes,
     files,
-    totalFiles: allFiles.length,
-    pathPrefix: filterPrefix ? filterPrefix + '/' : detectPathPrefix(allFiles),
+    totalFiles: files.length,
+    pathPrefix: '',
   };
+}
+
+export async function loadIndex(indexUrl) {
+  const idx = await fetchJson(indexUrl);
+  return processIndexData(idx);
 }
 
 /**

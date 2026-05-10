@@ -70,8 +70,15 @@ async function _drawThumb(canvas, path) {
   const southRow = dirless ? 0 : (dirs ? Math.max(0, dirs.indexOf('1')) : 2);
   const srcY = southRow * frameSize;
 
-  const imageBase = state.imageBase || '../spritesheets/';
-  const url = imageBase + _encodeFilePath(file);
+  const imageBase = state.imageBase ?? '../spritesheets/';
+  const encodedPath = _encodeFilePath(file);
+  // ZIP 프로젝트: zipBlobs 에서 Blob URL 우선 조회
+  let url;
+  if (state.zipBlobs.size > 0) {
+    url = state.zipBlobs.get(file) ?? (imageBase + encodedPath);
+  } else {
+    url = imageBase + encodedPath;
+  }
   try {
     const img = await _loadImage(url);
     const ctx = canvas.getContext('2d');
@@ -144,6 +151,7 @@ export function renderTree() {
   if (!container || !state.tree) return;
   container.innerHTML = '';
   _thumbObserver = null; // 기존 observer 초기화
+  _imgCache.clear();    // 썸네일 이미지 캐시 초기화 (프로젝트 전환 시 stale URL 방지)
 
   const ul = document.createElement('ul');
   ul.className = 'tree-root';

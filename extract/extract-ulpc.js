@@ -359,9 +359,7 @@ for (const [mat, vers] of Object.entries(palettes)) {
 }
 console.log(`  팔레트 총 색상 엔트리: ${totalPalColors}개`);
 console.log('  → colors.json 저장 완료 (OUT_ROOT)');
-console.log('  → palette.json 은 파일 복사 완료 후 저장됩니다.');
-
-// 1-C. credits 추출 (쓰기는 STEP 3에서 palette.json 과 함께)
+// 1-C. credits 추출 (쓰기는 STEP 3에서 index.json 과 함께)
 // CREDITS.csv 에서 직접 읽어 URL 집합이 동일한 행끼리만 병합
 const credits = loadCreditsFromCSV();
 console.log(`  크레딧 고유 출처: ${credits.length}개\n`);
@@ -448,6 +446,30 @@ function mapFile(fullPath) {
     preAnimSegs  = dirSegs;
     postAnimSegs = [];
     colorStem    = stem;
+  }
+
+  // ── 레이어 지시자 파일명 처리 ────────────────────────────────────────────────
+  // background.png / foreground.png 가 애니메이션 폴더 안의 파일명으로 쓰인 경우
+  // (예: weapon/magic/crystal/thrust/background.png,
+  //      weapon/magic/crystal/universal/hurt/background.png)
+  // colorStem이 레이어 지시자인데 aliasedAnim이 아닌 경우, 올바른 경로와 z값을 위해
+  // preAnimSegs 또는 postAnimSegs에 삽입한다.
+  //   - zMap에 "{preAnimSegs}/{animName}/{layerStem}" 정확 매칭 시 → postAnimSegs 삽입
+  //     (thrust/background 구조: zMap 키가 weapon/magic/crystal/thrust/background)
+  //   - 그 외 → preAnimSegs 끝에 삽입
+  //     (universal/hurt/background 구조: zMap 키가 weapon/magic/crystal/universal/background)
+  // colorStem은 그대로 두면 wouldCreateSubPath=false 판정 후 variant.v1.{stem}으로 처리됨.
+  if (colorStem && !aliasedAnim) {
+    const LAYER_STEMS_SET = new Set(['background', 'foreground']);
+    if (LAYER_STEMS_SET.has(colorStem)) {
+      const tryPostPath = [...preAnimSegs, animName, colorStem].join('/');
+      if (Object.prototype.hasOwnProperty.call(zMap, tryPostPath)) {
+        postAnimSegs = [...postAnimSegs, colorStem];
+      } else {
+        preAnimSegs = [...preAnimSegs, colorStem];
+      }
+      // colorStem 유지 → dedupedExtra 계산 시 pre/postAnimSegs에 포함돼 wouldCreateSubPath=false
+    }
   }
 
   // animName을 항상 lookupPath에 포함 (aliasedAnim 제외).
@@ -1096,11 +1118,37 @@ const nonSynthetic = mapping.filter(e => !e.synthetic && e.dstPath != null);
   const projectDir = path.join(OUT_SPRITES, PROJECT_NAME);
   if (!isDryRun) {
     if (!fs.existsSync(projectDir)) fs.mkdirSync(projectDir, { recursive: true });
-    fs.writeFileSync(path.join(projectDir, 'palette.json'), JSON.stringify(palettes, null, 2), 'utf8');
     fs.writeFileSync(path.join(projectDir, 'credits.json'), JSON.stringify(formatCreditsAsJson(credits), null, 2), 'utf8');
-    console.log(`  → palette.json / credits.json 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
+    console.log(`  → credits.json 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
   }
 
   console.log('\n=== 추출 완료 ===');
-  console.log('다음 단계: node build-index.js');
+
+  // ─── index.json.gz 생성 ────────────────────────────────────────────────────
+  if (!isDryRun && fs.existsSync(projectDir)) {
+    console.log('\n=== index.json 생성 ===');
+
+    // 파일 목록 수집 (projectDir 기준 상대경로)
+    const files = [];
+    function walkForIndex(dir) {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          walkForIndex(full);
+        } else if (entry.name.endsWith('.png')) {
+          files.push(path.relative(projectDir, full).replace(/\\/g, '/'));
+        }
+      }
+    }
+    walkForIndex(projectDir);
+    files.sort();
+    console.log(`파일 수: ${files.length}개`);
+
+    const jsonPath = path.join(projectDir, 'index.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({ files, palettes }), 'utf8');
+
+    const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);
+    console.log(`✅ index.json 저장: ${jsonPath}`);
+    console.log(`   크기: ${sizeKB} KB`);
+  }
 })();

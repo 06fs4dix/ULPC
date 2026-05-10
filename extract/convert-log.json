@@ -3794,6 +3794,16 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/magic/crystal/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[background]/a[thrust]/z-1/variant.v1.crystal_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/crystal/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[foreground]/a[thrust]/z150/variant.v1.crystal_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/magic/crystal/universal/background/hurt/crystal.png",
     "kept": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[background]/a[hurt]/z9/blue_64_6_1.png"
   },
@@ -3809,8 +3819,118 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/magic/diamond/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[diamond]/p[background]/a[thrust]/z-1/variant.v1.diamond_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/diamond/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[diamond]/p[foreground]/a[thrust]/z150/variant.v1.diamond_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/diamond_off/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[diamond_off]/p[background]/a[thrust]/z140/variant.v1.diamond_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/diamond_off/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[diamond_off]/p[foreground]/a[thrust]/z140/variant.v1.diamond_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/gnarled/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[gnarled]/p[background]/a[thrust]/z-1/variant.v1.gnarled_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/gnarled/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[gnarled]/p[foreground]/a[thrust]/z150/variant.v1.gnarled_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/gnarled_off/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[gnarled_off]/p[background]/a[thrust]/z140/variant.v1.gnarled_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/gnarled_off/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[gnarled_off]/p[foreground]/a[thrust]/z140/variant.v1.gnarled_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/loop/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[loop]/p[background]/a[thrust]/z-1/variant.v1.loop_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/loop/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[loop]/p[foreground]/a[thrust]/z150/variant.v1.loop_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/loop_off/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[loop_off]/p[background]/a[thrust]/z140/variant.v1.loop_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/loop_off/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[loop_off]/p[foreground]/a[thrust]/z140/variant.v1.loop_off_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/s/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[s]/p[background]/a[thrust]/z-1/variant.v1.s_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/s/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[s]/p[foreground]/a[thrust]/z150/variant.v1.s_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/s/universal/hurt/background.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[s]/p[universal]/p[background]/a[hurt]/z9/variant.v1.s_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/s/universal/hurt/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[s]/p[universal]/p[foreground]/a[hurt]/z140/variant.v1.s_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/magic/s/universal/walk/foreground.png",
+    "kept": "weapons/p[weapon]/p[magic]/p[s]/p[universal]/p[foreground]/a[walk]/z140/variant.v1.s_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/dragonspear/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[dragonspear]/p[background]/a[thrust]/z-1/variant.v1.dragonspear_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/dragonspear/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[dragonspear]/p[foreground]/a[thrust]/z150/variant.v1.dragonspear_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/longspear/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[longspear]/p[background]/a[thrust]/z-1/variant.v1.longspear_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/longspear/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[longspear]/p[foreground]/a[thrust]/z150/variant.v1.longspear_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear/background/hurt/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[hurt]/z9/silver_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/hurt/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[hurt]/z9/variant.v1.spear_64_6_1.png"
   },
   {
     "status": "skipped_same_dir",
@@ -3819,8 +3939,18 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[thrust]/z9/variant.v1.spear_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear/background/walk/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[walk]/z9/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/walk/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[walk]/z9/variant.v1.spear_64_8_0213.png"
   },
   {
     "status": "skipped_same_dir",
@@ -3829,13 +3959,28 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/hurt/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[hurt]/z140/variant.v1.spear_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear/foreground/thrust/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[thrust]/z140/silver_64_8_0213.png"
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[thrust]/z140/variant.v1.spear_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear/foreground/walk/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[walk]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear/walk/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[walk]/z140/variant.v1.spear_64_8_0213.png"
   },
   {
     "status": "skipped_same_dir",
@@ -3849,8 +3994,18 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[thrust]/z140/variant.v1.spear_off_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear_off/background/walk/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[walk]/z140/silver_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/walk/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[walk]/z140/variant.v1.spear_off_64_8_0213.png"
   },
   {
     "status": "skipped_same_dir",
@@ -3864,13 +4019,43 @@
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[thrust]/z140/variant.v1.spear_off_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/polearm/spear_off/foreground/walk/steel.png",
     "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[walk]/z140/silver_64_8_0213.png"
   },
   {
     "status": "skipped_same_dir",
+    "old": "weapon/polearm/spear_off/walk/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[walk]/z140/variant.v1.spear_off_64_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/trident/thrust/background.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[trident]/p[background]/a[thrust]/z-1/variant.v1.trident_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/polearm/trident/thrust/foreground.png",
+    "kept": "weapons/p[weapon]/p[polearm]/p[trident]/p[foreground]/a[thrust]/z150/variant.v1.trident_192_8_0213.png"
+  },
+  {
+    "status": "skipped_same_dir",
     "old": "weapon/ranged/bow/great/universal/background/hurt/great.png",
     "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[great]/p[universal]/p[background]/a[hurt]/z-1/light_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/ranged/bow/recurve/universal/hurt/background.png",
+    "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[recurve]/p[universal]/p[background]/a[hurt]/z-1/variant.v1.recurve_64_6_1.png"
+  },
+  {
+    "status": "skipped_same_dir",
+    "old": "weapon/ranged/bow/recurve/universal/shoot/background.png",
+    "kept": "weapons/p[weapon]/p[ranged]/p[bow]/p[recurve]/p[universal]/p[background]/a[shoot]/z-1/variant.v1.recurve_64_13_0213.png"
   },
   {
     "status": "skipped_same_dir",
@@ -3885,8 +4070,8 @@
   {
     "status": "error",
     "synthetic": true,
-    "intended": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.crystal_64_3_0213.png",
-    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[crystal]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.crystal_64_8_0213.png'"
+    "intended": "weapons/p[weapon]/p[magic]/p[s]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.foreground_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[s]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.foreground_64_8_0213.png'"
   },
   {
     "status": "error",
@@ -3897,8 +4082,20 @@
   {
     "status": "error",
     "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear]/p[background]/a[idle]/z9/variant.v1.background_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear]\\p[background]\\a[walk]\\z9\\variant.v1.background_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
     "intended": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[idle]/z140/steel_64_3_0213.png",
     "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear]\\p[foreground]\\a[walk]\\z140\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear]/p[foreground]/a[idle]/z140/variant.v1.foreground_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear]\\p[foreground]\\a[walk]\\z140\\variant.v1.foreground_64_8_0213.png'"
   },
   {
     "status": "error",
@@ -3909,8 +4106,26 @@
   {
     "status": "error",
     "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[background]/a[idle]/z140/variant.v1.background_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[background]\\a[walk]\\z140\\variant.v1.background_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
     "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[idle]/z140/steel_64_3_0213.png",
     "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[foreground]\\a[walk]\\z140\\steel_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[idle]/z140/variant.v1.foreground_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[foreground]\\a[walk]\\z140\\variant.v1.foreground_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
+    "intended": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.crystal_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[crystal]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.crystal_64_8_0213.png'"
   },
   {
     "status": "removed_dup_postclean",

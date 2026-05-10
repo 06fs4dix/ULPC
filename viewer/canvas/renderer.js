@@ -34,6 +34,10 @@ const imageCache = new Map();
 // 팔레트 스왑 캐시 (url::fromColor::toColor → HTMLCanvasElement | null)
 const swapCache = new Map();
 
+export function clearImageCache() {
+  imageCache.clear();
+}
+
 // buildCharacterSheet 동시 실행 방지용 버전 카운터
 // 새 호출이 시작되면 이전 호출은 결과를 버림 (race condition 방지)
 let _buildVersion = 0;
@@ -49,8 +53,19 @@ function encodeFilePath(filePath) {
   ).join('/');
 }
 
-/** 이미지 로드 (캐시) */
+/** 이미지 로드 (캐시)
+ *  ZIP 프로젝트: state.zipBlobs 에서 Blob URL 우선 조회
+ */
 function loadImage(url) {
+  // ZIP 프로젝트: imageBase 접두어 제거 후 zipBlobs 조회
+  if (state.zipBlobs.size > 0) {
+    const decoded  = decodeURIComponent(url);
+    const base     = state.imageBase || '';
+    const filePath = base ? (decoded.startsWith(base) ? decoded.slice(base.length) : decoded) : decoded;
+    const blobUrl  = state.zipBlobs.get(filePath);
+    if (blobUrl) url = blobUrl;
+  }
+
   if (imageCache.has(url)) {
     const img = imageCache.get(url);
     if (img.complete && img.naturalWidth > 0) return Promise.resolve(img);
@@ -228,7 +243,7 @@ export async function buildCharacterSheet() {
   const sheetCtx = sheet.getContext('2d');
   sheetCtx.imageSmoothingEnabled = false;
 
-  const imageBase = state.imageBase || '../spritesheets/';
+  const imageBase = state.imageBase ?? '../spritesheets/';
 
   for (const animName of Object.keys(animLayout)) {
     const layout = animLayout[animName];

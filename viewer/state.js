@@ -34,6 +34,9 @@ export const state = {
   // 줌
   zoomLevel: 3,
 
+  // ZIP 프로젝트: 파일경로 → Blob URL 맵 (비어있으면 일반 HTTP 로드)
+  zipBlobs: new Map(),
+
   // 사전 베이크된 캐릭터 합성 시트
   characterSheet: null,   // HTMLCanvasElement — buildCharacterSheet() 결과
   animLayout: {},         // animName → { startY, maxFrameSize, dirCount, frameCount }

@@ -105,7 +105,15 @@ function buildExportData() {
       };
     }
 
-    return { path: prefix, recolors, files };
+    // path/files에 프로젝트명이 없으면 prepend (ULPC는 'arms/...' 형태라 없음)
+    const proj = state.selectedProject;
+    const projPrefix = proj ? proj + '/' : '';
+    const exportPath  = (projPrefix && !prefix.startsWith(projPrefix)) ? projPrefix + prefix : prefix;
+    const exportFiles = files.map(f =>
+      (projPrefix && !f.startsWith(projPrefix)) ? projPrefix + f : f
+    );
+
+    return { path: exportPath, recolors, files: exportFiles };
   });
 
   const result = { version: 3, selections };
@@ -130,13 +138,21 @@ function buildExportData() {
  *   ]
  * }
  */
+/** URL 경로 인코딩: [, ] → %5B, %5D */
+function encodeFilePath(filePath) {
+  return filePath.split('/').map(seg =>
+    seg.replace(/\[/g, '%5B').replace(/\]/g, '%5D')
+  ).join('/');
+}
+
 async function buildExportDataBase64() {
   const base = buildExportData();
   const resBase = document.getElementById('input-res-base')?.value.trim() ?? '';
 
   await Promise.all(base.selections.map(async sel => {
     sel.base64s = await Promise.all(sel.files.map(async filePath => {
-      const url = resBase ? resBase.replace(/\/?$/, '/') + filePath : filePath;
+      const encoded = encodeFilePath(filePath);
+      const url = resBase ? resBase.replace(/\/?$/, '/') + encoded : encoded;
       try {
         const res = await fetch(url);
         if (!res.ok) return null;
