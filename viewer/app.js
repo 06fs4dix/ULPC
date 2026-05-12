@@ -191,7 +191,7 @@ async function init() {
     initImport(loadProject);
 
     // resBase 기본값: 현재 viewer URL 기준 ../spritesheets/ 절대 URL
-    const resBaseEl = document.getElementById('input-res-base');
+    const resBaseEl = document.getElementById('export-res-base');
     if (resBaseEl && !resBaseEl.value) {
       resBaseEl.value = new URL('../spritesheets/', window.location.href).href;
     }

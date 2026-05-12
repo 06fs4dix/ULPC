@@ -1151,4 +1151,13 @@ const nonSynthetic = mapping.filter(e => !e.synthetic && e.dstPath != null);
     console.log(`✅ index.json 저장: ${jsonPath}`);
     console.log(`   크기: ${sizeKB} KB`);
   }
+
+  // mapping.json 자동 삭제 (추출 완료 후 불필요, dry-run 제외)
+  if (!isDryRun) {
+    const mappingPath = path.join(OUT_ROOT, 'mapping.json');
+    if (fs.existsSync(mappingPath)) {
+      fs.unlinkSync(mappingPath);
+      console.log('\n  → mapping.json 삭제 완료');
+    }
+  }
 })();

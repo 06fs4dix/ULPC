@@ -4,23 +4,106 @@
 import { renderFullSheet } from './renderer.js';
 import { parseFilename } from '../data/loader.js';
 import { state } from '../state.js';
+import { ANIM_NAMES } from './animation.js';
 
 export function initDownload() {
   document.getElementById('btn-download-json')
-    ?.addEventListener('click', downloadJSON);
+    ?.addEventListener('click', openExportModal);
   document.getElementById('btn-download-sheet')
     ?.addEventListener('click', downloadSheet);
+  document.getElementById('btn-export-json')
+    ?.addEventListener('click', downloadJSON);
+  document.getElementById('btn-export-base64')
+    ?.addEventListener('click', downloadBase64);
+  document.getElementById('btn-export-anim-all')
+    ?.addEventListener('click', () => {
+      document.querySelectorAll('#export-anim-list input[type=checkbox]')
+        .forEach(cb => (cb.checked = true));
+    });
+  document.getElementById('btn-export-anim-none')
+    ?.addEventListener('click', () => {
+      document.querySelectorAll('#export-anim-list input[type=checkbox]')
+        .forEach(cb => (cb.checked = false));
+    });
 }
 
-// ── JSON 다운로드 ──────────────────────────────────────────────────────────
+// ── Export 모달 ──────────────────────────────────────────────────────────
 
-/** 선택된 아이템 + 팔레트 정보를 JSON으로 내보내기 */
+/** 현재 선택 아이템에 실제로 존재하는 애니메이션 목록 반환 */
+function getAvailableAnimations() {
+  const prefixes = Object.keys(state.selections || {});
+  if (prefixes.length === 0 || !state.itemMap) return ANIM_NAMES;
+
+  const available = new Set();
+  for (const prefix of prefixes) {
+    const files = state.itemMap[prefix] || [];
+    for (const f of files) {
+      const segs = f.split('/');
+      const aIdx = segs.findIndex(s => /^a\[/.test(s));
+      if (aIdx < 0) continue;
+      const m = segs[aIdx].match(/^a\[(.+)\]$/);
+      if (m) available.add(m[1]);
+    }
+  }
+  return [
+    ...ANIM_NAMES.filter(n => available.has(n)),
+    ...[...available].filter(n => !ANIM_NAMES.includes(n)).sort(),
+  ];
+}
+
+/** Export 모달 열기 — 애니메이션 체크박스 목록 채우고 표시 */
+function openExportModal() {
+  const listEl = document.getElementById('export-anim-list');
+  if (listEl) {
+    listEl.innerHTML = '';
+    for (const name of getAvailableAnimations()) {
+      const id  = `export-anim-${name}`;
+      const div = document.createElement('div');
+      div.className = 'form-check';
+      div.innerHTML =
+        `<input class="form-check-input" type="checkbox" value="${name}" id="${id}" checked>` +
+        `<label class="form-check-label small" for="${id}">${name.replace(/_/g, ' ')}</label>`;
+      listEl.appendChild(div);
+    }
+  }
+  bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('export-modal')
+  ).show();
+}
+
+/** 모달에서 체크된 애니메이션 Set 반환 */
+function getSelectedAnimations() {
+  return new Set(
+    [...document.querySelectorAll('#export-anim-list input[type=checkbox]:checked')]
+      .map(cb => cb.value)
+  );
+}
+
+// ── JSON 내보내기 ──────────────────────────────────────────────────────────
+
+/** JSON 버튼 — 모달 닫고 JSON 파일 다운로드 */
 async function downloadJSON() {
-  const useBase64 = document.getElementById('chk-export-base64')?.checked ?? false;
-  const data = useBase64 ? await buildExportDataBase64() : buildExportData();
+  bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('export-modal')
+  ).hide();
+  const selectedAnims = getSelectedAnimations();
+  const data = buildExportData(selectedAnims);
   const json = JSON.stringify(data, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
   triggerDownload(blob, 'ulpc_selection.json');
+}
+
+/** base64 txt 버튼 — JSON을 base64로 인코딩해서 .txt 파일로 다운로드 */
+async function downloadBase64() {
+  bootstrap.Modal.getOrCreateInstance(
+    document.getElementById('export-modal')
+  ).hide();
+  const selectedAnims = getSelectedAnimations();
+  const data = buildExportData(selectedAnims);
+  const json = JSON.stringify(data, null, 2);
+  const b64 = btoa(unescape(encodeURIComponent(json)));
+  const blob = new Blob([b64], { type: 'text/plain' });
+  triggerDownload(blob, 'ulpc_selection.txt');
 }
 
 /**
@@ -40,7 +123,7 @@ async function downloadJSON() {
  *   }
  * }
  */
-function buildExportData() {
+function buildExportData(selectedAnims = null) {
   const prefixes = Object.keys(state.selections);
 
   const selections = prefixes.map(prefix => {
@@ -58,6 +141,11 @@ function buildExportData() {
       const aIdx = segs.findIndex(s => /^a\[/.test(s));
       if (aIdx < 0) continue;
       const animSeg = segs[aIdx];
+      // 선택된 애니메이션 필터
+      if (selectedAnims) {
+        const m = animSeg.match(/^a\[(.+)\]$/);
+        if (!m || !selectedAnims.has(m[1])) continue;
+      }
       const zSeg    = segs[aIdx + 1];
       const fname   = segs[aIdx + 2];
       if (!fname) continue;
@@ -117,58 +205,11 @@ function buildExportData() {
   });
 
   const result = { version: 3, selections };
-  const resBase = document.getElementById('input-res-base')?.value.trim();
+  const resBase = document.getElementById('export-res-base')?.value.trim();
   if (resBase) result.resBase = resBase;
   return result;
 }
 
-/**
- * base64 내보내기 — files의 각 이미지를 fetch해서 base64 Data URL로 변환
- * resBase + 파일 경로로 URL을 구성해 이미지를 가져온다.
- *
- * 결과 JSON 구조:
- * {
- *   version: 3,
- *   selections: [
- *     {
- *       path, recolors,
- *       files: [ "경로/파일.png", ... ],          // 기존과 동일
- *       filesData: { "경로/파일.png": "data:image/png;base64,..." }  // 추가
- *     }
- *   ]
- * }
- */
-/** URL 경로 인코딩: [, ] → %5B, %5D */
-function encodeFilePath(filePath) {
-  return filePath.split('/').map(seg =>
-    seg.replace(/\[/g, '%5B').replace(/\]/g, '%5D')
-  ).join('/');
-}
-
-async function buildExportDataBase64() {
-  const base = buildExportData();
-  const resBase = document.getElementById('input-res-base')?.value.trim() ?? '';
-
-  await Promise.all(base.selections.map(async sel => {
-    sel.base64s = await Promise.all(sel.files.map(async filePath => {
-      const encoded = encodeFilePath(filePath);
-      const url = resBase ? resBase.replace(/\/?$/, '/') + encoded : encoded;
-      try {
-        const res = await fetch(url);
-        if (!res.ok) return null;
-        const arrayBuf = await res.arrayBuffer();
-        const b64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuf)));
-        return `data:image/png;base64,${b64}`;
-      } catch {
-        return null;
-      }
-    }));
-  }));
-
-  // base64 모드에서는 resBase 불필요 (이미지가 내장되므로)
-  delete base.resBase;
-  return base;
-}
 
 // ── 스프라이트시트 PNG 다운로드 ────────────────────────────────────────────
 
