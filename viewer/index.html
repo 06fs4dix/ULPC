@@ -14,6 +14,15 @@
     #left-panel  { height: 100%; overflow-y: auto; }
     #right-panel { height: 100%; overflow-y: auto; }
 
+    /* ── Mobile: allow vertical scroll when panels stack ── */
+    @media (max-width: 991.98px) {
+      body { overflow: auto; }
+      #main-content { height: auto; overflow: visible; }
+      #main-row { height: auto; }
+      #left-panel  { height: auto; max-height: 50vh; overflow-y: auto; }
+      #right-panel { height: auto; overflow-y: visible; }
+    }
+
     /* ── Tree ── */
     .tree-root { list-style: none; padding: 0; margin: 0; }
     .tree-children { list-style: none; padding-left: 1rem; margin: 0; }
@@ -97,7 +106,7 @@
   <div class="row g-3 h-100" id="main-row">
 
     <!-- ══ LEFT PANEL ══ -->
-    <aside class="col-12 col-xxl-5" id="left-panel">
+    <aside class="col-12 col-lg-5" id="left-panel">
       <!-- Search -->
       <div class="mb-2 position-relative">
         <i class="bi bi-search position-absolute" style="top:8px;left:10px;opacity:.5;"></i>
@@ -136,7 +145,7 @@
     </aside>
 
     <!-- ══ RIGHT PANEL ══ -->
-    <section class="col-12 col-xxl-7" id="right-panel">
+    <section class="col-12 col-lg-7" id="right-panel">
       <div class="d-flex flex-column gap-3">
 
         <!-- Animation Preview Card -->
