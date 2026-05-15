@@ -7,7 +7,7 @@
  */
 import { buildExportData } from './download.js';
 
-const PREVIEW_BASE = 'https://06fs4dix.github.io/ULPC/viewer/';
+const PREVIEW_BASE = 'https://06fs4dix.github.io/Artgine/proj/Tutorial/ULPC/ULPC.html';
 
 let _zTop    = 1000;
 let _cascade = 0;
