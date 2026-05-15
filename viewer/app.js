@@ -207,11 +207,20 @@ async function init() {
     startAnimation();
 
     // 6. 선택 변경 시 패널 + 캔버스 갱신 (buildCharacterSheet → renderCharacter)
+    let _buildingCount = 0;
+    const _loadingEl = () => document.getElementById('canvas-loading');
     addChangeListener(async () => {
       refreshAnimButtons();
       renderSelectedPanel();
+      _buildingCount++;
+      const el = _loadingEl();
+      if (el) el.style.display = 'flex';
       await buildCharacterSheet();
-      renderCharacter(canvas.getContext('2d'), state.currentFrame);
+      _buildingCount--;
+      if (_buildingCount === 0) {
+        renderCharacter(canvas.getContext('2d'), state.currentFrame);
+        if (el) el.style.display = 'none';
+      }
     });
 
     // 7. Reset All 버튼

@@ -148,6 +148,10 @@
             <!-- Canvas -->
             <div class="canvas-wrap mb-3" id="canvas-wrap">
               <canvas id="preview-canvas" width="192" height="192"></canvas>
+              <div id="canvas-loading" style="display:none;position:absolute;inset:0;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;z-index:10;flex-direction:column;gap:8px;">
+                <div class="spinner-border text-light" style="width:2rem;height:2rem;"></div>
+                <span style="color:#fff;font-size:0.8rem;opacity:0.9;">Loading…</span>
+              </div>
               <div id="render-error" class="alert alert-warning py-1 px-2 mb-0" style="display:none;"></div>
             </div>
 
