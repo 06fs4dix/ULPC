@@ -40,16 +40,35 @@ function _loadImage(url) {
 
 function _pickThumbFile(files) {
   for (const anim of THUMB_ANIM_PRIORITY) {
-    const f = files.find(f => f.includes(`/a[${anim}]_`));
+    const f = files.find(f => f.includes(`/a[${anim}]_`) || f.includes(`/a[${anim}]/`));
     if (f) return f;
   }
   return files[0] || null;
+}
+
+function _resolveUrl(filePath) {
+  const imageBase = state.imageBase ?? '../spritesheets/';
+  const encoded   = _encodeFilePath(filePath);
+  return state.zipBlobs.size > 0
+    ? (state.zipBlobs.get(filePath) ?? (imageBase + encoded))
+    : imageBase + encoded;
 }
 
 async function _drawThumb(canvas, path) {
   const files = state.itemMap?.[path];
   if (!files || files.length === 0) return;
 
+  // icon.png 직접 로드 시도 (인덱스 미포함, 경로 직접 구성)
+  try {
+    const img = await _loadImage(_resolveUrl(path + '/icon.png'));
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, THUMB_SIZE, THUMB_SIZE);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 0, 0, THUMB_SIZE, THUMB_SIZE);
+    return;
+  } catch { /* fallback */ }
+
+  // fallback: 기존 spritesheet UV 크롭 방식
   const file = _pickThumbFile(files);
   if (!file) return;
 
@@ -57,7 +76,7 @@ async function _drawThumb(canvas, path) {
   const aIdx  = segs.findIndex(s => /^a\[/.test(s));
   if (aIdx < 0) return;
 
-  const animName = (segs[aIdx].match(/^a\[(.+)\]$/) || [])[1] || '';
+  const animName = (segs[aIdx].match(/^a\[(.+?)\]/) || [])[1] || '';
   const fname    = segs[aIdx + 2];
   if (!fname) return;
 
@@ -65,26 +84,16 @@ async function _drawThumb(canvas, path) {
   if (!parsed) return;
   const { frameSize, dirs } = parsed;
 
-  const dirless = dirs === '1' || animName === 'hurt' || animName === 'climb';
-  const srcX = 0;
+  const dirless  = dirs === '1' || animName === 'hurt' || animName === 'climb';
   const southRow = dirless ? 0 : (dirs ? Math.max(0, dirs.indexOf('1')) : 2);
-  const srcY = southRow * frameSize;
+  const srcY     = southRow * frameSize;
 
-  const imageBase = state.imageBase ?? '../spritesheets/';
-  const encodedPath = _encodeFilePath(file);
-  // ZIP 프로젝트: zipBlobs 에서 Blob URL 우선 조회
-  let url;
-  if (state.zipBlobs.size > 0) {
-    url = state.zipBlobs.get(file) ?? (imageBase + encodedPath);
-  } else {
-    url = imageBase + encodedPath;
-  }
   try {
-    const img = await _loadImage(url);
+    const img = await _loadImage(_resolveUrl(file));
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, THUMB_SIZE, THUMB_SIZE);
     ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(img, srcX, srcY, frameSize, frameSize, 0, 0, THUMB_SIZE, THUMB_SIZE);
+    ctx.drawImage(img, 0, srcY, frameSize, frameSize, 0, 0, THUMB_SIZE, THUMB_SIZE);
   } catch { /* 이미지 없으면 빈 상태 유지 */ }
 }
 

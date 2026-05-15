@@ -123,7 +123,7 @@ async function downloadBase64() {
  *   }
  * }
  */
-function buildExportData(selectedAnims = null) {
+export function buildExportData(selectedAnims = null) {
   const prefixes = Object.keys(state.selections);
 
   const selections = prefixes.map(prefix => {

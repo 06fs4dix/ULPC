@@ -33,6 +33,9 @@ const DIRS_4  = '1023'; // 방향 인코딩: row0=S(1), row1=N(0), row2=W(2), ro
 const DIRS_1  = '1';    // 남/앞 단방향
 const DIRS_2  = '2';    // 서/좌 단방향 (Side 파일)
 
+// ─── 유틸 ────────────────────────────────────────────────────────────────────
+function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+
 // ─── PNG 헤더 읽기 ─────────────────────────────────────────────────────────────
 function readDim(f) {
   const b = Buffer.alloc(24);
@@ -56,6 +59,51 @@ function writePNG(dst, dstPath) {
 function copyPNG(src, dst) {
   ensureDir(path.dirname(dst));
   fs.copyFileSync(src, dst);
+}
+
+// 비정사각형 시트 → 각 프레임을 size×size 캔버스에 중앙 배치
+function squarePadSheet(srcPath, dstPath, frameW, frameH, numFrames) {
+  const src  = PNG.sync.read(fs.readFileSync(srcPath));
+  const size = Math.max(frameW, frameH);
+  const ox   = Math.floor((size - frameW) / 2);
+  const oy   = Math.floor((size - frameH) / 2);
+  const dstW = size * numFrames;
+  const dst  = new PNG({ width: dstW, height: size });
+  for (let f = 0; f < numFrames; f++) {
+    for (let py = 0; py < frameH; py++) {
+      for (let px = 0; px < frameW; px++) {
+        const si = (py * src.width + f * frameW + px) * 4;
+        const di = ((oy + py) * dstW + f * size + ox + px) * 4;
+        dst.data[di]     = src.data[si];
+        dst.data[di + 1] = src.data[si + 1];
+        dst.data[di + 2] = src.data[si + 2];
+        dst.data[di + 3] = src.data[si + 3];
+      }
+    }
+  }
+  src.data = null;
+  writePNG(dst, dstPath);
+}
+
+// 비정사각형 frame0 → size×size 캔버스에 중앙 배치 (icon용)
+function squarePadIcon(srcPath, dstPath, frameW, frameH) {
+  const src  = PNG.sync.read(fs.readFileSync(srcPath));
+  const size = Math.max(frameW, frameH);
+  const ox   = Math.floor((size - frameW) / 2);
+  const oy   = Math.floor((size - frameH) / 2);
+  const dst  = new PNG({ width: size, height: size });
+  for (let py = 0; py < frameH; py++) {
+    for (let px = 0; px < frameW; px++) {
+      const si = (py * src.width + px) * 4;
+      const di = ((oy + py) * size + ox + px) * 4;
+      dst.data[di]     = src.data[si];
+      dst.data[di + 1] = src.data[si + 1];
+      dst.data[di + 2] = src.data[si + 2];
+      dst.data[di + 3] = src.data[si + 3];
+    }
+  }
+  src.data = null;
+  writePNG(dst, dstPath);
 }
 
 // 소스 PNG에서 (x, y, w, h) 영역을 잘라 저장
@@ -155,6 +203,12 @@ function addCrop(srcPath, dstPath, x, y, w, h) {
 function addTranspose(srcPath, dstPath, cropX, cropY, cellSize, numDirs, numFrames) {
   ops.push({ kind: 'transpose', srcPath, dstPath, cropX, cropY, cellSize, numDirs, numFrames });
 }
+// icon: 소스 시트 (0,0)에서 frameSize×frameSize 1장 → p[Name]/icon.png
+function addIconCrop(cat, name, _colorId, srcPath, frameSize) {
+  ops.push({ kind: 'crop', srcPath,
+    dstPath: path.join(OUT_ROOT, cat, `p[${name}]`, 'icon.png'),
+    crop: { x: 0, y: 0, w: frameSize, h: frameSize } });
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // ─── Character 처리 ────────────────────────────────────────────────────────────
@@ -205,6 +259,21 @@ function processCharacterSeparateAnim(charDir, charName) {
       addCopy(srcPath, dstPath);
     }
   }
+
+  // icon: idle > walk > 첫 번째 파일 순으로 소스 선택
+  const ICON_PREFER = ['idle', 'walk', 'attack', 'jump', 'dead', 'item', 'special1', 'special2'];
+  let iconSrc = null;
+  for (const stem of ICON_PREFER) {
+    const f = path.join(sepDir, stem + '.png');
+    if (fs.existsSync(f)) { iconSrc = f; break; }
+  }
+  if (!iconSrc) {
+    for (const fname of fs.readdirSync(sepDir)) {
+      if (fname.endsWith('.png')) { iconSrc = path.join(sepDir, fname); break; }
+    }
+  }
+  if (iconSrc) addIconCrop('Character', charName, 'default', iconSrc, 16);
+
   return true;
 }
 
@@ -258,6 +327,8 @@ function processCharacterSpriteSheet(charDir, charName) {
     addCopy(sheetFile, buildDst('Character', charName, 'walk', 'default', h, frameCount, DIRS_1));
     warnings.push(`Character/${charName}: 비표준 SpriteSheet ${w}x${h} → walk 단방향으로 처리`);
   }
+  // icon: 시트 (0,0) = 남/앞 방향 frame0
+  addIconCrop('Character', charName, 'default', sheetFile, FRAME);
 }
 
 function processCharacterDir(catDir) {
@@ -303,6 +374,8 @@ function processMonsterDir(catDir) {
         addCopy(srcPath, dstPath);
         warnings.push(`Monster/${monName}/${fname}: 비표준 ${w}x${h} → walk 단방향`);
       }
+      // icon: (0,0) = 남/앞 방향 frame0
+      addIconCrop('Monster', monName, 'default', srcPath, FRAME);
     }
   }
 }
@@ -364,6 +437,8 @@ function processAnimalDir(catDir) {
       const animName = parsed.side ? 'walk_side' : 'walk';
       const dstPath  = buildDst('Animal', animalName, animName, parsed.colorId, frameSize, frameCount, dirsVal);
       addCopy(srcPath, dstPath);
+      // icon: (0,0) = 남/앞 방향 frame0 (side 파일 포함, 대표 1장)
+      if (!parsed.side) addIconCrop('Animal', animalName, parsed.colorId, srcPath, frameSize);
     }
   }
 }
@@ -383,21 +458,48 @@ function processBossDir(catDir) {
     const bossDir = path.join(catDir, bossName);
     if (!fs.statSync(bossDir).isDirectory()) continue;
 
+    // 1차 스캔: 유효 파일 목록 + 크기 수집
+    const bossFiles = [];
     for (const fname of fs.readdirSync(bossDir)) {
       if (!fname.endsWith('.png')) continue;
-      const stem = path.basename(fname, '.png');
-      if (BOSS_SKIP.has(stem.toLowerCase())) continue;
-
+      if (BOSS_SKIP.has(path.basename(fname, '.png').toLowerCase())) continue;
       const srcPath = path.join(bossDir, fname);
       const { w, h } = readDim(srcPath);
+      bossFiles.push({ fname, srcPath, w, h });
+    }
 
-      // frame height = sprite height (Boss 프레임은 정사각형 h×h 셀로 가정)
-      const frameSize  = h;
-      const frameCount = w % h === 0 ? w / h : Math.round(w / h) || 1;
-      const animName   = stem.toLowerCase().replace(/[^a-z0-9]/g, '_');
+    // w % h !== 0 인 높이 그룹 → 같은 높이 파일들의 폭 GCD = 실제 프레임 폭
+    const heightGcd = new Map();
+    for (const { w, h } of bossFiles) {
+      if (w % h !== 0)
+        heightGcd.set(h, heightGcd.has(h) ? gcd(heightGcd.get(h), w) : w);
+    }
 
-      const dstPath = buildDst('Boss', bossName, animName, 'default', frameSize, frameCount, DIRS_1);
-      addCopy(srcPath, dstPath);
+    let iconAdded = false;
+    for (const { fname, srcPath, w, h } of bossFiles) {
+      const frameW    = (w % h !== 0 && heightGcd.has(h)) ? heightGcd.get(h) : h;
+      const isSquare  = frameW === h;
+      const size      = Math.max(frameW, h); // 정사각형 출력 크기
+      const frameCount = Math.round(w / frameW) || 1;
+      const animName  = path.basename(fname, '.png').toLowerCase().replace(/[^a-z0-9]/g, '_');
+      const dstPath   = buildDst('Boss', bossName, animName, 'default', size, frameCount, DIRS_1);
+
+      if (isSquare) {
+        addCopy(srcPath, dstPath);
+      } else {
+        ops.push({ kind: 'squarepad', srcPath, dstPath, frameW, frameH: h, frameCount });
+      }
+
+      if (!iconAdded) {
+        if (isSquare) {
+          addIconCrop('Boss', bossName, 'default', srcPath, size);
+        } else {
+          ops.push({ kind: 'squarepadicon', srcPath,
+            dstPath: path.join(OUT_ROOT, 'Boss', `p[${bossName}]`, 'icon.png'),
+            frameW, frameH: h });
+        }
+        iconAdded = true;
+      }
     }
   }
 }
@@ -450,6 +552,10 @@ for (const op of ops) {
         cropAndSave(op.srcPath, op.dstPath, x, y, w, h);
       } else if (op.kind === 'transpose') {
         transposeCells(op.srcPath, op.dstPath, op.cropX, op.cropY, op.cellSize, op.numDirs, op.numFrames);
+      } else if (op.kind === 'squarepad') {
+        squarePadSheet(op.srcPath, op.dstPath, op.frameW, op.frameH, op.frameCount);
+      } else if (op.kind === 'squarepadicon') {
+        squarePadIcon(op.srcPath, op.dstPath, op.frameW, op.frameH);
       }
       done++;
     } catch (err) {
@@ -552,36 +658,3 @@ function parseReadmeCredits(text) {
   return { Authors: authors, Licenses: licenses, URLs: urls };
 }
 
-// ─── index.json 생성 ─────────────────────────────────────────────────────────
-if (!isDryRun && fs.existsSync(OUT_ROOT)) {
-  console.log('\n=== index.json 생성 ===');
-
-  // 파일 목록 수집 (OUT_ROOT 기준 상대경로)
-  const files = [];
-  function walkForIndex(dir) {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) {
-        walkForIndex(full);
-      } else if (entry.name.endsWith('.png')) {
-        files.push(path.relative(OUT_ROOT, full).replace(/\\/g, '/'));
-      }
-    }
-  }
-  walkForIndex(OUT_ROOT);
-  files.sort();
-  console.log(`파일 수: ${files.length}개`);
-
-  // palette.json 로드 (없으면 빈 객체)
-  const palPath = path.join(OUT_ROOT, 'palette.json');
-  const palettes = fs.existsSync(palPath)
-    ? JSON.parse(fs.readFileSync(palPath, 'utf8'))
-    : {};
-
-  const jsonPath = path.join(OUT_ROOT, 'index.json');
-  fs.writeFileSync(jsonPath, JSON.stringify({ files, palettes }), 'utf8');
-
-  const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);
-  console.log(`✅ index.json 저장: ${jsonPath}`);
-  console.log(`   크기: ${sizeKB} KB`);
-}

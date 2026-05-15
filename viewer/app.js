@@ -11,6 +11,7 @@ import { initAnimation, startAnimation } from './canvas/animation.js';
 import { buildCharacterSheet, renderCharacter, clearSwapCache, clearImageCache } from './canvas/renderer.js';
 import { initDownload } from './canvas/download.js';
 import { initImport } from './canvas/import.js';
+import { initPresets } from './canvas/presets.js';
 import { resetFrame } from './canvas/animation.js';
 import { clearZipBlobs, loadFromZip, loadFromZipFile } from './data/zip-loader.js';
 
@@ -189,6 +190,7 @@ async function init() {
     initAnimControls();
     initDownload();
     initImport(loadProject);
+    initPresets(loadProject);
 
     // resBase 기본값: 현재 viewer URL 기준 ../spritesheets/ 절대 URL
     const resBaseEl = document.getElementById('export-res-base');

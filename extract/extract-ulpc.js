@@ -227,6 +227,27 @@ function prependFirstFrame(srcPath, dstPath, frameSize) {
   writePNG(dst, dstPath);
 }
 
+// icon: 소스 시트에서 아래(south) 방향 frame0 1장 추출
+// dirs: 소스 파일 행 순서 인코딩 (예: '0213' → south=index 2, srcY=2*frameSize)
+function extractIconFrame(srcPath, dstPath, frameSize, dirs) {
+  const src = PNG.sync.read(fs.readFileSync(srcPath));
+  const southRow = dirs.includes('1') ? dirs.indexOf('1') : 0;
+  const srcY = southRow * frameSize;
+  const dst = new PNG({ width: frameSize, height: frameSize });
+  for (let py = 0; py < frameSize; py++) {
+    for (let px = 0; px < frameSize; px++) {
+      const si = ((srcY + py) * src.width + px) * 4;
+      const di = (py * frameSize + px) * 4;
+      dst.data[di]     = src.data[si];
+      dst.data[di + 1] = src.data[si + 1];
+      dst.data[di + 2] = src.data[si + 2];
+      dst.data[di + 3] = src.data[si + 3];
+    }
+  }
+  src.data = null;
+  writePNG(dst, dstPath);
+}
+
 // ── 워커 모드: 파일 복사 작업만 수행하고 종료 ──────────────────────────────────
 if (!isMainThread) {
   const { copyChunk, synthChunk, wDryRun } = workerData;
@@ -241,6 +262,7 @@ if (!isMainThread) {
           else if (e.animName === 'idle' || e.animName === 'combat_idle') prependFirstFrame(e.srcPath, e.dstPath, e.frameSize);
           else if (e.animName === 'jump')                                 appendFrame(e.srcPath, e.dstPath, e.frameSize, 1);
           else if (e.animName === 'backslash')                            deleteFrame(e.srcPath, e.dstPath, e.frameSize, 6);
+          else if (e.animName === 'icon')                                 extractIconFrame(e.srcPath, e.dstPath, e.frameSize, e.iconSrcDirs);
           else if (e.targetFrames)                                        cropToFrames(e.srcPath, e.dstPath, e.frameSize, e.targetFrames);
           else {
             const srcBuf = fs.readFileSync(e.srcPath);
@@ -874,6 +896,41 @@ console.log(`  합성 idle 대상: ${syntheticIdleEntries.length}개 (walk 있�
 // mapping에 포함시켜 mapping.json / report에 기록
 mapping.push(...syntheticIdleEntries);
 
+// ── icon: 각 아이템의 아래(south) 방향 frame0 1장 → prefix/icon.png ─────────
+// (idle > walk > combat_idle > ... 순으로 소스 선택, 아이템당 1개)
+{
+  const ICON_ANIM_PRIORITY = ['idle', 'walk', 'combat_idle', 'spellcast', 'slash', 'thrust', 'shoot', 'hurt'];
+  const iconBest = new Map(); // key: prefix → { entry, priority }
+
+  for (const entry of mapping) {
+    if (!entry.oldPath || entry.animName === 'all' || entry.animName === 'icon') continue;
+    const prefix = getItemPrefix(entry.newPath);
+    if (!prefix) continue;
+    const pri  = ICON_ANIM_PRIORITY.indexOf(entry.animName);
+    const prev = iconBest.get(prefix);
+    if (!prev || (pri >= 0 && (prev.priority < 0 || pri < prev.priority)))
+      iconBest.set(prefix, { entry, priority: pri });
+  }
+
+  const iconEntries = [];
+  for (const [prefix, { entry: src }] of iconBest.entries()) {
+    const srcDirs = getAnimDirs(src.animName);
+    iconEntries.push({
+      oldPath:     src.oldPath,
+      newPath:     `${prefix}/icon.png`,
+      zPos:        src.zPos,
+      animName:    'icon',
+      color:       src.color,
+      frameSize:   src.frameSize,
+      frameCount:  1,
+      warnings:    [],
+      iconSrcDirs: srcDirs,
+    });
+  }
+  console.log(`  icon 대상: ${iconEntries.length}개`);
+  mapping.push(...iconEntries);
+}
+
 console.log(`\n  총 파일: ${count}개 | 매핑: ${mapping.length}개 | 제외: ${skipped.length}개 | 경고: ${issues.length}개 | 중복: ${duplicates.length}개`);
 
 fs.writeFileSync(path.join(OUT_ROOT, 'mapping.json'), JSON.stringify(mapping, null, 2), 'utf8');
@@ -1124,32 +1181,10 @@ const nonSynthetic = mapping.filter(e => !e.synthetic && e.dstPath != null);
 
   console.log('\n=== 추출 완료 ===');
 
-  // ─── index.json.gz 생성 ────────────────────────────────────────────────────
+  // ─── palette.json 저장 (build-index.js 가 읽어 index.json 생성 시 통합) ───
   if (!isDryRun && fs.existsSync(projectDir)) {
-    console.log('\n=== index.json 생성 ===');
-
-    // 파일 목록 수집 (projectDir 기준 상대경로)
-    const files = [];
-    function walkForIndex(dir) {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const full = path.join(dir, entry.name);
-        if (entry.isDirectory()) {
-          walkForIndex(full);
-        } else if (entry.name.endsWith('.png')) {
-          files.push(path.relative(projectDir, full).replace(/\\/g, '/'));
-        }
-      }
-    }
-    walkForIndex(projectDir);
-    files.sort();
-    console.log(`파일 수: ${files.length}개`);
-
-    const jsonPath = path.join(projectDir, 'index.json');
-    fs.writeFileSync(jsonPath, JSON.stringify({ files, palettes }), 'utf8');
-
-    const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);
-    console.log(`✅ index.json 저장: ${jsonPath}`);
-    console.log(`   크기: ${sizeKB} KB`);
+    fs.writeFileSync(path.join(projectDir, 'palette.json'), JSON.stringify(palettes, null, 2), 'utf8');
+    console.log(`  → palette.json 저장 완료 (spritesheets/${PROJECT_NAME}/)`);
   }
 
   // mapping.json 자동 삭제 (추출 완료 후 불필요, dry-run 제외)

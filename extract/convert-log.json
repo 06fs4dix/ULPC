@@ -4070,6 +4070,12 @@
   {
     "status": "error",
     "synthetic": true,
+    "intended": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.crystal_64_3_0213.png",
+    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[crystal]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.crystal_64_8_0213.png'"
+  },
+  {
+    "status": "error",
+    "synthetic": true,
     "intended": "weapons/p[weapon]/p[magic]/p[s]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.foreground_64_3_0213.png",
     "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[s]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.foreground_64_8_0213.png'"
   },
@@ -4120,12 +4126,6 @@
     "synthetic": true,
     "intended": "weapons/p[weapon]/p[polearm]/p[spear_off]/p[foreground]/a[idle]/z140/variant.v1.foreground_64_3_0213.png",
     "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[polearm]\\p[spear_off]\\p[foreground]\\a[walk]\\z140\\variant.v1.foreground_64_8_0213.png'"
-  },
-  {
-    "status": "error",
-    "synthetic": true,
-    "intended": "weapons/p[weapon]/p[magic]/p[crystal]/p[universal]/p[foreground]/a[idle]/z140/variant.v1.crystal_64_3_0213.png",
-    "error": "ENOENT: no such file or directory, open 'D:\\Artgine-script\\big\\ULPC\\spritesheets\\ULPC\\weapons\\p[weapon]\\p[magic]\\p[crystal]\\p[universal]\\p[foreground]\\a[walk]\\z140\\variant.v1.crystal_64_8_0213.png'"
   },
   {
     "status": "removed_dup_postclean",
