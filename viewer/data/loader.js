@@ -52,13 +52,13 @@ export function detectPathPrefix(files) {
 /**
  * 파싱된 index 데이터 객체에서 tree/itemMap을 빌드하고 결과 반환
  * (loadIndex 내부, zip-loader 공유)
+ *
+ * 최적화: 파일명 파싱을 1회만 수행하고, expand 로직에서 재활용
  */
 export function processIndexData(idx) {
   const files   = idx.files;
   const tree    = buildTree(files, 0);
-  const itemMap = buildItemMap(files, 0);
-  expandMultiColorLeaves(tree, itemMap);
-  expandMultiMaterialLeaves(tree, itemMap);
+  const itemMap = buildItemMapAndExpand(files, 0, tree);
   return {
     tree,
     itemMap,
@@ -67,6 +67,97 @@ export function processIndexData(idx) {
     totalFiles: files.length,
     pathPrefix: '',
   };
+}
+
+/**
+ * buildItemMap + expandMultiColorLeaves + expandMultiMaterialLeaves 통합 (1-pass 파싱)
+ */
+function buildItemMapAndExpand(files, skipSegments, tree) {
+  const map = {};
+  // prefix별 메타: 파싱 결과를 분류해 저장
+  const prefixMeta = {}; // prefix → { nullColors: Map<color, file[]>, matGroups: Map<matKey, file[]>, matFiles: file[] }
+
+  for (const f of files) {
+    const segs = f.split('/');
+    const aIdx = segs.findIndex(s => /^a\[/.test(s));
+    if (aIdx < 0) continue;
+    const prefix = segs.slice(skipSegments, aIdx).join('/');
+    if (!map[prefix]) {
+      map[prefix] = [];
+      prefixMeta[prefix] = { nullColors: new Map(), matGroups: new Map(), matFiles: [] };
+    }
+    map[prefix].push(f);
+
+    // 파일명 1회 파싱
+    const fname = segs[aIdx + 2];
+    if (!fname) continue;
+    const parsed = parseFilename(fname);
+    if (!parsed) continue;
+
+    const meta = prefixMeta[prefix];
+    if (parsed.material === null) {
+      let arr = meta.nullColors.get(parsed.color);
+      if (!arr) { arr = []; meta.nullColors.set(parsed.color, arr); }
+      arr.push(f);
+    } else {
+      const matKey = `${parsed.material}.${parsed.version}`;
+      let arr = meta.matGroups.get(matKey);
+      if (!arr) { arr = []; meta.matGroups.set(matKey, arr); }
+      arr.push(f);
+      meta.matFiles.push(f);
+    }
+  }
+
+  // ── expandMultiColorLeaves (pre-grouped 데이터 활용) ──
+  for (const prefix of Object.keys(prefixMeta)) {
+    const meta = prefixMeta[prefix];
+    if (meta.nullColors.size <= 1) continue;
+
+    const prefixSegs = prefix.split('/');
+    let node = tree, valid = true;
+    for (const seg of prefixSegs) {
+      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
+      node = node[seg];
+    }
+    if (!valid || typeof node !== 'object') continue;
+
+    for (const colorName of meta.nullColors.keys()) {
+      node[colorName] = {};
+    }
+    for (const [colorName, colorFiles] of meta.nullColors) {
+      map[`${prefix}/${colorName}`] = colorFiles;
+    }
+    if (meta.matFiles.length > 0) {
+      map[prefix] = meta.matFiles;
+    } else {
+      delete map[prefix];
+    }
+  }
+
+  // ── expandMultiMaterialLeaves (pre-grouped 데이터 활용) ──
+  for (const prefix of Object.keys(prefixMeta)) {
+    const meta = prefixMeta[prefix];
+    if (meta.matGroups.size <= 1) continue;
+
+    const prefixSegs = prefix.split('/');
+    let node = tree, valid = true;
+    for (const seg of prefixSegs) {
+      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
+      node = node[seg];
+    }
+    if (!valid || typeof node !== 'object') continue;
+    if (Object.keys(node).length > 0) continue;
+
+    for (const matKey of meta.matGroups.keys()) {
+      node[matKey] = {};
+    }
+    for (const [matKey, groupFiles] of meta.matGroups) {
+      map[`${prefix}/${matKey}`] = groupFiles;
+    }
+    delete map[prefix];
+  }
+
+  return map;
 }
 
 export async function loadIndex(indexUrl) {
@@ -246,134 +337,6 @@ export function parseFilename(fname) {
   return { material, version, color, frameSize, frameCount, dirs, palettes: null };
 }
 
-/**
- * material=null 파일이 복수의 색상을 가진 프리픽스를 색상별 트리 리프로 분리
- *
- * 동작:
- *  - 해당 프리픽스의 트리 노드에 색상명 자식을 추가 (리프 → 폴더)
- *  - itemMap에 "prefix/colorName" 서브 엔트리 생성 (해당 색상 파일만 포함)
- *  - material.version 파일이 없으면 원본 엔트리 삭제, 있으면 해당 파일만 남김
- */
-function expandMultiColorLeaves(tree, itemMap) {
-  for (const [prefix, files] of Object.entries(itemMap)) {
-    // material=null 색상 수집
-    const nullColors = new Set();
-    for (const f of files) {
-      const segs = f.split('/');
-      const aIdx = segs.findIndex(s => /^a\[/.test(s));
-      if (aIdx < 0) continue;
-      const fname = segs[aIdx + 2];
-      if (!fname) continue;
-      const parsed = parseFilename(fname);
-      if (parsed && parsed.material === null) nullColors.add(parsed.color);
-    }
-    if (nullColors.size <= 1) continue; // 단일 색상: 분리 불필요
-
-    // 트리에서 해당 노드 탐색
-    const prefixSegs = prefix.split('/');
-    let node = tree;
-    let valid = true;
-    for (const seg of prefixSegs) {
-      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
-      node = node[seg];
-    }
-    if (!valid || typeof node !== 'object') continue;
-
-    // 트리 노드에 색상별 자식 리프 추가
-    for (const colorName of nullColors) {
-      node[colorName] = {};
-    }
-
-    // itemMap: 색상별 서브 엔트리 생성
-    for (const colorName of nullColors) {
-      itemMap[`${prefix}/${colorName}`] = files.filter(f => {
-        const segs = f.split('/');
-        const aIdx = segs.findIndex(s => /^a\[/.test(s));
-        if (aIdx < 0) return false;
-        const fname = segs[aIdx + 2];
-        if (!fname) return false;
-        const parsed = parseFilename(fname);
-        return parsed && parsed.material === null && parsed.color === colorName;
-      });
-    }
-
-    // 원본 엔트리: material.version 파일이 있으면 해당 파일만 유지, 없으면 삭제
-    const matFiles = files.filter(f => {
-      const segs = f.split('/');
-      const aIdx = segs.findIndex(s => /^a\[/.test(s));
-      if (aIdx < 0) return false;
-      const fname = segs[aIdx + 2];
-      if (!fname) return false;
-      const parsed = parseFilename(fname);
-      return parsed && parsed.material !== null;
-    });
-    if (matFiles.length > 0) {
-      itemMap[prefix] = matFiles;
-    } else {
-      delete itemMap[prefix];
-    }
-  }
-}
-
-/**
- * material.version 그룹이 복수인 아이템을 그룹별 트리 리프로 분리
- *
- * 동작:
- *  - 해당 프리픽스의 트리 노드에 "material.version" 자식을 추가 (리프 → 폴더)
- *  - itemMap에 "prefix/material.version" 서브 엔트리 생성 (해당 그룹 파일만 포함)
- *  - 원본 엔트리 삭제
- *
- * 예: arms/p[armour]/p[plate]/p[male] 에 all.lpcr + metal.lpcr + metal.ulpc 가 있으면
- *     → arms/p[armour]/p[plate]/p[male]/all.lpcr
- *     → arms/p[armour]/p[plate]/p[male]/metal.lpcr
- *     → arms/p[armour]/p[plate]/p[male]/metal.ulpc  로 분리
- */
-function expandMultiMaterialLeaves(tree, itemMap) {
-  for (const [prefix, files] of Object.entries(itemMap)) {
-    // material.version 별 파일 분류 (material=null 제외)
-    const matGroups = new Map(); // "material.version" → [filePath, ...]
-    for (const f of files) {
-      const segs = f.split('/');
-      const aIdx = segs.findIndex(s => /^a\[/.test(s));
-      if (aIdx < 0) continue;
-      const fname = segs[aIdx + 2];
-      if (!fname) continue;
-      const parsed = parseFilename(fname);
-      if (!parsed || parsed.material === null) continue;
-      const matKey = `${parsed.material}.${parsed.version}`;
-      if (!matGroups.has(matKey)) matGroups.set(matKey, []);
-      matGroups.get(matKey).push(f);
-    }
-
-    if (matGroups.size <= 1) continue; // 단일 그룹: 분리 불필요
-
-    // 트리에서 해당 노드 탐색
-    const prefixSegs = prefix.split('/');
-    let node = tree;
-    let valid = true;
-    for (const seg of prefixSegs) {
-      if (!node || !Object.prototype.hasOwnProperty.call(node, seg)) { valid = false; break; }
-      node = node[seg];
-    }
-    if (!valid || typeof node !== 'object') continue;
-
-    // 이미 자식이 있는 노드(색상 분리 등)는 건너뜀
-    if (Object.keys(node).length > 0) continue;
-
-    // 트리 노드에 material.version 자식 리프 추가
-    for (const matKey of matGroups.keys()) {
-      node[matKey] = {};
-    }
-
-    // itemMap: 그룹별 서브 엔트리 생성
-    for (const [matKey, groupFiles] of matGroups.entries()) {
-      itemMap[`${prefix}/${matKey}`] = groupFiles;
-    }
-
-    // 원본 엔트리 삭제 (자식으로 분리됐으므로)
-    delete itemMap[prefix];
-  }
-}
 
 /**
  * 아이템 prefix 에서 머티리얼 그룹별 사용 가능한 컬러 목록 반환
