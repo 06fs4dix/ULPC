@@ -195,9 +195,10 @@ async function init() {
     initArtginePreview();
 
     // resBase 기본값: 현재 viewer URL 기준 ../spritesheets/ 절대 URL
-    const resBaseEl = document.getElementById('export-res-base');
-    if (resBaseEl && !resBaseEl.value) {
-      resBaseEl.value = new URL('../spritesheets/', window.location.href).href;
+    const defaultResBase = new URL('../spritesheets/', window.location.href).href;
+    for (const id of ['export-res-base', 'preset-res-base']) {
+      const el = document.getElementById(id);
+      if (el && !el.value) el.value = defaultResBase;
     }
 
     // 4. Canvas + 애니메이션 루프 초기화

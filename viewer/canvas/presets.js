@@ -7,6 +7,7 @@ import { applyImportData } from './import.js';
 
 const STORAGE_KEY = 'ulpc_viewer_presets';
 let _loadProject  = null;
+let _defaultPresets = null;  // 캐시
 
 // ── localStorage 헬퍼 ────────────────────────────────────────────────────────
 
@@ -19,10 +20,21 @@ function savePresets(presets) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(presets));
 }
 
+async function loadDefaultPresets() {
+  if (_defaultPresets) return _defaultPresets;
+  try {
+    const res = await fetch('./data/default_presets.json');
+    if (res.ok) _defaultPresets = await res.json();
+    else _defaultPresets = [];
+  } catch { _defaultPresets = []; }
+  return _defaultPresets;
+}
+
 // ── 초기화 ──────────────────────────────────────────────────────────────────
 
 export function initPresets(loadProjectFn) {
   _loadProject = loadProjectFn;
+
   document.getElementById('btn-presets')
     ?.addEventListener('click', openModal);
   document.getElementById('btn-preset-save')
@@ -37,11 +49,19 @@ export function initPresets(loadProjectFn) {
     ?.addEventListener('change', importPresets);
   document.getElementById('btn-preset-zip')
     ?.addEventListener('click', exportZip);
+  document.getElementById('btn-preset-clear-all')
+    ?.addEventListener('click', clearAllPresets);
+
 }
 
 // ── 모달 ────────────────────────────────────────────────────────────────────
 
-function openModal() {
+async function openModal() {
+  if (loadPresets().length === 0) {
+    if (confirm('No presets yet. Load sample characters?')) {
+      await loadSamples();
+    }
+  }
   renderList();
   // eslint-disable-next-line no-undef
   bootstrap.Modal.getOrCreateInstance(document.getElementById('presets-modal')).show();
@@ -59,24 +79,29 @@ function renderList() {
 
   listEl.innerHTML = '';
   for (const preset of presets) {
-    const row = document.createElement('div');
-    row.className = 'd-flex align-items-center gap-2 py-2 border-bottom';
-    row.innerHTML = `
-      <div class="preset-load-area flex-grow-1" style="cursor:pointer;min-width:0">
-        <div class="fw-semibold text-truncate" style="font-size:0.85rem">${_esc(preset.name)}</div>
-        <div class="text-secondary" style="font-size:0.72rem">${_esc(preset.selections?.[0]?.path?.split('/')?.[0] ?? '')}</div>
-      </div>
-      <button class="btn btn-sm btn-outline-danger preset-del py-0 px-1" title="삭제">
-        <i class="bi bi-trash3"></i>
-      </button>
-    `;
-    row.querySelector('.preset-load-area').addEventListener('click', () => applyPreset(preset));
-    row.querySelector('.preset-del').addEventListener('click', e => {
-      e.stopPropagation();
-      deletePreset(preset.name);
-    });
-    listEl.appendChild(row);
+    listEl.appendChild(_buildRow(preset, true));
   }
+}
+
+function _buildRow(preset, deletable) {
+  const row = document.createElement('div');
+  row.className = 'd-flex align-items-center gap-2 py-2 border-bottom';
+  const parts = (preset.selections || []).length;
+  row.innerHTML = `
+    <div class="preset-load-area flex-grow-1" style="cursor:pointer;min-width:0">
+      <div class="fw-semibold text-truncate" style="font-size:0.85rem">${_esc(preset.name)}</div>
+      <div class="text-secondary" style="font-size:0.72rem">${parts} parts</div>
+    </div>
+    <button class="btn btn-sm btn-outline-danger preset-del py-0 px-1" title="삭제">
+      <i class="bi bi-trash3"></i>
+    </button>
+  `;
+  row.querySelector('.preset-load-area').addEventListener('click', () => applyPreset(preset));
+  row.querySelector('.preset-del').addEventListener('click', e => {
+    e.stopPropagation();
+    deletePreset(preset.name);
+  });
+  return row;
 }
 
 // ── 저장 ────────────────────────────────────────────────────────────────────
@@ -113,12 +138,39 @@ function deletePreset(name) {
   renderList();
 }
 
+// ── Clear All ───────────────────────────────────────────────────────────────
+
+function clearAllPresets() {
+  if (!confirm('Delete all presets?')) return;
+  savePresets([]);
+  renderList();
+}
+
+// ── Samples ─────────────────────────────────────────────────────────────────
+
+async function loadSamples() {
+  const defaults = await loadDefaultPresets();
+  if (defaults.length === 0) { alert('No sample presets available.'); return; }
+  const existing = loadPresets();
+  const existingNames = new Set(existing.map(p => p.name));
+  const newOnes = defaults.filter(p => !existingNames.has(p.name));
+  if (newOnes.length === 0) { alert('All samples already loaded.'); return; }
+  savePresets([...existing, ...newOnes]);
+  renderList();
+}
+
 // ── Export / Import / ZIP ────────────────────────────────────────────────────
 
 function exportPresets() {
   const presets = loadPresets();
   if (presets.length === 0) { alert('No presets to export.'); return; }
-  const blob = new Blob([JSON.stringify(presets, null, 2)], { type: 'application/json' });
+  const resBase = document.getElementById('preset-res-base')?.value.trim() || '';
+  const output = presets.map(p => {
+    const copy = { ...p };
+    if (resBase) copy.resBase = resBase;
+    return copy;
+  });
+  const blob = new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' });
   _download(blob, 'ulpc_presets.json');
 }
 
@@ -151,6 +203,8 @@ async function exportZip() {
   const JSZip = window.JSZip;
   if (!JSZip) { alert('JSZip not available.'); return; }
 
+  const resBase = document.getElementById('preset-res-base')?.value.trim() || '';
+
   const btn = document.getElementById('btn-preset-zip');
   const setLabel = (s) => { if (btn) btn.innerHTML = s; };
   if (btn) btn.disabled = true;
@@ -159,44 +213,85 @@ async function exportZip() {
   try {
     const zip = new JSZip();
 
-    // 모든 프리셋에서 고유 파일 경로 수집
+    // 모든 프리셋에서 고유 파일 경로 수집 + icon.png 경로도 수집
     const filePaths = new Set();
     for (const preset of presets) {
       for (const sel of preset.selections || []) {
         for (const f of sel.files || []) filePaths.add(f);
+        // icon.png: selection path에서 icon.png 추가
+        if (sel.path) filePaths.add(sel.path + '/icon.png');
       }
     }
 
     // 절대 base URL (상대경로 오류 방지)
     const baseUrl = new URL('../spritesheets/', window.location.href).href;
 
-    let done = 0, ok = 0;
+    let done = 0, ok = 0, fail = 0;
     const total = filePaths.size;
 
-    // 병렬 fetch → zip에 추가
-    await Promise.all([...filePaths].map(async (filePath) => {
-      const encoded = filePath.split('/').map(s =>
-        s.replace(/\[/g, '%5B').replace(/\]/g, '%5D')
-      ).join('/');
-      try {
-        const res = await fetch(baseUrl + encoded);
-        if (res.ok) {
-          zip.file(filePath, await res.blob());
-          ok++;
-        }
-      } catch { /* 파일 없으면 건너뜀 */ }
-      done++;
-      if (done % 10 === 0 || done === total)
-        setLabel(`<span class="spinner-border spinner-border-sm me-1"></span>${done}/${total}`);
-    }));
+    // 동시 요청 제한 (브라우저 과부하 방지)
+    const CONCURRENCY = 20;
+    const queue = [...filePaths];
+
+    async function worker() {
+      while (queue.length > 0) {
+        const filePath = queue.shift();
+        const encoded = filePath.split('/').map(s =>
+          s.replace(/\[/g, '%5B').replace(/\]/g, '%5D')
+        ).join('/');
+        try {
+          const res = await fetch(baseUrl + encoded);
+          if (res.ok) {
+            zip.file(filePath, await res.blob());
+            ok++;
+          } else {
+            fail++;
+          }
+        } catch { fail++; }
+        done++;
+        if (done % 20 === 0 || done === total)
+          setLabel(`<span class="spinner-border spinner-border-sm me-1"></span>${ok} ok / ${done} of ${total}`);
+      }
+    }
+
+    await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
+
+    // 각 selection을 base 경로(레이어 세그먼트 제거)로 그룹핑하여 index.json 저장
+    const LAYER_SEGS = new Set(['p[behind]','p[bg]','p[fg]','p[background]','p[foreground]','p[universal]','p[universal_behind]']);
+    for (const preset of presets) {
+      const grouped = new Map(); // basePath → [sel, ...]
+      for (const sel of preset.selections || []) {
+        if (!sel.path) continue;
+        // 경로 끝에서 레이어 세그먼트 제거 → base 경로
+        const parts = sel.path.split('/');
+        while (parts.length > 0 && LAYER_SEGS.has(parts[parts.length - 1])) parts.pop();
+        const basePath = parts.join('/');
+        if (!grouped.has(basePath)) grouped.set(basePath, []);
+        grouped.get(basePath).push(sel);
+      }
+      for (const [basePath, sels] of grouped) {
+        const selJson = {
+          name: preset.name,
+          version: preset.version ?? 3,
+          selections: sels,
+        };
+        if (resBase) selJson.resBase = resBase;
+        zip.file(basePath + '/index.json', JSON.stringify(selJson, null, 2));
+      }
+    }
 
     // 프리셋 목록도 함께 포함
-    zip.file('presets.json', JSON.stringify(presets, null, 2));
+    const presetsOut = presets.map(p => {
+      const copy = { ...p };
+      if (resBase) copy.resBase = resBase;
+      return copy;
+    });
+    zip.file('presets.json', JSON.stringify(presetsOut, null, 2));
 
     setLabel('<span class="spinner-border spinner-border-sm me-1"></span>Packing…');
     const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
     _download(blob, 'ulpc_presets.zip');
-    console.log(`ZIP: ${ok}/${total} files packed`);
+    console.log(`ZIP: ${ok} packed, ${fail} missing, ${total} total`);
   } finally {
     if (btn) btn.disabled = false;
     setLabel('<i class="bi bi-file-zip me-1"></i>ZIP');

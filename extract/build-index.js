@@ -12,6 +12,7 @@
 
 const fs   = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const SPRITES_ROOT = path.join(__dirname, '../spritesheets');
 
@@ -64,10 +65,18 @@ for (const project of projectDirs) {
   }
 
   const jsonPath = path.join(projectDir, 'index.json');
-  fs.writeFileSync(jsonPath, JSON.stringify({ files, palettes }), 'utf8');
+  const jsonData = JSON.stringify({ files, palettes });
+  fs.writeFileSync(jsonPath, jsonData, 'utf8');
 
   const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);
   console.log(`  ✅ index.json 저장: ${sizeKB} KB`);
+
+  // gzip 압축 버전 생성
+  const gzPath = jsonPath + '.gz';
+  const compressed = zlib.gzipSync(jsonData, { level: 9 });
+  fs.writeFileSync(gzPath, compressed);
+  const gzSizeKB = (compressed.length / 1024).toFixed(1);
+  console.log(`  ✅ index.json.gz 저장: ${gzSizeKB} KB`);
 }
 
 console.log('\n완료.');

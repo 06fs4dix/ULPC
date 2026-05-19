@@ -1,0 +1,7455 @@
+[
+  {
+    "name": "Male - Villager",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[messy1]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "dark_brown",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#050100",
+              "#160701",
+              "#290e02",
+              "#421603",
+              "#5f1f04",
+              "#792806"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[shortsleeve]/p[tshirt]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "navy",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#20102b",
+              "#281e41",
+              "#322d6a",
+              "#3c49ad",
+              "#466ac9"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[shoes]/p[basic]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Male - Knight",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[buzzcut]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "black",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#000000",
+              "#080a0a",
+              "#101414",
+              "#1c2222",
+              "#31313e",
+              "#4a5057"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[plate]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[armour]/p[plate]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/arms/p[armour]/p[plate]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/arms/p[shoulders]/p[pauldrons]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "white",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ]
+          },
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#181009",
+              "#32251a",
+              "#594435",
+              "#7d604d",
+              "#ba9069",
+              "#fbe3b0"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[armour]/p[plate]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/headwear/p[hat]/p[helmet]/p[armet]/p[adult]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Male - Mage",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[long]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "gray",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#0e0e0e",
+              "#292929",
+              "#4b4b4b",
+              "#777777",
+              "#aaaaaa",
+              "#d9d9d9"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[faces]/p[male]/p[neutral]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "blue",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#281e41",
+              "#322d6a",
+              "#3c49ad",
+              "#466ac9",
+              "#61a0ef"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[waist]/p[belt_robe]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "navy",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#20102b",
+              "#281e41",
+              "#322d6a",
+              "#3c49ad",
+              "#466ac9"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/headwear/p[hat]/p[magic]/p[wizard]/p[base]/p[adult]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Male - Ranger",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[parted]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "chestnut",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#200c0d",
+              "#3a130e",
+              "#63200b",
+              "#81310a",
+              "#b6550e",
+              "#d28102"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[leather]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "forest",
+            "base": [
+              "#2b1c1d",
+              "#311210",
+              "#4b2b13",
+              "#704325",
+              "#75502d",
+              "#9a6f37"
+            ],
+            "recolor": [
+              "#09131d",
+              "#07391d",
+              "#0b1f25",
+              "#0b2b28",
+              "#134507",
+              "#1b5502"
+            ]
+          },
+          "metal.ulpc": {
+            "color": "bronze",
+            "base": [
+              "#181009",
+              "#32251a",
+              "#594435",
+              "#7d604d",
+              "#ba9069",
+              "#fbe3b0"
+            ],
+            "recolor": [
+              "#4f2313",
+              "#6d4a00",
+              "#966600",
+              "#bf8200",
+              "#e7a820",
+              "#fbe3b0"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/arms/p[bracers]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "bronze",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#4f2313",
+              "#6d4a00",
+              "#966600",
+              "#bf8200",
+              "#e7a820",
+              "#fbe3b0"
+            ]
+          },
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[cape]/p[solid]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Male - Pirate",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[bedhead]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "black",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#000000",
+              "#080a0a",
+              "#101414",
+              "#1c2222",
+              "#31313e",
+              "#4a5057"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "red",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#400b1f",
+              "#651117",
+              "#82171c",
+              "#ab1e1e",
+              "#cd2429"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[fold]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/headwear/p[hat]/p[pirate]/p[tricorne]/p[basic]/p[adult]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Male - Blacksmith",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[straight]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[balding]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "dark_brown",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#050100",
+              "#160701",
+              "#290e02",
+              "#421603",
+              "#5f1f04",
+              "#792806"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[sleeveless]/p[sleeveless1]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[aprons]/p[apron]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/arms/p[hands]/p[gloves]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "steel",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Female - Villager",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[button]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[bangs]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "chestnut",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#200c0d",
+              "#3a130e",
+              "#63200b",
+              "#81310a",
+              "#b6550e",
+              "#d28102"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[blouse]/p[female]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[skirts]/p[plain]/p[thin]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[shoes]/p[basic]/p[thin]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Female - Warrior",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[button]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[ponytail2]/p[adult]/p[bg]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "red",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#300000",
+              "#870000",
+              "#a40712",
+              "#cb0000",
+              "#e21414",
+              "#f1583a"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[ponytail2]/p[adult]/p[fg]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "red",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#300000",
+              "#870000",
+              "#a40712",
+              "#cb0000",
+              "#e21414",
+              "#f1583a"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[leather]/p[female]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "red",
+            "base": [
+              "#2b1c1d",
+              "#311210",
+              "#4b2b13",
+              "#704325",
+              "#75502d",
+              "#9a6f37"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#400b1f",
+              "#651117",
+              "#82171c",
+              "#ab1e1e",
+              "#cd2429"
+            ]
+          },
+          "metal.ulpc": {
+            "color": "copper",
+            "base": [
+              "#181009",
+              "#32251a",
+              "#594435",
+              "#7d604d",
+              "#ba9069",
+              "#fbe3b0"
+            ],
+            "recolor": [
+              "#691503",
+              "#7b2008",
+              "#973c23",
+              "#9d5427",
+              "#ec855c",
+              "#ffc95a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[armour]/p[plate]/p[thin]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "copper",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#691503",
+              "#7b2008",
+              "#973c23",
+              "#9d5427",
+              "#ec855c",
+              "#ffc95a"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "copper",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b1313",
+              "#462825",
+              "#603429",
+              "#794118",
+              "#a26118",
+              "#e19d4d"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[thin]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/arms/p[bracers]/p[thin]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "copper",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#691503",
+              "#7b2008",
+              "#973c23",
+              "#9d5427",
+              "#ec855c",
+              "#ffc95a"
+            ]
+          },
+          "cloth.ulpc": {
+            "color": "red",
+            "base": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#400b1f",
+              "#651117",
+              "#82171c",
+              "#ab1e1e",
+              "#cd2429"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Female - Mage",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[button]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[princess]/p[adult]/p[bg]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "platinum",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#1c0e06",
+              "#7d5d5d",
+              "#a87d52",
+              "#c0ab81",
+              "#eddf95",
+              "#f6f6f3"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[princess]/p[adult]/p[fg]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "platinum",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#1c0e06",
+              "#7d5d5d",
+              "#a87d52",
+              "#c0ab81",
+              "#eddf95",
+              "#f6f6f3"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[female]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "purple",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#13112d",
+              "#261044",
+              "#411357",
+              "#621e78",
+              "#813089"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[skirts]/p[belle]/p[thin]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "purple",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#13112d",
+              "#261044",
+              "#411357",
+              "#621e78",
+              "#813089"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[slippers]/p[thin]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Female - Healer",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[button]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[bob]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "blonde",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#331313",
+              "#552b15",
+              "#ac5d1f",
+              "#e09e2b",
+              "#fccf56",
+              "#ffe67d"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[female]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "white",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[skirts]/p[plain]/p[thin]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "white",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[sandals]/p[thin]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Female - Pirate",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[female]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[adult]/p[default]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[nose]/p[button]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[loose]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "raven",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#010107",
+              "#040b18",
+              "#061421",
+              "#071f2a",
+              "#0d384d",
+              "#1a5369"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[corset]/p[female]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[thin]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[fold]/p[thin]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/headwear/p[hat]/p[pirate]/p[bandana]/p[adult]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Orc - Warrior",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[orc]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "green",
+            "base": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ],
+            "recolor": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[ears]/p[big]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[leather]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#2b1c1d",
+              "#311210",
+              "#4b2b13",
+              "#704325",
+              "#75502d",
+              "#9a6f37"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "metal.ulpc": {
+            "color": "iron",
+            "base": [
+              "#181009",
+              "#32251a",
+              "#594435",
+              "#7d604d",
+              "#ba9069",
+              "#fbe3b0"
+            ],
+            "recolor": [
+              "#000000",
+              "#1b192b",
+              "#29253a",
+              "#343043",
+              "#484152",
+              "#726b7e"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[fur]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "base",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/arms/p[bracers]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "iron",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#1b192b",
+              "#29253a",
+              "#343043",
+              "#484152",
+              "#726b7e"
+            ]
+          },
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "steel",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Orc - Shaman",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[orc]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "green",
+            "base": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ],
+            "recolor": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[ears]/p[big]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "maroon",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#400b1f",
+              "#551c22",
+              "#682121",
+              "#832121",
+              "#ae424a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[sandals]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[skeleton]",
+        "recolors": {
+          "variant.v1": {
+            "color": "skeleton",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[skeleton]/p[adult]",
+        "recolors": {
+          "variant.v1": {
+            "color": "skeleton",
+            "base": [],
+            "recolor": []
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Skeleton - Warrior",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[skeleton]",
+        "recolors": {
+          "variant.v1": {
+            "color": "skeleton",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[skeleton]/p[adult]",
+        "recolors": {
+          "variant.v1": {
+            "color": "skeleton",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[plate]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "iron",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#1b192b",
+              "#29253a",
+              "#343043",
+              "#484152",
+              "#726b7e"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "iron",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#000000",
+              "#252025",
+              "#392b34",
+              "#52414a",
+              "#6f6563",
+              "#948081"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[armour]/p[plate]/p[male]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "iron",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#1b192b",
+              "#29253a",
+              "#343043",
+              "#484152",
+              "#726b7e"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "iron",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#000000",
+              "#252025",
+              "#392b34",
+              "#52414a",
+              "#6f6563",
+              "#948081"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/headwear/p[hat]/p[helmet]/p[nasal]/p[adult]",
+        "recolors": {
+          "metal.ulpc": {
+            "color": "iron",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#1b192b",
+              "#29253a",
+              "#343043",
+              "#484152",
+              "#726b7e"
+            ]
+          },
+          "metal.lpcr": {
+            "color": "iron",
+            "base": [
+              "#1b192b",
+              "#484152",
+              "#726b7e",
+              "#867e7f",
+              "#a8b3b8",
+              "#e3e7d3"
+            ],
+            "recolor": [
+              "#000000",
+              "#252025",
+              "#392b34",
+              "#52414a",
+              "#6f6563",
+              "#948081"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Zombie",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[zombie]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[zombie]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "zombie",
+            "base": [
+              "#281820",
+              "#6b5c40",
+              "#928364",
+              "#a79778",
+              "#c5b38f",
+              "#dbcbab"
+            ],
+            "recolor": [
+              "#281820",
+              "#6b5c40",
+              "#928364",
+              "#a79778",
+              "#c5b38f",
+              "#dbcbab"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Wolf - Hunter",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[wolf]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "fur_brown",
+            "base": [
+              "#000000",
+              "#1e120e",
+              "#251b19",
+              "#473730",
+              "#624135",
+              "#975b5a"
+            ],
+            "recolor": [
+              "#000000",
+              "#1e120e",
+              "#251b19",
+              "#473730",
+              "#624135",
+              "#975b5a"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[tail]/p[wolf]/p[adult]/p[bg]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/body/p[tail]/p[wolf]/p[adult]/p[fg]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/torso/p[armour]/p[leather]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#2b1c1d",
+              "#311210",
+              "#4b2b13",
+              "#704325",
+              "#75502d",
+              "#9a6f37"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "metal.ulpc": {
+            "color": "bronze",
+            "base": [
+              "#181009",
+              "#32251a",
+              "#594435",
+              "#7d604d",
+              "#ba9069",
+              "#fbe3b0"
+            ],
+            "recolor": [
+              "#4f2313",
+              "#6d4a00",
+              "#966600",
+              "#bf8200",
+              "#e7a820",
+              "#fbe3b0"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Lizard - Mage",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[lizard]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "green",
+            "base": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ],
+            "recolor": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[ears]/p[dragon]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[tail]/p[lizard]/p[adult]/p[bg]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[tail]/p[lizard]/p[adult]/p[fg]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "purple",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#180716",
+              "#13112d",
+              "#261044",
+              "#411357",
+              "#621e78",
+              "#813089"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[sandals]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Goblin - Rogue",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[goblin]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "green",
+            "base": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ],
+            "recolor": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[ears]/p[long]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[sleeveless]/p[sleeveless1]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[shorts]/p[shorts]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[sandals]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Troll",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[muscular]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[troll]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "green",
+            "base": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ],
+            "recolor": [
+              "#140c09",
+              "#09320b",
+              "#19541d",
+              "#228236",
+              "#39aa4e",
+              "#53bf71"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[ears]/p[big]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[fur]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "brown",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#411e05",
+              "#4b2b13",
+              "#62351c",
+              "#744b30",
+              "#996b4a"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "base",
+            "base": [],
+            "recolor": []
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Vampire - Lord",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[male]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[vampire]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/hair/p[parted2]/p[adult]",
+        "recolors": {
+          "hair.ulpc": {
+            "color": "raven",
+            "base": [
+              "#260d14",
+              "#6a1108",
+              "#a42600",
+              "#bf4000",
+              "#e55600",
+              "#ff8a00"
+            ],
+            "recolor": [
+              "#010107",
+              "#040b18",
+              "#061421",
+              "#071f2a",
+              "#0d384d",
+              "#1a5369"
+            ]
+          },
+          "hair.lpcr": {
+            "color": "orange",
+            "base": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ],
+            "recolor": [
+              "#3e111a",
+              "#95381c",
+              "#b54936",
+              "#cf6f30",
+              "#e09c4c",
+              "#f8bc76"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[longsleeve]/p[longsleeve2]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "black",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#101414",
+              "#1c2222",
+              "#22282a",
+              "#2a3034",
+              "#4a5057"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/torso/p[jacket]/p[collared]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/torso/p[cape]/p[solid]/p[male]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[formal]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "black",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#101414",
+              "#1c2222",
+              "#22282a",
+              "#2a3034",
+              "#4a5057"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "base",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      }
+    ]
+  },
+  {
+    "name": "Child - Adventurer",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[child]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[child]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[human]/p[child]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/head/p[eyes]/p[human]/p[child]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/torso/p[clothes]/p[shirt]/p[child]",
+        "recolors": {
+          "variant.v1": {
+            "color": "lightblue",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/legs/p[skirts]/p[child]",
+        "recolors": {
+          "variant.v1": {
+            "color": "darkblue",
+            "base": [],
+            "recolor": []
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Frankenstein",
+    "version": 3,
+    "selections": [
+      {
+        "path": "ULPC/body/p[bodies]/p[muscular]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[shadow]/p[adult]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/head/p[heads]/p[frankenstein]/p[adult]",
+        "recolors": {
+          "body.ulpc": {
+            "color": "light",
+            "base": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#271920",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "body.lpcr": {
+            "color": "ivory",
+            "base": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ],
+            "recolor": [
+              "#2a1722",
+              "#99423c",
+              "#cc8665",
+              "#e4a47c",
+              "#f9d5ba",
+              "#faece7"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          }
+        }
+      },
+      {
+        "path": "ULPC/body/p[wound]/p[ribs]",
+        "recolors": {}
+      },
+      {
+        "path": "ULPC/legs/p[pants]/p[male]",
+        "recolors": {
+          "cloth.ulpc": {
+            "color": "charcoal",
+            "base": [
+              "#281820",
+              "#4d4a5d",
+              "#958080",
+              "#c4b59f",
+              "#e5e6c7",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#000000",
+              "#130d14",
+              "#1c2222",
+              "#2a3034",
+              "#4a5057",
+              "#6e7675"
+            ]
+          },
+          "all.lpcr": {
+            "color": "source",
+            "base": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ],
+            "recolor": [
+              "#1d131e",
+              "#4d4a5d",
+              "#726b7e",
+              "#867e7f",
+              "#c4b59f",
+              "#ffffff"
+            ]
+          },
+          "variant.v1": {
+            "color": "magenta",
+            "base": [],
+            "recolor": []
+          }
+        }
+      },
+      {
+        "path": "ULPC/feet/p[boots]/p[basic]/p[male]",
+        "recolors": {}
+      }
+    ]
+  }
+]

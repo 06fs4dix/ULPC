@@ -45,7 +45,8 @@ async function applyImport() {
 
   // 프로젝트 전환 가능 여부 사전 검증 (모달 닫기 전)
   const allFiles = data.selections.flatMap(sel => sel.files ?? []);
-  const prefix = detectPathPrefix(allFiles);
+  const allPaths = allFiles.length > 0 ? allFiles : data.selections.map(sel => sel.path).filter(Boolean);
+  const prefix = detectPathPrefix(allPaths);
   const detectedProject = prefix ? prefix.replace(/\/$/, '') : 'ULPC';
   const select = document.getElementById('project-select');
   const needSwitch = detectedProject && detectedProject !== state.selectedProject;
@@ -70,11 +71,12 @@ export async function applyImportData(data, loadProjectFn = null) {
   if (!data?.selections || !Array.isArray(data.selections)) return;
 
   const allFiles = data.selections.flatMap(sel => sel.files ?? []);
-  const prefix = detectPathPrefix(allFiles);
+  const allPaths = allFiles.length > 0 ? allFiles : data.selections.map(sel => sel.path).filter(Boolean);
+  const prefix = detectPathPrefix(allPaths);
   const detectedProject = prefix ? prefix.replace(/\/$/, '') : 'ULPC';
 
   const select = document.getElementById('project-select');
-  const needSwitch = detectedProject && detectedProject !== state.selectedProject;
+  const needSwitch = detectedProject && (detectedProject !== state.selectedProject || !state.itemMap);
   if (needSwitch && loadProjectFn) {
     if (select) select.value = detectedProject;
     await loadProjectFn(detectedProject);
