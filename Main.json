@@ -1,0 +1,14 @@
+{
+  "width": 1024,
+  "height": 768,
+  "fullScreen": false,
+  "program": "developer",
+  "url": "http://localhost:8050/ULPC",
+  "projectPath": "proj/Tutorial/ULPC",
+  "page": "html",
+  "server": "local",
+  "github": false,
+  "tsc": true,
+  "password": "artgine",
+  "rootPath": "./"
+}

@@ -88,9 +88,10 @@ async function downloadJSON() {
   ).hide();
   const selectedAnims = getSelectedAnimations();
   const data = buildExportData(selectedAnims);
+  if (document.getElementById('export-base64-check')?.checked)
+    await injectBase64s(data);
   const json = JSON.stringify(data, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  triggerDownload(blob, 'ulpc_selection.json');
+  triggerDownload(new Blob([json], { type: 'application/json' }), 'ulpc_selection.json');
 }
 
 /** base64 txt 버튼 — JSON을 base64로 인코딩해서 .txt 파일로 다운로드 */
@@ -100,10 +101,11 @@ async function downloadBase64() {
   ).hide();
   const selectedAnims = getSelectedAnimations();
   const data = buildExportData(selectedAnims);
+  if (document.getElementById('export-base64-check')?.checked)
+    await injectBase64s(data);
   const json = JSON.stringify(data, null, 2);
   const b64 = btoa(unescape(encodeURIComponent(json)));
-  const blob = new Blob([b64], { type: 'text/plain' });
-  triggerDownload(blob, 'ulpc_selection.txt');
+  triggerDownload(new Blob([b64], { type: 'text/plain' }), 'ulpc_selection.txt');
 }
 
 /**
@@ -210,6 +212,41 @@ export function buildExportData(selectedAnims = null) {
   return result;
 }
 
+
+// ── base64 이미지 수집 ────────────────────────────────────────────────────
+
+/**
+ * 각 selection의 files[]에 대응하는 base64s[] 배열을 추가한다.
+ * CParserULPC가 sel.base64s[fi]를 files[fi]와 병렬로 읽는 구조에 맞춘다.
+ */
+async function injectBase64s(exportData) {
+  const proj       = state.selectedProject;
+  const projPrefix = proj ? proj + '/' : '';
+  const imageBase  = state.imageBase ?? `../spritesheets/${proj}/`;
+
+  await Promise.all(exportData.selections.map(async (sel) => {
+    const base64s = await Promise.all((sel.files ?? []).map(async (exportFile) => {
+      const rawPath = exportFile.startsWith(projPrefix)
+        ? exportFile.slice(projPrefix.length)
+        : exportFile;
+      const encodedPath = rawPath.replace(/\[/g, '%5B').replace(/\]/g, '%5D');
+      const url = state.zipBlobs.size > 0
+        ? (state.zipBlobs.get(rawPath) ?? (imageBase + encodedPath))
+        : (imageBase + encodedPath);
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) return null;
+        const blob = await resp.blob();
+        return await new Promise(resolve => {
+          const reader = new FileReader();
+          reader.onload  = () => resolve(reader.result);
+          reader.readAsDataURL(blob);
+        });
+      } catch { return null; }
+    }));
+    sel.base64s = base64s;
+  }));
+}
 
 // ── 스프라이트시트 PNG 다운로드 ────────────────────────────────────────────
 
