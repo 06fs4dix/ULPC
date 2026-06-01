@@ -1,0 +1,3 @@
+[submodule "external/Artgine"]
+	path = external/Artgine
+	url = https://github.com/06fs4dix/Artgine
