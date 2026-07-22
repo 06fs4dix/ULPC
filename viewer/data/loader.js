@@ -59,14 +59,33 @@ export function processIndexData(idx) {
   const files   = idx.files;
   const tree    = buildTree(files, 0);
   const itemMap = buildItemMapAndExpand(files, 0, tree);
+  // icons: icon.png 가 존재하는 아이템 prefix 집합 (없으면 null → 레거시 프로브)
+  const icons = idx.icons
+    ? new Set(idx.icons)
+    : null;
   return {
     tree,
     itemMap,
     palettes:   idx.palettes,
     files,
+    icons,
     totalFiles: files.length,
     pathPrefix: '',
   };
+}
+
+/**
+ * itemMap 파일 목록에서 실제 아이템 prefix 추출 (a[ 이전).
+ * 색상/머티리얼 가상 리프 경로가 아니라 디스크상 폴더 경로.
+ * 예: files[0]="body/p[wheelchair]/.../a[all]/z-2/white_....png"
+ *     → "body/p[wheelchair]/p[adult]/p[background]"
+ */
+export function itemPrefixFromFiles(files) {
+  if (!files || files.length === 0) return null;
+  const segs = files[0].split('/');
+  const aIdx = segs.findIndex(s => /^a\[/.test(s));
+  if (aIdx < 0) return null;
+  return segs.slice(0, aIdx).join('/');
 }
 
 /**

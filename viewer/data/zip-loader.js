@@ -39,11 +39,17 @@ async function _processZip(zip) {
     try { credits = JSON.parse(await creditsFile.async('text')); } catch { /* 무시 */ }
   }
 
-  // 모든 PNG → Blob URL 병렬 추출
+  // 모든 PNG → Blob URL 병렬 추출 (+ zip 내 icon.png 로 icons 보완)
   const tasks = [];
+  const zipIconPrefixes = [];
   zip.forEach((relativePath, file) => {
     if (file.dir) return;
     if (!relativePath.toLowerCase().endsWith('.png')) return;
+    if (relativePath.endsWith('/icon.png') || relativePath === 'icon.png') {
+      zipIconPrefixes.push(
+        relativePath === 'icon.png' ? '' : relativePath.slice(0, -'/icon.png'.length)
+      );
+    }
     tasks.push(
       file.async('blob').then(blob => {
         state.zipBlobs.set(relativePath, URL.createObjectURL(blob));
@@ -51,6 +57,11 @@ async function _processZip(zip) {
     );
   });
   await Promise.all(tasks);
+
+  // index에 icons 없으면 ZIP 스캔 결과로 채움
+  if (!idx.icons && zipIconPrefixes.length > 0) {
+    idx.icons = zipIconPrefixes;
+  }
 
   return { ...processIndexData(idx), credits };
 }

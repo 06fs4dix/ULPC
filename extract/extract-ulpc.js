@@ -95,23 +95,22 @@ function cropFirstFrame(srcPath, dstPath, frameSize, targetFrames = null) {
 function cropToFrames(srcPath, dstPath, frameSize, targetFrames) {
   const src       = PNG.sync.read(fs.readFileSync(srcPath));
   const srcCols   = Math.floor(src.width / frameSize);
-  const finalCols = Math.min(targetFrames, srcCols);
-  if (finalCols >= srcCols) {
-    // 자를 필요 없으면 그냥 복사
+  // 초과 → 앞쪽 N프레임만, 부족 → 마지막 프레임 반복 패딩 (sit 2→3 등)
+  if (srcCols === targetFrames) {
     const dir = path.dirname(dstPath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(dstPath, fs.readFileSync(srcPath));
     src.data = null;
     return;
   }
-  const newW = finalCols * frameSize;
+  const newW = targetFrames * frameSize;
   const dst  = new PNG({ width: newW, height: src.height });
   for (let y = 0; y < src.height; y++) {
-    for (let col = 0; col < finalCols; col++) {
-      const baseX = col * frameSize;
+    for (let col = 0; col < targetFrames; col++) {
+      const srcCol = Math.min(col, srcCols - 1);
       for (let px = 0; px < frameSize; px++) {
-        const si = (y * src.width + baseX + px) * 4;
-        const di = (y * newW      + baseX + px) * 4;
+        const si = (y * src.width + srcCol * frameSize + px) * 4;
+        const di = (y * newW      + col    * frameSize + px) * 4;
         dst.data[di]     = src.data[si];
         dst.data[di + 1] = src.data[si + 1];
         dst.data[di + 2] = src.data[si + 2];
@@ -227,25 +226,42 @@ function prependFirstFrame(srcPath, dstPath, frameSize) {
   writePNG(dst, dstPath);
 }
 
-// icon: 소스 시트에서 아래(south) 방향 frame0 1장 추출
-// dirs: 소스 파일 행 순서 인코딩 (예: '0213' → south=index 2, srcY=2*frameSize)
+// icon: 소스 시트에서 frame0 1장 추출
+// dirs: 소스 파일 행 순서 인코딩 (예: '0213' → south=index 2)
+// south 행이 완전 투명이면 다른 방향 행을 순서대로 시도 (fg 레이어 등)
 function extractIconFrame(srcPath, dstPath, frameSize, dirs) {
   const src = PNG.sync.read(fs.readFileSync(srcPath));
-  const southRow = dirs.includes('1') ? dirs.indexOf('1') : 0;
-  const srcY = southRow * frameSize;
-  const dst = new PNG({ width: frameSize, height: frameSize });
-  for (let py = 0; py < frameSize; py++) {
-    for (let px = 0; px < frameSize; px++) {
-      const si = ((srcY + py) * src.width + px) * 4;
-      const di = (py * frameSize + px) * 4;
-      dst.data[di]     = src.data[si];
-      dst.data[di + 1] = src.data[si + 1];
-      dst.data[di + 2] = src.data[si + 2];
-      dst.data[di + 3] = src.data[si + 3];
+  const dirStr = dirs || '1';
+  const rowCount = Math.floor(src.height / frameSize);
+  const preferred = [];
+  if (dirStr.includes('1')) preferred.push(dirStr.indexOf('1'));
+  for (let i = 0; i < dirStr.length; i++) {
+    if (!preferred.includes(i)) preferred.push(i);
+  }
+  for (let r = 0; r < rowCount; r++) {
+    if (!preferred.includes(r)) preferred.push(r);
+  }
+
+  for (const row of preferred) {
+    const srcY = row * frameSize;
+    if (srcY + frameSize > src.height || frameSize > src.width) continue;
+    const dst = new PNG({ width: frameSize, height: frameSize });
+    for (let py = 0; py < frameSize; py++) {
+      for (let px = 0; px < frameSize; px++) {
+        const si = ((srcY + py) * src.width + px) * 4;
+        const di = (py * frameSize + px) * 4;
+        dst.data[di]     = src.data[si];
+        dst.data[di + 1] = src.data[si + 1];
+        dst.data[di + 2] = src.data[si + 2];
+        dst.data[di + 3] = src.data[si + 3];
+      }
+    }
+    if (writePNG(dst, dstPath)) {
+      src.data = null;
+      return;
     }
   }
   src.data = null;
-  writePNG(dst, dstPath);
 }
 
 // ── 워커 모드: 파일 복사 작업만 수행하고 종료 ──────────────────────────────────
@@ -470,6 +486,12 @@ function mapFile(fullPath) {
     colorStem    = stem;
   }
 
+  // wheelchair: 전 애니 공용 a[all] 이 아니라 sit 전용 애니 a[sit]
+  // (구버전 경로 body/wheelchair/... 에 애니 폴더가 없어 all 로 떨어지던 것 교정)
+  if (animName === 'all' && dirSegs.includes('wheelchair')) {
+    animName = 'sit';
+  }
+
   // ── 레이어 지시자 파일명 처리 ────────────────────────────────────────────────
   // background.png / foreground.png 가 애니메이션 폴더 안의 파일명으로 쓰인 경우
   // (예: weapon/magic/crystal/thrust/background.png,
@@ -602,10 +624,11 @@ function mapFile(fullPath) {
   // 애니메이션별 표준 프레임 수 (ANIM_META 기준)
   const ANIM_FRAME_CAPS = {
     walk: 8, spellcast: 7, thrust: 8, slash: 6, shoot: 13,
-    hurt: 6, climb: 6, idle: 3, jump: 5, sit: 3, emote: 3,
+    hurt: 6, climb: 6, idle: 3, jump: 5, sit: 1, sit_lounge: 1, sit_lady: 1, emote: 3,
     run: 8, combat_idle: 2, backslash: 12, halfslash: 6,
   };
   const cap = ANIM_FRAME_CAPS[animName] ?? null;
+  // sit 등: 표준보다 적으면 패딩(마지막 프레임 반복), 많으면 크롭
   const effectiveFrameCount = (animName === 'walk')              ? (ANIM_FRAME_CAPS.walk)
                             : (PREPEND_ANIMS.has(animName))      ? frameCount + 1
                             : (animName === 'jump')              ? frameCount + 1
@@ -622,7 +645,7 @@ function mapFile(fullPath) {
     newFilename,
   ].join('/');
 
-  // targetFrames: walk=크롭+frame0제거, 그 외 표준 초과=앞N프레임 크롭
+  // targetFrames: walk=크롭+frame0제거, 표준 초과=크롭, sit 부족=패딩(동일 필드)
   const needsCrop = cap !== null && frameCount > cap
                     && animName !== 'walk'
                     && !PREPEND_ANIMS.has(animName)
@@ -897,13 +920,14 @@ console.log(`  합성 idle 대상: ${syntheticIdleEntries.length}개 (walk 있�
 mapping.push(...syntheticIdleEntries);
 
 // ── icon: 각 아이템의 아래(south) 방향 frame0 1장 → prefix/icon.png ─────────
-// (idle > walk > combat_idle > ... 순으로 소스 선택, 아이템당 1개)
+// (idle > walk > … > all 순으로 소스 선택, 아이템당 1개)
+// a[all] 전용 아이템(wheelchair 등)도 맨 아래 우선순위로 icon 생성 대상에 포함한다.
 {
-  const ICON_ANIM_PRIORITY = ['idle', 'walk', 'combat_idle', 'spellcast', 'slash', 'thrust', 'shoot', 'hurt'];
+  const ICON_ANIM_PRIORITY = ['idle', 'walk', 'combat_idle', 'spellcast', 'slash', 'thrust', 'shoot', 'hurt', 'all'];
   const iconBest = new Map(); // key: prefix → { entry, priority }
 
   for (const entry of mapping) {
-    if (!entry.oldPath || entry.animName === 'all' || entry.animName === 'icon') continue;
+    if (!entry.oldPath || entry.animName === 'icon') continue;
     const prefix = getItemPrefix(entry.newPath);
     if (!prefix) continue;
     const pri  = ICON_ANIM_PRIORITY.indexOf(entry.animName);

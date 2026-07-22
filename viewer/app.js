@@ -93,11 +93,12 @@ async function loadProject(projectId) {
     state.imageBase = `../spritesheets/${projectId}/`;
   }
 
-  const { tree, itemMap, palettes, files, totalFiles } = result;
+  const { tree, itemMap, palettes, files, totalFiles, icons } = result;
   state.tree       = tree;
   state.itemMap    = itemMap;
   state.palettes   = palettes;
   state.files      = files;
+  state.icons      = icons ?? null;
   state.pathPrefix = '';
 
   // credits.json 로드 (ZIP이면 zip 내부에서, 아니면 HTTP)

@@ -8,6 +8,7 @@ export const state = {
   itemMap:  null,
   palettes: null,
   files:    null,
+  icons:    null,  // Set<itemPrefix> — icon.png 가 있는 prefix (null이면 레거시)
 
   // 프로젝트
   selectedProject: 'ULPC',

@@ -1,0 +1,13 @@
+{
+  "width": 1024,
+  "height": 768,
+  "fullScreen": false,
+  "program": "server",
+  "url": "http://localhost:7000/ULPC",
+  "projectPath": "viewer",
+  "page": "html",
+  "server": "webServer",
+  "github": false,
+  "tsc": true,
+  "password": "artgine"
+}

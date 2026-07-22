@@ -213,13 +213,23 @@ async function exportZip() {
   try {
     const zip = new JSZip();
 
-    // 모든 프리셋에서 고유 파일 경로 수집 + icon.png 경로도 수집
+    // 모든 프리셋에서 고유 파일 경로 수집 + 실제 prefix 의 icon.png
     const filePaths = new Set();
     for (const preset of presets) {
       for (const sel of preset.selections || []) {
         for (const f of sel.files || []) filePaths.add(f);
-        // icon.png: selection path에서 icon.png 추가
-        if (sel.path) filePaths.add(sel.path + '/icon.png');
+        // icon: 색상 가상 경로가 아니라 파일 기준 아이템 prefix
+        const sample = (sel.files && sel.files[0]) || null;
+        if (sample) {
+          const segs = sample.split('/');
+          const aIdx = segs.findIndex(s => /^a\[/.test(s));
+          if (aIdx > 0) {
+            const itemPrefix = segs.slice(0, aIdx).join('/');
+            if (!state.icons || state.icons.has(itemPrefix)) {
+              filePaths.add(itemPrefix + '/icon.png');
+            }
+          }
+        }
       }
     }
 

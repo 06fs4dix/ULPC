@@ -31,7 +31,7 @@ function getAvailableAnimations() {
     }
   }
 
-  // ULPC 표준 순서 유지, 미등록 커스텀 애니는 뒤에 추가
+  // ULPC 표준 순서 유지, 미등록 커스텀 애니는 뒤에 추가 (wheelchair 등)
   return [
     ...ANIM_NAMES.filter(name => available.has(name)),
     ...[...available].filter(name => !ANIM_NAMES.includes(name)).sort(),

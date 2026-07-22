@@ -38,21 +38,30 @@ for (const project of projectDirs) {
   const projectDir = path.join(SPRITES_ROOT, project);
   console.log(`\n=== index.json 생성: ${project} ===`);
 
-  // PNG 목록 수집 (icon.png 제외)
+  // PNG 목록 수집 (스프라이트 / icon 분리)
   const files = [];
+  const icons = []; // icon.png 가 있는 아이템 prefix 목록
   function walkDir(dir) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
         walkDir(full);
-      } else if (entry.name.endsWith('.png') && entry.name !== 'icon.png') {
-        files.push(path.relative(projectDir, full).replace(/\\/g, '/'));
+      } else if (entry.name.endsWith('.png')) {
+        const rel = path.relative(projectDir, full).replace(/\\/g, '/');
+        if (entry.name === 'icon.png') {
+          // "body/p[male]/icon.png" → "body/p[male]"
+          icons.push(rel.slice(0, -'/icon.png'.length));
+        } else {
+          files.push(rel);
+        }
       }
     }
   }
   walkDir(projectDir);
   files.sort();
+  icons.sort();
   console.log(`  파일 수: ${files.length}개`);
+  console.log(`  icon 수: ${icons.length}개`);
 
   // palette.json 로드
   const palPath = path.join(projectDir, 'palette.json');
@@ -65,7 +74,7 @@ for (const project of projectDirs) {
   }
 
   const jsonPath = path.join(projectDir, 'index.json');
-  const jsonData = JSON.stringify({ files, palettes });
+  const jsonData = JSON.stringify({ files, icons, palettes });
   fs.writeFileSync(jsonPath, jsonData, 'utf8');
 
   const sizeKB = (fs.statSync(jsonPath).size / 1024).toFixed(1);

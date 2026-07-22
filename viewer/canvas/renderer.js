@@ -4,7 +4,8 @@
  * buildCharacterSheet(): 선택된 아이템 전체를 사전 베이크
  *   - 존재하는 애니메이션을 순차적으로 탐색 → 각 애니당 최대 frameSize 확정
  *   - 동적으로 y좌표를 쌓아가며 애니메이션 레이아웃 기록
- *   - a[all] 아이템: yOffset/64 = 행번호로 해당 위치를 읽어 모든 애니에 기여
+ *   - a[all] 유니버설 시트: yOffset/64 행으로 해당 애니 구간을 읽어 기여
+ *   - a[all] 컴팩트 시트(wheelchair 등): dir×frame 그리드를 모든 애니에 재사용
  *
  * renderCharacter(): 동기, 베이크된 시트에서 프레임 복사만 수행
  */
@@ -143,7 +144,8 @@ function showError(msg) {
  *
  * [Phase 1] 각 아이템의 애니메이션 데이터 수집
  *   - 개별 a[animName]: frameSize = 이미지 실제 높이 / dirCount
- *   - a[all]: frameSize = 파일명 파싱값, 행번호 = meta.yOffset / 64
+ *   - a[all] 유니버설: frameSize = 파일명값, 행 = meta.yOffset/64 + dir
+ *   - a[all] 컴팩트: frameSize = 파일명값, 행 = dir (시트 행 수 ≈ dirCount)
  *
  * [Phase 2] 애니메이션별 최대 frameSize 확정 → 레이아웃 계산 (동적 y 누적)
  *
@@ -177,8 +179,9 @@ export async function buildCharacterSheet() {
   }
 
   // ── Phase 2: 선택 아이템에서 애니 목록 수집 + 레이아웃 ──────────────────
-  // 실제 존재하는 애니메이션만 처리 (ANIM_NAMES 상수 불필요)
-  // ULPC 표준 순서 유지: ANIM_NAMES 기준 정렬 후 미등록 애니는 뒤에 추가
+  // 실제 존재하는 애니메이션만 처리
+  // ULPC 표준 순서 유지: ANIM_NAMES 기준 정렬 후 미등록 애니(wheelchair 등)는 뒤에 추가
+  // a[all] 유니버설 시트는 전 애니 공용 레이어라 목록에서 제외하고, 다른 애니에 합성한다.
   const allAnimNames = new Set();
   for (const { info } of prefixData) {
     for (const animName of Object.keys(info)) {
@@ -367,20 +370,34 @@ export async function buildCharacterSheet() {
         for (const layer of readyLayers) {
           const { source, actualFs, fromAll } = layer;
 
-          // 소스 좌표
-          // a[all] walk: all 시트는 프레임 0(idle)이 그대로 남아 있으므로 1프레임 오프셋
-          const srcX = (fromAll && animName === 'walk')
-            ? (f + 1) * actualFs
-            : f * actualFs;
-          const srcY = fromAll
-            ? (allStartRow + d) * actualFs   // all 시트: 행번호 × frameSize
-            : d * actualFs;                  // 개별 파일: 방향 행
+          // a[all] 에는 두 종류가 있다:
+          //  1) 유니버설 합성 시트 (행 수십 개, yOffset/64 로 애니 구간) — 헤어 등
+          //  2) 컴팩트 공용 시트 (방향×프레임만, 4행 전후) — wheelchair 등
+          //     → 모든 애니에 같은 dir×frame 그리드를 쓴다
+          const srcH = source.naturalHeight || source.height || 0;
+          const srcW = source.naturalWidth  || source.width  || 0;
+          const sheetRows = actualFs > 0 ? Math.floor(srcH / actualFs) : 0;
+          const sheetCols = actualFs > 0 ? Math.floor(srcW / actualFs) : 0;
+          const isUniversalAll = fromAll && sheetRows > dirCount + 2;
+
+          let srcX, srcY;
+          if (fromAll && isUniversalAll) {
+            // 유니버설 all: walk는 프레임0(idle)이 남아 있어 +1 오프셋
+            srcX = (animName === 'walk') ? (f + 1) * actualFs : f * actualFs;
+            srcY = (allStartRow + d) * actualFs;
+          } else if (fromAll) {
+            // 컴팩트 all: 열/행 순환 (휠체어 2프레임 등)
+            const cols = Math.max(1, sheetCols);
+            const rows = Math.max(1, sheetRows);
+            srcX = (f % cols) * actualFs;
+            srcY = (d % rows) * actualFs;
+          } else {
+            srcX = f * actualFs;
+            srcY = d * actualFs;
+          }
 
           // 범위 초과 방지
-          if (srcX + actualFs > source.naturalWidth  ||
-              srcX + actualFs > source.width         ||
-              srcY + actualFs > source.naturalHeight ||
-              srcY + actualFs > source.height) continue;
+          if (srcX + actualFs > srcW || srcY + actualFs > srcH) continue;
 
           // 작은 레이어는 maxFrameSize 기준 중앙 정렬
           const offset = Math.floor((maxFrameSize - actualFs) / 2);

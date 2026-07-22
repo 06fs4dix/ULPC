@@ -16,7 +16,9 @@ export const ANIM_META = {
   climb:       { yOffset: 1344, dirCount: 1, frameCount: 6  },
   idle:        { yOffset: 1408, dirCount: 4, frameCount: 3  },
   jump:        { yOffset: 1664, dirCount: 4, frameCount: 6  },
-  sit:         { yOffset: 1920, dirCount: 4, frameCount: 3  },
+  sit:         { yOffset: 1920, dirCount: 4, frameCount: 1  }, // 의자 앉기 (구 sit F0)
+  sit_lounge:  { yOffset: 1920, dirCount: 4, frameCount: 1  }, // 다리 올린 앉기 (구 sit F1)
+  sit_lady:    { yOffset: 1920, dirCount: 4, frameCount: 1  }, // 단정히 앉기 (구 sit F2)
   emote:       { yOffset: 2176, dirCount: 4, frameCount: 3  },
   run:         { yOffset: 2432, dirCount: 4, frameCount: 8  },
   combat_idle: { yOffset: 2688, dirCount: 4, frameCount: 3  },

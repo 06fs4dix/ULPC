@@ -24,7 +24,9 @@ const ANIMATION_OFFSETS = {
   climb:       21 * FRAME_SIZE,  // 1344
   idle:        22 * FRAME_SIZE,  // 1408
   jump:        26 * FRAME_SIZE,  // 1664
-  sit:         30 * FRAME_SIZE,  // 1920
+  sit:         30 * FRAME_SIZE,  // 1920 — 의자 앉기 (구 sit F0)
+  sit_lounge:  30 * FRAME_SIZE,  // 1920 — 다리 올린 앉기 (구 sit F1)
+  sit_lady:    30 * FRAME_SIZE,  // 1920 — 단정히 앉기 (구 sit F2)
   emote:       34 * FRAME_SIZE,  // 2176
   run:         38 * FRAME_SIZE,  // 2432
   combat_idle: 42 * FRAME_SIZE,  // 2688

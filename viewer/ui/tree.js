@@ -5,7 +5,7 @@
  * 자식 DOM은 노드를 펼칠 때 그 시점에 생성한다 (lazy rendering).
  * leafCount는 DOM 없이 트리 데이터를 경량 순회해 계산한다.
  */
-import { displayName, isLeaf, parseFilename } from '../data/loader.js';
+import { displayName, isLeaf, parseFilename, itemPrefixFromFiles } from '../data/loader.js';
 import { state, onSelectionChange } from '../state.js';
 
 // ── 썸네일 ──────────────────────────────────────────────────────────────────
@@ -58,15 +58,22 @@ async function _drawThumb(canvas, path) {
   const files = state.itemMap?.[path];
   if (!files || files.length === 0) return;
 
-  // icon.png 직접 로드 시도 (인덱스 미포함, 경로 직접 구성)
-  try {
-    const img = await _loadImage(_resolveUrl(path + '/icon.png'));
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, THUMB_SIZE, THUMB_SIZE);
-    ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(img, 0, 0, THUMB_SIZE, THUMB_SIZE);
-    return;
-  } catch { /* fallback */ }
+  // icon.png: 색상/머티리얼 가상 리프가 아닌 실제 아이템 prefix 기준
+  // (디스크: prefix/icon.png, 인덱스 icons[] 에 있을 때만 요청 → 404 방지)
+  const itemPrefix = itemPrefixFromFiles(files);
+  const iconKnown = itemPrefix && (
+    state.icons == null || state.icons.has(itemPrefix)
+  );
+  if (iconKnown) {
+    try {
+      const img = await _loadImage(_resolveUrl(itemPrefix + '/icon.png'));
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, THUMB_SIZE, THUMB_SIZE);
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(img, 0, 0, THUMB_SIZE, THUMB_SIZE);
+      return;
+    } catch { /* fallback */ }
+  }
 
   // fallback: 기존 spritesheet UV 크롭 방식
   const file = _pickThumbFile(files);
