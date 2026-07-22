@@ -1,6 +1,6 @@
 ## Demo
 
-[Demo](https://06fs4dix.github.io/ULPC/viewer/)
+[Demo](https://06fs4dix.github.io/ULPC/viewer/viewer.html)
 
 > Compatible with the [Artgine](https://github.com/06fs4dix/Artgine-Project) engine.
 

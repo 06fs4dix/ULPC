@@ -1,6 +1,6 @@
 ## 데모
 
-[Demo](https://06fs4dix.github.io/ULPC/viewer/)
+[Demo](https://06fs4dix.github.io/ULPC/viewer/viewer.html)
 
 > [Artgine](https://github.com/06fs4dix/Artgine-Project) 엔진과 연동 가능합니다.
 
