@@ -13,11 +13,12 @@
   "dependencies": {
     "compression": "^1.8.1",
     "cors": "^2.8.5",
-	"electron": "^35.2.1",
+    "electron": "^35.2.1",
     "express": "^4.21.2",
     "express-session": "^1.18.2",
+    "image-size": "^2.0.2",
+    "nodemailer": "^7.0.13",
     "raw-body": "^3.0.0",
-	"image-size": "^2.0.2",
     "ws": "^8.18.1"
   },
   "devDependencies": {
@@ -25,6 +26,6 @@
     "@types/node": "^22.14.1",
     "@types/ws": "^8.18.1",
     "@webgpu/types": "^0.1.40",
-    "typescript": "^5.8.2"
+    "typescript": "^7.0.2"
   }
 }
